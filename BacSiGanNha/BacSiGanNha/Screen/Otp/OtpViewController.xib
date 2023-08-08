@@ -17,6 +17,7 @@
             <connections>
                 <outlet property="instructionLabel" destination="KgO-9q-QaD" id="WVm-ew-Tt6"/>
                 <outlet property="nextBtn" destination="dPc-5M-wyL" id="Yuh-Zc-RNo"/>
+                <outlet property="nextBtnView" destination="SPj-dJ-cjh" id="xPg-yx-T91"/>
                 <outlet property="nextImageView" destination="Wed-fg-ede" id="b5f-aB-bIi"/>
                 <outlet property="reSendBtn" destination="K8r-mF-2GT" id="Rw6-o2-gK4"/>
                 <outlet property="resendLabel" destination="z7b-Ue-bNJ" id="mje-8z-a0G"/>
@@ -37,58 +38,58 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vMY-5N-xut">
                     <rect key="frame" x="40" y="104.5" width="335" height="42"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-Ro-D6h">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-Ro-D6h" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="K8u-BO-jig"/>
-                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="Muv-ea-A1S"/>
+                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="NFu-as-rBl"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCc-3T-8gY">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCc-3T-8gY" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="58.5" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="j3d-JX-RHB"/>
-                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="0Vv-HR-Jt3"/>
+                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="lv1-e4-a4S"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6S-S0-PMs">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6S-S0-PMs" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="117" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="ZRE-Ue-WAI"/>
-                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="RNJ-JT-YK6"/>
+                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="lvc-oU-mKx"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFq-Zo-lZg">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFq-Zo-lZg" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="175.5" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="yVT-LR-ogn"/>
-                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="qlE-kb-JnG"/>
+                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="xY3-Kv-laG"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUB-qq-cec">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUB-qq-cec" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="234" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="nHA-8m-NWX"/>
-                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="fmk-ck-FBQ"/>
+                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="cf4-Q1-NlP"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9n-83-Bfu">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9n-83-Bfu" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="292.5" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="didBeginEditing:" destination="-1" eventType="editingDidBegin" id="fk4-dn-Qey"/>
-                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="Rg6-Gw-QzU"/>
+                                <action selector="didChanged:" destination="-1" eventType="editingChanged" id="u2Y-c9-FEH"/>
                             </connections>
                         </textField>
                     </subviews>
@@ -106,6 +107,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="366" height="48"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="didTapNextBtn:" destination="-1" eventType="touchDown" id="bQH-wm-Uls"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -134,6 +138,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="218" height="32"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="didTapReSendBtn:" destination="-1" eventType="touchDown" id="5oa-qA-wMq"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

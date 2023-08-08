@@ -16,11 +16,15 @@ class OtpViewController: UIViewController {
     @IBOutlet weak var nextImageView: UIImageView!
     @IBOutlet weak var resendLabel: UILabel!
     
+    @IBOutlet weak var nextBtnView: UIView!
     var user: User?
     var activeTextField: UITextField?
-
+    var countDownTimer = 60
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextfield()
         setupNavigation()
         setupUI()
     }
@@ -32,6 +36,17 @@ class OtpViewController: UIViewController {
     
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func setupTextfield() {
+        for textField in textFieldsOutletCollection {
+         textField.delegate = self
+        }
+        for i in 0..<textFieldsOutletCollection.count {
+               let textField = textFieldsOutletCollection[i] as! OTPTextField
+               textField.previousTextField = i > 0 ? textFieldsOutletCollection[i - 1] as? OTPTextField : nil
+               textField.nextTextField = i < textFieldsOutletCollection.count - 1 ? textFieldsOutletCollection[i + 1] as? OTPTextField : nil
+           }
     }
     
     func setupUI() {
@@ -74,19 +89,45 @@ class OtpViewController: UIViewController {
         nextImageView.alpha = 0.5
     }
     
+    func textFieldAction() {
+        let otpCode = textFieldsOutletCollection.map { $0.text ?? "" }.joined()
+        if otpCode.count == 6 {
+            if otpCode == "111111" {
+                nextBtn.isEnabled = true
+                nextImageView.alpha = 1
+                UIView.animate(withDuration: 0.3) {
+                    self.nextBtnView.transform = CGAffineTransform(translationX: 0, y: 200)
+                }
+                return
+            }
+            if otpCode != "111111" {
+                nextBtn.isEnabled = false
+                nextImageView.alpha = 0.5
+                nextBtn.transform = .identity
+                nextImageView.transform = .identity
+//                resendLabel.transform = CGAffineTransform(translationX: 0, y: 50)
+                return
+            }
+            return
+        }
+        if otpCode.count != 6 {
+            nextBtn.isEnabled = false
+            nextImageView.alpha = 0.5
+            return
+        }
+    }
+    
     @IBAction func didChanged(_ textField: UITextField) {
         if textField.text!.count == 1 {
             if IQKeyboardManager.shared.canGoNext {
                 IQKeyboardManager.shared.goNext()
             }
-        }
-        
-        if textField.text!.count != 1 {
+        } else {
             if IQKeyboardManager.shared.canGoPrevious {
                 IQKeyboardManager.shared.goPrevious()
             }
         }
-//        self.textFieldAction()
+        self.textFieldAction()
     }
     
     
@@ -100,6 +141,35 @@ class OtpViewController: UIViewController {
                    textField.layer.borderColor = UIColor.clear.cgColor
                }
            }
+    }
+    
+    @IBAction func didTapReSendBtn(_ sender: Any) {
+        resendLabel.alpha = 0.2
+        reSendBtn.isEnabled = false
+        resendLabel.text = "Gửi lại mã sau \(countDownTimer)s"
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            self.countDownTimer -= 1
+            if self.countDownTimer == 0 {
+                self.timer?.invalidate()
+                self.countDownTimer = 60
+                self.resendLabel.text = "Gửi lại mã sau \(self.countDownTimer)s"
+                self.resendLabel.alpha = 1
+                self.reSendBtn.isEnabled = true
+                return
+            }
+            
+            if self.countDownTimer != 0 {
+                self.resendLabel.text = "Gửi lại mã sau \(self.countDownTimer)s"
+                return
+            }
+        }
+    }
+
+    @IBAction func didTapNextBtn(_ sender: Any) {
+//        let vc = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
 
