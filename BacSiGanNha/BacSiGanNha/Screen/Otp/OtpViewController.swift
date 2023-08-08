@@ -16,18 +16,43 @@ class OtpViewController: UIViewController {
     @IBOutlet weak var nextImageView: UIImageView!
     @IBOutlet weak var resendLabel: UILabel!
     
+    @IBOutlet weak var resendView: UIView!
     @IBOutlet weak var nextBtnView: UIView!
     var user: User?
     var activeTextField: UITextField?
     var countDownTimer = 60
     var timer: Timer?
+    var wrongLabel: UILabel!
+    var hapticGenerator: UIImpactFeedbackGenerator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextfield()
         setupNavigation()
         setupUI()
+        setupWrongLabel()
     }
+    
+    func setupWrongLabel() {
+           wrongLabel = UILabel()
+           wrongLabel.translatesAutoresizingMaskIntoConstraints = false
+           wrongLabel.text = "Nhập sai mã xác thực"
+           wrongLabel.textColor = UIColor(red: 0.988, green: 0.141, blue: 0.208, alpha: 1)
+           wrongLabel.font = UIFont(name: "NunitoSans-Regular", size: 12)
+           wrongLabel.textAlignment = .center
+           wrongLabel.isHidden = true
+
+           view.addSubview(wrongLabel)
+
+           NSLayoutConstraint.activate([
+               wrongLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+               wrongLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+               wrongLabel.topAnchor.constraint(equalTo: textFieldsOutletCollection[0].bottomAnchor, constant: 16),
+               wrongLabel.heightAnchor.constraint(equalToConstant: 20)
+           ])
+       }
+    
+
     
     func setupNavigation() {
         self.navigationItem.title = "Xác minh số điện thoại"
@@ -95,25 +120,25 @@ class OtpViewController: UIViewController {
             if otpCode == "111111" {
                 nextBtn.isEnabled = true
                 nextImageView.alpha = 1
-                UIView.animate(withDuration: 0.3) {
-                    self.nextBtnView.transform = CGAffineTransform(translationX: 0, y: 200)
-                }
-                return
-            }
-            if otpCode != "111111" {
+                wrongLabel.isHidden = true
+                resendView.transform = .identity
+                nextBtnView.transform = .identity
+            } else {
                 nextBtn.isEnabled = false
                 nextImageView.alpha = 0.5
-                nextBtn.transform = .identity
-                nextImageView.transform = .identity
-//                resendLabel.transform = CGAffineTransform(translationX: 0, y: 50)
-                return
+                
+                wrongLabel.isHidden = false
+                UIView.animate(withDuration: 0.2) {
+                    self.resendView.transform = CGAffineTransform(translationX: 0, y: 40)
+                    self.nextBtnView.transform = CGAffineTransform(translationX: 0, y: 300)
+                }
             }
-            return
-        }
-        if otpCode.count != 6 {
+        } else {
             nextBtn.isEnabled = false
             nextImageView.alpha = 0.5
-            return
+            wrongLabel.isHidden = true
+            nextBtn.transform = .identity
+            nextImageView.transform = .identity
         }
     }
     

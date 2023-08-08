@@ -21,6 +21,7 @@
                 <outlet property="nextImageView" destination="Wed-fg-ede" id="b5f-aB-bIi"/>
                 <outlet property="reSendBtn" destination="K8r-mF-2GT" id="Rw6-o2-gK4"/>
                 <outlet property="resendLabel" destination="z7b-Ue-bNJ" id="mje-8z-a0G"/>
+                <outlet property="resendView" destination="TQb-cc-EnY" id="3GF-sz-Kcb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outletCollection property="textFieldsOutletCollection" destination="X9n-Ro-D6h" collectionClass="NSMutableArray" id="Cke-AY-Jc1"/>
                 <outletCollection property="textFieldsOutletCollection" destination="pCc-3T-8gY" collectionClass="NSMutableArray" id="ess-PN-Td1"/>
