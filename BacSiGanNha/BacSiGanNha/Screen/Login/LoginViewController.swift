@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var viewTextfield: UIView!
