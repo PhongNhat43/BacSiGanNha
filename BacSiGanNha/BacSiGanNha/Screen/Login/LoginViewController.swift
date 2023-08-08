@@ -83,29 +83,28 @@ extension LoginViewController: UITextFieldDelegate {
         
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-
-        if updatedText.count <= maxLength {
-            if updatedText.count == maxLength {
-                if updatedText.isValidPhoneNumber() {
-                    nextBtn.isEnabled = true
-                    nexBtnImageView.alpha = 1
-                }
-                nextBtn.isEnabled = false
-                nexBtnImageView.alpha = 0.5
-            }
-            
-            if updatedText.count != maxLength  {
-                nextBtn.isEnabled = false
-                nexBtnImageView.alpha = 0.5
-            }
-        }
-        else {
+        
+        if updatedText.count > maxLength {
             return false
         }
-
+        
+        if updatedText.count == maxLength {
+            if updatedText.isValidPhoneNumber() {
+                nextBtn.isEnabled = true
+                nexBtnImageView.alpha = 1
+            } else {
+                nextBtn.isEnabled = false
+                nexBtnImageView.alpha = 0.5
+            }
+        } else {
+            nextBtn.isEnabled = false
+            nexBtnImageView.alpha = 0.5
+        }
+        
         return true
     }
 }
+
 
 
 extension String {
