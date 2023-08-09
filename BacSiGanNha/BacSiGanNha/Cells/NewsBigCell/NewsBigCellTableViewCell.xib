@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans-Bold.ttf">
+            <string>NunitoSans-Bold</string>
+        </array>
+        <array key="NunitoSans-Regular.ttf">
+            <string>NunitoSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="301" id="KGk-i7-Jjw" customClass="NewsBigCellTableViewCell" customModule="BacSiGanNha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="301"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="301"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCd-WT-6KR">
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="301"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iFP-bT-pgT">
+                                <rect key="frame" x="0.0" y="0.0" width="373" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="2iN-R2-1ST"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqx-ag-Pwf">
+                                <rect key="frame" x="12" y="212" width="349" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jio Health khởi động chương trình Doctor Tour 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVL-Ur-gLA">
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="55"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 tháng 6, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noo-J2-uvu">
+                                        <rect key="frame" x="0.0" y="59" width="94" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
+                                        <color key="textColor" red="0.49019607843137253" green="0.51764705882352935" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YVL-Ur-gLA" secondAttribute="trailing" id="5Wd-Qc-vye"/>
+                                    <constraint firstItem="YVL-Ur-gLA" firstAttribute="leading" secondItem="gqx-ag-Pwf" secondAttribute="leading" id="OSI-Ee-xBR"/>
+                                    <constraint firstItem="YVL-Ur-gLA" firstAttribute="top" secondItem="gqx-ag-Pwf" secondAttribute="top" id="Z92-EU-FAX"/>
+                                    <constraint firstItem="noo-J2-uvu" firstAttribute="top" secondItem="YVL-Ur-gLA" secondAttribute="bottom" constant="4" id="nsN-nK-cda"/>
+                                    <constraint firstItem="noo-J2-uvu" firstAttribute="leading" secondItem="gqx-ag-Pwf" secondAttribute="leading" id="oGO-67-IlV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gqx-ag-Pwf" secondAttribute="bottom" constant="12" id="MLz-cA-oN1"/>
+                            <constraint firstAttribute="trailing" secondItem="gqx-ag-Pwf" secondAttribute="trailing" constant="12" id="NXx-Ck-4sq"/>
+                            <constraint firstAttribute="trailing" secondItem="iFP-bT-pgT" secondAttribute="trailing" id="P4h-lC-SOT"/>
+                            <constraint firstItem="gqx-ag-Pwf" firstAttribute="leading" secondItem="oCd-WT-6KR" secondAttribute="leading" constant="12" id="Y9d-ur-uZP"/>
+                            <constraint firstItem="iFP-bT-pgT" firstAttribute="top" secondItem="oCd-WT-6KR" secondAttribute="top" id="Yy8-T8-wB1"/>
+                            <constraint firstItem="gqx-ag-Pwf" firstAttribute="top" secondItem="iFP-bT-pgT" secondAttribute="bottom" constant="12" id="bTq-YE-8zm"/>
+                            <constraint firstItem="iFP-bT-pgT" firstAttribute="leading" secondItem="oCd-WT-6KR" secondAttribute="leading" id="e40-tx-g69"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oCd-WT-6KR" secondAttribute="bottom" id="DvE-46-cf2"/>
+                    <constraint firstItem="oCd-WT-6KR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EDw-pq-5Mx"/>
+                    <constraint firstAttribute="trailing" secondItem="oCd-WT-6KR" secondAttribute="trailing" id="lLH-w1-Q2T"/>
+                    <constraint firstItem="oCd-WT-6KR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tiy-TU-gpd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsCreateAt" destination="noo-J2-uvu" id="AGL-60-YxU"/>
+                <outlet property="newsImageView" destination="iFP-bT-pgT" id="aLA-mn-ZU6"/>
+                <outlet property="newsTitleLabel" destination="YVL-Ur-gLA" id="Sk3-ZZ-Q6g"/>
+            </connections>
+            <point key="canvasLocation" x="165.94202898550725" y="163.72767857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

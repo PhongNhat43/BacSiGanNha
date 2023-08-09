@@ -8,9 +8,14 @@
 import UIKit
 import Alamofire
 class HomePageViewController: UIViewController {
+    
     var newsArr = [ArticleList]()
     var promotionArr = [PromotionList]()
+    var doctorArr = [DoctorList]()
     
+    @IBOutlet weak var homePageScrollView: UIScrollView!
+    @IBOutlet weak var roundView: UIView!
+    @IBOutlet weak var doctorCollectionView: UICollectionView!
     @IBOutlet weak var promotionCollectionView: UICollectionView!
     @IBOutlet weak var newsCollectionView: UICollectionView!
     @IBOutlet weak var heightOfNewsConstraint: NSLayoutConstraint!
@@ -19,21 +24,35 @@ class HomePageViewController: UIViewController {
         super.viewDidLoad()
         getData()
         setupCollecitonView()
-       
+//        roundView.layer.cornerRadius = 8
+//        roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        roundView.layer.cornerRadius = 10
+        roundView.layer.borderWidth = 1
+        roundView.layer.borderColor = UIColor.red.cgColor
+        roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            
+        
     }
     
     func setupCollecitonView(){
         newsCollectionView.delegate = self
         newsCollectionView.dataSource = self
         newsCollectionView.register(NewsCollectionViewCell.nib(), forCellWithReuseIdentifier: NewsCollectionViewCell.indentifier)
+        
         promotionCollectionView.delegate = self
         promotionCollectionView.dataSource = self
         promotionCollectionView.register(PromotionCollectionViewCell.nib(), forCellWithReuseIdentifier: PromotionCollectionViewCell.indentifier)
+        
+        doctorCollectionView.delegate = self
+        doctorCollectionView.dataSource = self
+        doctorCollectionView.register(DoctorCollectionViewCell.nib(), forCellWithReuseIdentifier: DoctorCollectionViewCell.indentifier)
+        
         newsCollectionView.collectionViewLayout.invalidateLayout()
         newsCollectionView.layoutIfNeeded()
         newsCollectionView.reloadData()
-        heightOfNewsConstraint.constant = 244
-        heightOfPromotionConstraint.constant = 244
+//        heightOfNewsConstraint.constant = 244
+//        heightOfPromotionConstraint.constant = 244
 
     }
     
@@ -49,12 +68,12 @@ class HomePageViewController: UIViewController {
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
                 self.newsArr = articleData
                 self.promotionArr = promotionData
-//                self.doctorArr = doctorData
+                self.doctorArr = doctorData
                 
                 DispatchQueue.main.async {
                     self.newsCollectionView.reloadData()
                     self.promotionCollectionView.reloadData()
-//                    self.doctorCollectionView.reloadData()
+                    self.doctorCollectionView.reloadData()
                 }
             }
     }
@@ -65,15 +84,15 @@ class HomePageViewController: UIViewController {
 extension HomePageViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       
         switch collectionView {
         case newsCollectionView:
             return newsArr.count
         case promotionCollectionView:
             return promotionArr.count
-        default:
-            return 0
-      }
+        case doctorCollectionView:
+            return doctorArr.count
+        default: return 0
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
@@ -89,6 +108,13 @@ extension HomePageViewController: UICollectionViewDataSource {
             let dataPromotion = promotionArr[indexPath.item]
             cell.configure(dataPromotion: dataPromotion)
             return cell
+            
+        case doctorCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoctorCollectionViewCell.indentifier, for: indexPath) as! DoctorCollectionViewCell
+            let dataDoctor = doctorArr[indexPath.item]
+            cell.configure(dataDoctor: dataDoctor)
+            return cell
+            
         default: return UICollectionViewCell()
         
      }
@@ -102,6 +128,8 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 258, height: 220)
         case promotionCollectionView:
             return CGSize(width: 258, height: 220)
+        case doctorCollectionView:
+            return CGSize(width: 121, height: 185)
         default: return CGSize(width: 0, height: 0)
             
         }
@@ -112,6 +140,8 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
         case newsCollectionView:
             return 12
         case promotionCollectionView:
+            return 12
+        case doctorCollectionView:
             return 12
         default: return 0
             

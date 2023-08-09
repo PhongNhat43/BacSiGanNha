@@ -73,16 +73,8 @@ class NewsCollectionViewCell: UICollectionViewCell {
  
     
     func configure(data: ArticleList) {
-        let attributesHotSale: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
-            ]
-        let attributesCreateAt: [NSAttributedString.Key: Any] = [
-                .foregroundColor: UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1)
-            ]
-
-        newshHotSale.attributedText = NSMutableAttributedString(string: "Ưu đãi hot", attributes: attributesHotSale)
         newsTitleLabel.text = data.title
-        newsCreatedAtLabel.attributedText = NSMutableAttributedString(string: data.createdAt, attributes: attributesCreateAt)
+        newsCreatedAtLabel.text =  data.createdAt
         
         if let imageUrl = URL(string: data.picture) {
             newsImageView.kf.setImage(with: imageUrl, placeholder: nil, options: nil, completionHandler: { result in

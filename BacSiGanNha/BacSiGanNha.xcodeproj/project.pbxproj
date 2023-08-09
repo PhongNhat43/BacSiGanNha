@@ -14,6 +14,12 @@
 		E72A1BCD2A80E58F00EFB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A1BCB2A80E58F00EFB0D7 /* Main.storyboard */; };
 		E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72A1BCE2A80E59800EFB0D7 /* Assets.xcassets */; };
 		E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A1BD02A80E59800EFB0D7 /* LaunchScreen.storyboard */; };
+		E73057C72A8375AB00A59E09 /* DoctorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73057C52A8375AB00A59E09 /* DoctorCollectionViewCell.swift */; };
+		E73057C82A8375AB00A59E09 /* DoctorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73057C62A8375AB00A59E09 /* DoctorCollectionViewCell.xib */; };
+		E73057D02A838BCA00A59E09 /* NewsBigCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73057CE2A838BCA00A59E09 /* NewsBigCellTableViewCell.swift */; };
+		E73057D12A838BCA00A59E09 /* NewsBigCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73057CF2A838BCA00A59E09 /* NewsBigCellTableViewCell.xib */; };
+		E73057D52A838E2500A59E09 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73057D32A838E2500A59E09 /* NewsTableViewCell.swift */; };
+		E73057D62A838E2500A59E09 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73057D42A838E2500A59E09 /* NewsTableViewCell.xib */; };
 		E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */; };
 		E755ED052A83486000C9BCC6 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */; };
 		E755ED062A83486000C9BCC6 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED032A83486000C9BCC6 /* NunitoSans-SemiBold.ttf */; };
@@ -39,6 +45,12 @@
 		E72A1BCE2A80E59800EFB0D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E72A1BD12A80E59800EFB0D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E72A1BD32A80E59800EFB0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E73057C52A8375AB00A59E09 /* DoctorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorCollectionViewCell.swift; sourceTree = "<group>"; };
+		E73057C62A8375AB00A59E09 /* DoctorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorCollectionViewCell.xib; sourceTree = "<group>"; };
+		E73057CE2A838BCA00A59E09 /* NewsBigCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBigCellTableViewCell.swift; sourceTree = "<group>"; };
+		E73057CF2A838BCA00A59E09 /* NewsBigCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsBigCellTableViewCell.xib; sourceTree = "<group>"; };
+		E73057D32A838E2500A59E09 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		E73057D42A838E2500A59E09 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 		E755ED032A83486000C9BCC6 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -119,6 +131,33 @@
 			path = BacSiGanNha;
 			sourceTree = "<group>";
 		};
+		E73057C42A83759000A59E09 /* DoctorCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E73057C52A8375AB00A59E09 /* DoctorCollectionViewCell.swift */,
+				E73057C62A8375AB00A59E09 /* DoctorCollectionViewCell.xib */,
+			);
+			path = DoctorCollectionView;
+			sourceTree = "<group>";
+		};
+		E73057C92A838B6000A59E09 /* NewsBigCell */ = {
+			isa = PBXGroup;
+			children = (
+				E73057CE2A838BCA00A59E09 /* NewsBigCellTableViewCell.swift */,
+				E73057CF2A838BCA00A59E09 /* NewsBigCellTableViewCell.xib */,
+			);
+			path = NewsBigCell;
+			sourceTree = "<group>";
+		};
+		E73057D22A838E0D00A59E09 /* NewsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E73057D32A838E2500A59E09 /* NewsTableViewCell.swift */,
+				E73057D42A838E2500A59E09 /* NewsTableViewCell.xib */,
+			);
+			path = NewsTableViewCell;
+			sourceTree = "<group>";
+		};
 		E755ED002A83486000C9BCC6 /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +199,9 @@
 		E76AD56F2A82415C0010485F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E73057D22A838E0D00A59E09 /* NewsTableViewCell */,
+				E73057C92A838B6000A59E09 /* NewsBigCell */,
+				E73057C42A83759000A59E09 /* DoctorCollectionView */,
 				E755ED072A834A6300C9BCC6 /* promotionColectionView */,
 				E76AD5702A8241650010485F /* NewsCollectionView */,
 			);
@@ -237,12 +279,15 @@
 			files = (
 				E76AD5672A8232480010485F /* HomePageViewController.xib in Resources */,
 				E755ED062A83486000C9BCC6 /* NunitoSans-SemiBold.ttf in Resources */,
+				E73057D12A838BCA00A59E09 /* NewsBigCellTableViewCell.xib in Resources */,
 				E755ED052A83486000C9BCC6 /* NunitoSans-Bold.ttf in Resources */,
 				E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */,
 				E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */,
 				E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */,
 				E76AD5742A82419B0010485F /* NewsCollectionViewCell.xib in Resources */,
+				E73057C82A8375AB00A59E09 /* DoctorCollectionViewCell.xib in Resources */,
 				E755ED0B2A834A8000C9BCC6 /* PromotionCollectionViewCell.xib in Resources */,
+				E73057D62A838E2500A59E09 /* NewsTableViewCell.xib in Resources */,
 				E72A1BCD2A80E58F00EFB0D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,11 +343,14 @@
 			files = (
 				E76AD5662A8232480010485F /* HomePageViewController.swift in Sources */,
 				E76AD56A2A823E090010485F /* Data.swift in Sources */,
+				E73057D52A838E2500A59E09 /* NewsTableViewCell.swift in Sources */,
 				E72A1BCA2A80E58F00EFB0D7 /* ViewController.swift in Sources */,
 				E76AD5732A82419B0010485F /* NewsCollectionViewCell.swift in Sources */,
+				E73057D02A838BCA00A59E09 /* NewsBigCellTableViewCell.swift in Sources */,
 				E76AD56E2A823E280010485F /* APICaller.swift in Sources */,
 				E72A1BC62A80E58F00EFB0D7 /* AppDelegate.swift in Sources */,
 				E72A1BC82A80E58F00EFB0D7 /* SceneDelegate.swift in Sources */,
+				E73057C72A8375AB00A59E09 /* DoctorCollectionViewCell.swift in Sources */,
 				E755ED0A2A834A8000C9BCC6 /* PromotionCollectionViewCell.swift in Sources */,
 				E76AD56C2A823E220010485F /* UIImageViewExtention.swift in Sources */,
 			);
