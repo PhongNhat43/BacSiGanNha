@@ -56,13 +56,6 @@ class HomePageViewController: UIViewController {
 
     }
     
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        let height = newsCollectionView.collectionViewLayout.collectionViewContentSize.height
-//        heightOfNewsConstraint.constant = height
-//        heightOfPromotionConstraint.constant = height
-//        self.view.layoutIfNeeded()
-//    }
     
     func getData() {
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
@@ -76,6 +69,12 @@ class HomePageViewController: UIViewController {
                     self.doctorCollectionView.reloadData()
                 }
             }
+    }
+    
+    @IBAction func didTapNextNewsBtn(_ sender: Any) {
+        let vc = NewsDetailViewController(nibName: "NewsDetailViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.isNavigationBarHidden = false
     }
     
 

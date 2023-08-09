@@ -8,10 +8,10 @@
 import UIKit
 
 class NewsBigCellTableViewCell: UITableViewCell {
-    static let indentifier = "BigNewsTableViewCell"
+    static let indentifier = "NewsBigCellTableViewCell"
     
     static func nib() -> UINib {
-       return UINib(nibName: "BigNewsTableViewCell", bundle: nil)
+       return UINib(nibName: "NewsBigCellTableViewCell", bundle: nil)
     }
     
     @IBOutlet weak var newsTitleLabel: UILabel!
