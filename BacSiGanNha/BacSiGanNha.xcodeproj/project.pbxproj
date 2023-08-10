@@ -38,6 +38,10 @@
 		E76AD56E2A823E280010485F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76AD56D2A823E280010485F /* APICaller.swift */; };
 		E76AD5732A82419B0010485F /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76AD5712A82419B0010485F /* NewsCollectionViewCell.swift */; };
 		E76AD5742A82419B0010485F /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76AD5722A82419B0010485F /* NewsCollectionViewCell.xib */; };
+		E79425D82A83C84B0051EB4C /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79425D62A83C84B0051EB4C /* DoctorTableViewCell.swift */; };
+		E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79425D72A83C84B0051EB4C /* DoctorTableViewCell.xib */; };
+		E79425DD2A83CCCC0051EB4C /* DoctorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79425DB2A83CCCC0051EB4C /* DoctorTableViewController.swift */; };
+		E79425DE2A83CCCC0051EB4C /* DoctorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79425DC2A83CCCC0051EB4C /* DoctorTableViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		E76AD56D2A823E280010485F /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		E76AD5712A82419B0010485F /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E76AD5722A82419B0010485F /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		E79425D62A83C84B0051EB4C /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
+		E79425D72A83C84B0051EB4C /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
+		E79425DB2A83CCCC0051EB4C /* DoctorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewController.swift; sourceTree = "<group>"; };
+		E79425DC2A83CCCC0051EB4C /* DoctorTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorTableViewController.xib; sourceTree = "<group>"; };
 		F669494E467B184DE0FC6741 /* Pods-BacSiGanNha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiGanNha.release.xcconfig"; path = "Target Support Files/Pods-BacSiGanNha/Pods-BacSiGanNha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,6 +113,13 @@
 				F669494E467B184DE0FC6741 /* Pods-BacSiGanNha.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E71F76192A8473B8005DDA06 /* NewsWebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewsWebView;
 			sourceTree = "<group>";
 		};
 		E72A1BB92A80E58F00EFB0D7 = {
@@ -219,6 +234,8 @@
 		E76AD5632A8232230010485F /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				E71F76192A8473B8005DDA06 /* NewsWebView */,
+				E79425DA2A83CC790051EB4C /* DoctorTableView */,
 				E73057E12A83966900A59E09 /* PromotionDeatailTableView */,
 				E73057D82A83910000A59E09 /* NewsDetailTableView */,
 				E76AD5642A8232480010485F /* HomePageViewController.swift */,
@@ -240,6 +257,7 @@
 		E76AD56F2A82415C0010485F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E79425D52A83C8280051EB4C /* DoctorTableViewCell */,
 				E73057E72A83971D00A59E09 /* PromotionTableViewCell */,
 				E73057D22A838E0D00A59E09 /* NewsTableViewCell */,
 				E73057C92A838B6000A59E09 /* NewsBigCell */,
@@ -257,6 +275,24 @@
 				E76AD5722A82419B0010485F /* NewsCollectionViewCell.xib */,
 			);
 			path = NewsCollectionView;
+			sourceTree = "<group>";
+		};
+		E79425D52A83C8280051EB4C /* DoctorTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E79425D62A83C84B0051EB4C /* DoctorTableViewCell.swift */,
+				E79425D72A83C84B0051EB4C /* DoctorTableViewCell.xib */,
+			);
+			path = DoctorTableViewCell;
+			sourceTree = "<group>";
+		};
+		E79425DA2A83CC790051EB4C /* DoctorTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E79425DB2A83CCCC0051EB4C /* DoctorTableViewController.swift */,
+				E79425DC2A83CCCC0051EB4C /* DoctorTableViewController.xib */,
+			);
+			path = DoctorTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,11 +361,13 @@
 				E755ED052A83486000C9BCC6 /* NunitoSans-Bold.ttf in Resources */,
 				E73057E62A83969F00A59E09 /* PromotionDeatailTableView.xib in Resources */,
 				E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */,
+				E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */,
 				E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */,
 				E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */,
 				E73057E02A83917C00A59E09 /* NewsDetailViewController.xib in Resources */,
 				E76AD5742A82419B0010485F /* NewsCollectionViewCell.xib in Resources */,
 				E73057EB2A83974100A59E09 /* PromotionTableViewCell.xib in Resources */,
+				E79425DE2A83CCCC0051EB4C /* DoctorTableViewController.xib in Resources */,
 				E73057C82A8375AB00A59E09 /* DoctorCollectionViewCell.xib in Resources */,
 				E755ED0B2A834A8000C9BCC6 /* PromotionCollectionViewCell.xib in Resources */,
 				E73057D62A838E2500A59E09 /* NewsTableViewCell.xib in Resources */,
@@ -388,10 +426,12 @@
 			files = (
 				E73057E52A83969F00A59E09 /* PromotionDeatailTableView.swift in Sources */,
 				E76AD5662A8232480010485F /* HomePageViewController.swift in Sources */,
+				E79425D82A83C84B0051EB4C /* DoctorTableViewCell.swift in Sources */,
 				E76AD56A2A823E090010485F /* Data.swift in Sources */,
 				E73057D52A838E2500A59E09 /* NewsTableViewCell.swift in Sources */,
 				E72A1BCA2A80E58F00EFB0D7 /* ViewController.swift in Sources */,
 				E76AD5732A82419B0010485F /* NewsCollectionViewCell.swift in Sources */,
+				E79425DD2A83CCCC0051EB4C /* DoctorTableViewController.swift in Sources */,
 				E73057D02A838BCA00A59E09 /* NewsBigCellTableViewCell.swift in Sources */,
 				E73057DF2A83917C00A59E09 /* NewsDetailViewController.swift in Sources */,
 				E76AD56E2A823E280010485F /* APICaller.swift in Sources */,

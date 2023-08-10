@@ -26,7 +26,7 @@ class HomePageViewController: UIViewController {
         setupCollecitonView()
 //        roundView.layer.cornerRadius = 8
 //        roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
+        roundView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         roundView.layer.cornerRadius = 10
         roundView.layer.borderWidth = 1
         roundView.layer.borderColor = UIColor.red.cgColor
@@ -76,6 +76,21 @@ class HomePageViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         navigationController?.isNavigationBarHidden = false
     }
+    
+    
+    @IBAction func didTapNextPromotionBtn(_ sender: Any) {
+        let vc = PromotionDeatailTableView(nibName: "PromotionDeatailTableView", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    @IBAction func didTapNextDoctor(_ sender: Any) {
+        let vc = DoctorTableViewController(nibName: "DoctorTableViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    
     
 
 }
