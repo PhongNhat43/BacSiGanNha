@@ -8,8 +8,10 @@
 import UIKit
 
 class DoctorTableViewController: UIViewController {
+    // MARK: - Outlet
     @IBOutlet private weak var tableView: UITableView!
-
+    
+    // MARK: - Property
     var doctorArr = [DoctorList]()
     
     override func viewDidLoad() {
@@ -39,6 +41,12 @@ class DoctorTableViewController: UIViewController {
         self.navigationItem.title = "Bác sĩ"
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
        
+//        if let navigationBar = self.navigationController?.navigationBar {
+//            let borderView = UIView(frame: CGRect(x: 0, y: navigationBar.frame.height - 1, width: navigationBar.frame.width, height: 1))
+//            borderView.backgroundColor = UIColor.blue
+//            navigationBar.addSubview(borderView)
+//        }
+
     }
 
     @objc func backButtonTapped() {

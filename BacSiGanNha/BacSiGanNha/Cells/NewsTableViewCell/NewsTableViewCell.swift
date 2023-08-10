@@ -27,8 +27,6 @@ class NewsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setupUI() {
@@ -50,20 +48,19 @@ class NewsTableViewCell: UITableViewCell {
                 }
             })
         }
-        // Tạo một NSMutableParagraphStyle với lineHeightMultiple
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineHeightMultiple = 1.13
+       
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.13
             
-            // Thiết lập thuộc tính của newsTitleLabel
-            let attributedText = NSAttributedString(
+        let attributedText = NSAttributedString(
                 string: data.title,
                 attributes: [
                     .paragraphStyle: paragraphStyle,
-                    .font: newsTitleLabel.font, // Bạn cần thiết lập font cho attributed string
-                    .foregroundColor: newsTitleLabel.textColor // Bạn cũng có thể thiết lập màu sắc
+                    .font: newsTitleLabel.font,
+                    .foregroundColor: newsTitleLabel.textColor
                 ]
             )
-            newsTitleLabel.attributedText = attributedText
+        newsTitleLabel.attributedText = attributedText
         newsCreateNews.text = data.createdAt
     }
     

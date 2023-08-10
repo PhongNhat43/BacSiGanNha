@@ -27,24 +27,16 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         // Initialization code
         contentView.layer.cornerRadius = cornerRadius
         contentView.layer.masksToBounds = true
-
-        // Set masks to bounds to false to avoid the shadow
-        // from being clipped to the corner radius
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = false
-
-        // Apply a shadow
         layer.shadowRadius = 5.0
-  layer.shadowOpacity = 1.0
+        layer.shadowOpacity = 1.0
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-//        layer.shadowColor = UIColor.red.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 5)
     }
     
     override func layoutSubviews() {
            super.layoutSubviews()
-
-           // Improve scrolling performance with an explicit shadowPath
            layer.shadowPath = UIBezierPath(
                roundedRect: bounds,
                cornerRadius: cornerRadius

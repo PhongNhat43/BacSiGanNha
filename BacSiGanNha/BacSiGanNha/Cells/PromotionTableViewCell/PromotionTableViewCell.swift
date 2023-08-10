@@ -53,7 +53,6 @@ class PromotionTableViewCell: UITableViewCell {
         promotionTitleLabel.attributedText = attributedText
         promotionTitleLabel.numberOfLines = 0
         promotionTitleLabel.lineBreakMode = .byWordWrapping
-        
         promotionCreateAtLabel.text = data.createdAt
     }
 

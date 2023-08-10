@@ -9,8 +9,10 @@ import UIKit
 
 class NewsDetailViewController: UIViewController {
     
+    // MARK: - Outlet
     @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Property
     var newsArr = [ArticleList]()
 
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class NewsDetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            }
+        }
     }
     
     func setupTableView() {
@@ -45,7 +47,6 @@ class NewsDetailViewController: UIViewController {
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-
 }
 
 extension NewsDetailViewController: UITableViewDataSource {
@@ -70,23 +71,22 @@ extension NewsDetailViewController: UITableViewDataSource {
                 cell.configure(data: data)
                 return cell
             }
-            
             return UITableViewCell()
         }
-
-
-        
-    }
+}
 
 extension NewsDetailViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let dataNews = newsArr[indexPath.row]
-//        let urlString = dataNews.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-//        guard let url = URL(string: urlString) else { return }
-//        let vc = SFSafariViewController(url: url)
-//        present(vc, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        var urlString: String?
+        let data = newsArr[indexPath.row]
+        urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+        if let urlString = urlString, let url = URL(string: urlString) {
+             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
+             webViewController.url = url
+             navigationController?.pushViewController(webViewController, animated: true)
+         }
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {

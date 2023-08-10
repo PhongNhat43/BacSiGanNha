@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B37602221D35A05D9F200F81 /* Pods_BacSiGanNha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F999C32F34F8E83A11A58DB /* Pods_BacSiGanNha.framework */; };
+		E71F761C2A8474C6005DDA06 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F761A2A8474C6005DDA06 /* WebViewViewController.swift */; };
+		E71F761D2A8474C6005DDA06 /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F761B2A8474C6005DDA06 /* WebViewViewController.xib */; };
+		E71F76202A848BA3005DDA06 /* ExtensionLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F761F2A848BA3005DDA06 /* ExtensionLoading.swift */; };
 		E72A1BC62A80E58F00EFB0D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A1BC52A80E58F00EFB0D7 /* AppDelegate.swift */; };
 		E72A1BC82A80E58F00EFB0D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A1BC72A80E58F00EFB0D7 /* SceneDelegate.swift */; };
 		E72A1BCA2A80E58F00EFB0D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A1BC92A80E58F00EFB0D7 /* ViewController.swift */; };
@@ -47,6 +50,9 @@
 /* Begin PBXFileReference section */
 		6F999C32F34F8E83A11A58DB /* Pods_BacSiGanNha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BacSiGanNha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7202C4FF2F7D66B127CF54E /* Pods-BacSiGanNha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiGanNha.debug.xcconfig"; path = "Target Support Files/Pods-BacSiGanNha/Pods-BacSiGanNha.debug.xcconfig"; sourceTree = "<group>"; };
+		E71F761A2A8474C6005DDA06 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		E71F761B2A8474C6005DDA06 /* WebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
+		E71F761F2A848BA3005DDA06 /* ExtensionLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionLoading.swift; sourceTree = "<group>"; };
 		E72A1BC22A80E58F00EFB0D7 /* BacSiGanNha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiGanNha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72A1BC52A80E58F00EFB0D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E72A1BC72A80E58F00EFB0D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,11 +121,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E71F76192A8473B8005DDA06 /* NewsWebView */ = {
+		E71F76192A8473B8005DDA06 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				E71F761A2A8474C6005DDA06 /* WebViewViewController.swift */,
+				E71F761B2A8474C6005DDA06 /* WebViewViewController.xib */,
 			);
-			path = NewsWebView;
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		E71F761E2A848B82005DDA06 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E71F761F2A848BA3005DDA06 /* ExtensionLoading.swift */,
+				E76AD56B2A823E220010485F /* UIImageViewExtention.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E72A1BB92A80E58F00EFB0D7 = {
@@ -143,6 +160,7 @@
 		E72A1BC42A80E58F00EFB0D7 /* BacSiGanNha */ = {
 			isa = PBXGroup;
 			children = (
+				E71F761E2A848B82005DDA06 /* Extensions */,
 				E76AD56F2A82415C0010485F /* Cells */,
 				E76AD5682A823DFD0010485F /* Model */,
 				E76AD5632A8232230010485F /* Screen */,
@@ -234,7 +252,7 @@
 		E76AD5632A8232230010485F /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				E71F76192A8473B8005DDA06 /* NewsWebView */,
+				E71F76192A8473B8005DDA06 /* WebView */,
 				E79425DA2A83CC790051EB4C /* DoctorTableView */,
 				E73057E12A83966900A59E09 /* PromotionDeatailTableView */,
 				E73057D82A83910000A59E09 /* NewsDetailTableView */,
@@ -248,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				E76AD5692A823E090010485F /* Data.swift */,
-				E76AD56B2A823E220010485F /* UIImageViewExtention.swift */,
 				E76AD56D2A823E280010485F /* APICaller.swift */,
 			);
 			path = Model;
@@ -361,6 +378,7 @@
 				E755ED052A83486000C9BCC6 /* NunitoSans-Bold.ttf in Resources */,
 				E73057E62A83969F00A59E09 /* PromotionDeatailTableView.xib in Resources */,
 				E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */,
+				E71F761D2A8474C6005DDA06 /* WebViewViewController.xib in Resources */,
 				E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */,
 				E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */,
 				E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */,
@@ -424,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E71F76202A848BA3005DDA06 /* ExtensionLoading.swift in Sources */,
 				E73057E52A83969F00A59E09 /* PromotionDeatailTableView.swift in Sources */,
 				E76AD5662A8232480010485F /* HomePageViewController.swift in Sources */,
 				E79425D82A83C84B0051EB4C /* DoctorTableViewCell.swift in Sources */,
@@ -440,6 +459,7 @@
 				E73057C72A8375AB00A59E09 /* DoctorCollectionViewCell.swift in Sources */,
 				E755ED0A2A834A8000C9BCC6 /* PromotionCollectionViewCell.swift in Sources */,
 				E76AD56C2A823E220010485F /* UIImageViewExtention.swift in Sources */,
+				E71F761C2A8474C6005DDA06 /* WebViewViewController.swift in Sources */,
 				E73057EA2A83974100A59E09 /* PromotionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

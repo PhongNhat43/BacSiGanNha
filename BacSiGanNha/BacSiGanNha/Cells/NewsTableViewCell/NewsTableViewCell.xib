@@ -60,9 +60,19 @@
                             <constraint firstItem="1xv-fK-dBK" firstAttribute="leading" secondItem="QlX-ln-8xL" secondAttribute="leading" id="ZGH-2X-D7f"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2i-eg-L66">
+                        <rect key="frame" x="12" y="116" width="338" height="1"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="2jh-FG-BWf"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="S2i-eg-L66" secondAttribute="trailing" constant="12" id="Acc-0t-SLT"/>
                     <constraint firstItem="QlX-ln-8xL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Gtp-QE-CF4"/>
+                    <constraint firstItem="S2i-eg-L66" firstAttribute="top" secondItem="QlX-ln-8xL" secondAttribute="bottom" constant="11" id="R1H-cS-7aN"/>
+                    <constraint firstItem="S2i-eg-L66" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="Ua5-7v-pvo"/>
                     <constraint firstItem="QlX-ln-8xL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="fBO-Pr-NKR"/>
                     <constraint firstAttribute="trailing" secondItem="QlX-ln-8xL" secondAttribute="trailing" constant="16" id="r2T-LK-Hep"/>
                     <constraint firstAttribute="bottom" secondItem="QlX-ln-8xL" secondAttribute="bottom" constant="12" id="u1i-76-bXs"/>

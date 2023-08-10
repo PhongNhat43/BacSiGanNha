@@ -31,7 +31,6 @@ class DoctorTableViewCell: UITableViewCell {
         doctorMainView.layer.cornerRadius = 12
         doctorMainView.layer.borderWidth = 1
         doctorMainView.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1).cgColor
-        
         doctorImageView.layer.cornerRadius = 6
     }
 
@@ -40,19 +39,6 @@ class DoctorTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-//    func configure(data: DoctorList) {
-//        let placeholderImage = UIImage(named: "doctor")
-//           if let url = URL(string: data.avatar) {
-//               doctorImageView.kf.setImage(with: url, placeholder: placeholderImage)
-//           } else {
-//               doctorImageView.image = placeholderImage
-//           }
-//
-//        doctorNameLabel.text = "BS. \(data.fullName)"
-//        doctorMajorLabel.text = "Chuyên ngành \(data.majorsName)"
-//        doctorRateLabel.text = "\(data.ratioStar) (\(data.numberOfStars) Đánh giá)"
-//    }
     
     func configure(data: DoctorList) {
         let placeholderImage = UIImage(named: "doctor")

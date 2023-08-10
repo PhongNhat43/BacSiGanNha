@@ -15,30 +15,30 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PromotionTableViewCell" rowHeight="103" id="KGk-i7-Jjw" customClass="PromotionTableViewCell" customModule="BacSiGanNha" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="370" height="103"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PromotionTableViewCell" rowHeight="139" id="KGk-i7-Jjw" customClass="PromotionTableViewCell" customModule="BacSiGanNha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="139"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="103"/>
+                <rect key="frame" x="0.0" y="0.0" width="381" height="139"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAR-QF-Kiz">
-                        <rect key="frame" x="16" y="12" width="338" height="79"/>
+                        <rect key="frame" x="16" y="12" width="349" height="115"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DOJ-2z-Gyn">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="79"/>
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Nar-gN-V1E"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đổi Jio Points - Rinh quà sức khỏe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlD-Me-D8n">
-                                <rect key="frame" x="162" y="0.0" width="176" height="41"/>
+                                <rect key="frame" x="162" y="0.0" width="187" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 tháng 6, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEk-VU-3NZ">
-                                <rect key="frame" x="162" y="45" width="176" height="16.5"/>
+                                <rect key="frame" x="162" y="45" width="187" height="16.5"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -57,11 +57,21 @@
                             <constraint firstItem="HlD-Me-D8n" firstAttribute="leading" secondItem="DOJ-2z-Gyn" secondAttribute="trailing" constant="12" id="ynl-ue-7BP"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c79-Ua-YZZ">
+                        <rect key="frame" x="12" y="138" width="357" height="1"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="GLo-Af-8mM"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="c79-Ua-YZZ" secondAttribute="trailing" constant="12" id="BW8-BD-GHb"/>
                     <constraint firstItem="kAR-QF-Kiz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Klv-cx-Nhy"/>
+                    <constraint firstItem="c79-Ua-YZZ" firstAttribute="top" secondItem="kAR-QF-Kiz" secondAttribute="bottom" constant="11" id="Nqk-pQ-Hfv"/>
                     <constraint firstAttribute="bottom" secondItem="kAR-QF-Kiz" secondAttribute="bottom" constant="12" id="dEe-VY-aQv"/>
                     <constraint firstAttribute="trailing" secondItem="kAR-QF-Kiz" secondAttribute="trailing" constant="16" id="dJf-lQ-5oo"/>
+                    <constraint firstItem="c79-Ua-YZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="hKL-71-dlE"/>
                     <constraint firstItem="kAR-QF-Kiz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="ofy-Md-3Nv"/>
                 </constraints>
             </tableViewCellContentView>
@@ -71,7 +81,7 @@
                 <outlet property="promotionImageView" destination="DOJ-2z-Gyn" id="eXo-uR-siG"/>
                 <outlet property="promotionTitleLabel" destination="HlD-Me-D8n" id="ziM-LK-DD1"/>
             </connections>
-            <point key="canvasLocation" x="168.11594202898553" y="109.48660714285714"/>
+            <point key="canvasLocation" x="174.63768115942031" y="121.54017857142857"/>
         </tableViewCell>
     </objects>
     <resources>

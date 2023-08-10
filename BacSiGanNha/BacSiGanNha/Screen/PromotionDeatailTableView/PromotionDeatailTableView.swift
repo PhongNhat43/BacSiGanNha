@@ -9,8 +9,10 @@ import UIKit
 
 class PromotionDeatailTableView: UIViewController {
     
+    // MARK: - Outlet
     @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Property
     var promotionArr = [PromotionList]()
 
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class PromotionDeatailTableView: UIViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-            }
+        }
     }
     
     func setupNavigation() {
@@ -45,10 +47,6 @@ class PromotionDeatailTableView: UIViewController {
         tableView.dataSource = self
         tableView.register(PromotionTableViewCell.nib(), forCellReuseIdentifier: PromotionTableViewCell.indentifier)
     }
-    
-
-
-
 }
 
 extension PromotionDeatailTableView: UITableViewDataSource {
@@ -62,18 +60,20 @@ extension PromotionDeatailTableView: UITableViewDataSource {
         cell.configure(data: data)
         return cell
     }
-    
 }
 
 extension PromotionDeatailTableView: UITableViewDelegate {
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let data = promotionArr[indexPath.row]
-//        guard let url = URL(string: data.link ?? "") else { return }
-//        let vc = SFSafariViewController(url: url)
-//        present(vc, animated: true)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        var urlString: String?
+        let data = promotionArr[indexPath.row]
+        urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+        if let urlString = urlString, let url = URL(string: urlString) {
+             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
+             webViewController.url = url
+             navigationController?.pushViewController(webViewController, animated: true)
+         }
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 102

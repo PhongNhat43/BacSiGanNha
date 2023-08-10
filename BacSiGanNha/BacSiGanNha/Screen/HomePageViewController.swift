@@ -9,10 +9,8 @@ import UIKit
 import Alamofire
 class HomePageViewController: UIViewController {
     
-    var newsArr = [ArticleList]()
-    var promotionArr = [PromotionList]()
-    var doctorArr = [DoctorList]()
-    
+    // MARK: - Outlet
+    @IBOutlet weak var homePageImageView: UIImageView!
     @IBOutlet weak var homePageScrollView: UIScrollView!
     @IBOutlet weak var roundView: UIView!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
@@ -20,22 +18,36 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var newsCollectionView: UICollectionView!
     @IBOutlet weak var heightOfNewsConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightOfPromotionConstraint: NSLayoutConstraint!
+    
+    // MARK: - Property
+    var newsArr = [ArticleList]()
+    var promotionArr = [PromotionList]()
+    var doctorArr = [DoctorList]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
         setupCollecitonView()
-//        roundView.layer.cornerRadius = 8
-//        roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        roundView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        roundView.layer.cornerRadius = 10
-        roundView.layer.borderWidth = 1
-        roundView.layer.borderColor = UIColor.red.cgColor
-        roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            
-        
+        setupUI()
     }
     
-    func setupCollecitonView(){
+//    override func viewWillAppear(_ animated: Bool) {
+//        let loader = self.loader()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.stopLoader(loader: loader)
+//        }
+//    }
+    
+    func setupUI() {
+        roundView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        roundView.layer.cornerRadius = 15
+//        roundView.layer.borderWidth = 1
+//        roundView.layer.borderColor = UIColor.red.cgColor
+        roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+    }
+    
+    
+    func setupCollecitonView() {
         newsCollectionView.delegate = self
         newsCollectionView.dataSource = self
         newsCollectionView.register(NewsCollectionViewCell.nib(), forCellWithReuseIdentifier: NewsCollectionViewCell.indentifier)
@@ -51,9 +63,6 @@ class HomePageViewController: UIViewController {
         newsCollectionView.collectionViewLayout.invalidateLayout()
         newsCollectionView.layoutIfNeeded()
         newsCollectionView.reloadData()
-//        heightOfNewsConstraint.constant = 244
-//        heightOfPromotionConstraint.constant = 244
-
     }
     
     
@@ -63,10 +72,10 @@ class HomePageViewController: UIViewController {
                 self.promotionArr = promotionData
                 self.doctorArr = doctorData
                 
-                DispatchQueue.main.async {
-                    self.newsCollectionView.reloadData()
-                    self.promotionCollectionView.reloadData()
-                    self.doctorCollectionView.reloadData()
+        DispatchQueue.main.async {
+                self.newsCollectionView.reloadData()
+                self.promotionCollectionView.reloadData()
+                self.doctorCollectionView.reloadData()
                 }
             }
     }
@@ -89,13 +98,37 @@ class HomePageViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         navigationController?.isNavigationBarHidden = false
     }
-    
-    
-    
-
 }
 
 extension HomePageViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var urlString: String?
+        var titleString: String?
+        
+        switch collectionView {
+        case newsCollectionView:
+            let dataNews = newsArr[indexPath.row]
+            urlString = dataNews.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+            titleString = "Chi tiết tin tức"
+            
+        case promotionCollectionView:
+            let dataPromotion = promotionArr[indexPath.row]
+            urlString = dataPromotion.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+            titleString = "Chi tiết khuyến mại"
+            
+        default:
+            break
+        }
+        
+        if let urlString = urlString, let url = URL(string: urlString) {
+            let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
+            webViewController.url = url
+            webViewController.titleString = titleString // Thiết lập titleString
+            navigationController?.pushViewController(webViewController, animated: true)
+        }
+    }
+
+
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -130,15 +163,23 @@ extension HomePageViewController: UICollectionViewDataSource {
             return cell
             
         default: return UICollectionViewCell()
-        
      }
     }
 }
 
 extension HomePageViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
         switch collectionView {
         case newsCollectionView:
+//            let cellWidth: CGFloat = 258
+//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell else {
+//                fatalError("Failed to dequeue NewsCollectionViewCell")
+//            }
+//
+//                    let totalHeight = cell.calculateCellHeight(titleLabel: cell.newsTitleLabel, hotSaleLabel: cell.newshHotSale, width: cellWidth)
+//                    print("News CollectionView Cell Size - Width: \(cellWidth), Height: \(totalHeight)")
+//                    return CGSize(width: cellWidth, height: totalHeight)
             return CGSize(width: 258, height: 220)
         case promotionCollectionView:
             return CGSize(width: 258, height: 220)
@@ -147,6 +188,8 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
         default: return CGSize(width: 0, height: 0)
             
         }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -164,3 +207,5 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
 
 
 }
+
+

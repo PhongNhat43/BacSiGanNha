@@ -48,30 +48,23 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         doctorLastNameLabel.text = dataDoctor.majorsName
         doctorLastNameLabel.textColor = UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1)
         doctorLastNameLabel.font = UIFont(name: "NunitoSans-Regular", size: 12)
-//        doctorStarRateabel.text = "\(dataDoctor.numberOfStars)" + "\(dataDoctor.numberOfReviews)"
-        
-        // Tạo một đối tượng NSMutableParagraphStyle để tùy chỉnh định dạng đoạn văn bản
+
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 0.87
 
-        // Tạo đoạn văn bản cho số sao với màu và định dạng tương ứng
         let starsText = NSAttributedString(string: "\(dataDoctor.ratioStar)", attributes: [
             .foregroundColor: UIColor(red: 0.278, green: 0.29, blue: 0.341, alpha: 1),
-            .font: UIFont(name: "NunitoSans-Regular", size: 11)! // Chú ý: Kiểm tra xem UIFont có được tạo thành công không
+            .font: UIFont(name: "NunitoSans-Regular", size: 11)!
         ])
 
-        // Tạo đoạn văn bản cho số lượt đánh giá với màu và định dạng tương ứng
         let reviewsText = NSAttributedString(string: " (\(dataDoctor.numberOfReviews))", attributes: [
             .foregroundColor: UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1),
-            .font: UIFont(name: "NunitoSans-Regular", size: 11)! // Chú ý: Kiểm tra xem UIFont có được tạo thành công không
+            .font: UIFont(name: "NunitoSans-Regular", size: 11)!
         ])
 
-        // Tạo một đối tượng NSMutableAttributedString kết hợp cả hai đoạn văn bản
         let combinedText = NSMutableAttributedString()
         combinedText.append(starsText)
         combinedText.append(reviewsText)
-
-        // Gán định dạng văn bản cho label
         doctorStarRateabel.attributedText = combinedText
 
     }
