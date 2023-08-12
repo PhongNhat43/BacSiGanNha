@@ -14,12 +14,13 @@ class PromotionTableViewCell: UITableViewCell {
     static func nib() -> UINib {
        return UINib(nibName: "PromotionTableViewCell", bundle: nil)
     }
-
-
+    var bookmarkTapped: (() -> Void)?
+    
     @IBOutlet weak var promotionImageView: UIImageView!
     @IBOutlet weak var promotionCreateAtLabel: UILabel!
     @IBOutlet weak var promotionTitleLabel: UILabel!
-
+    @IBOutlet weak var bookMarkImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,7 +35,10 @@ class PromotionTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+    }
+    
+    @IBAction func bookMarkButtonTapped(_ sender: Any) {
+            bookmarkTapped?()
     }
     
     func configure(data: PromotionList) {

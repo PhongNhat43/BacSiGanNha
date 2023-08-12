@@ -43,6 +43,25 @@
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" highlightedImage="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="zly-lh-Omx">
+                                <rect key="frame" x="333" y="99" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="9tc-8A-quv"/>
+                                    <constraint firstAttribute="width" constant="16" id="Xo7-Px-ody"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsr-LW-r6w">
+                                <rect key="frame" x="328" y="94" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="HbB-mT-Zzv"/>
+                                    <constraint firstAttribute="height" constant="21" id="fCM-Hs-eXC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="bookMarkButtonTapped:" destination="KGk-i7-Jjw" eventType="touchDown" id="lSR-mr-jWN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -51,7 +70,11 @@
                             <constraint firstItem="DOJ-2z-Gyn" firstAttribute="leading" secondItem="kAR-QF-Kiz" secondAttribute="leading" id="Djk-ky-hq1"/>
                             <constraint firstItem="HlD-Me-D8n" firstAttribute="top" secondItem="kAR-QF-Kiz" secondAttribute="top" id="Gxn-al-fbr"/>
                             <constraint firstAttribute="trailing" secondItem="gEk-VU-3NZ" secondAttribute="trailing" id="HWU-sX-4rs"/>
+                            <constraint firstAttribute="bottom" secondItem="zly-lh-Omx" secondAttribute="bottom" id="Msi-3m-ZwJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Jsr-LW-r6w" secondAttribute="trailing" id="apO-Wl-Fae"/>
                             <constraint firstItem="gEk-VU-3NZ" firstAttribute="top" secondItem="HlD-Me-D8n" secondAttribute="bottom" constant="4" id="baW-m1-WZk"/>
+                            <constraint firstAttribute="trailing" secondItem="zly-lh-Omx" secondAttribute="trailing" id="cgo-d4-KWu"/>
+                            <constraint firstAttribute="bottom" secondItem="Jsr-LW-r6w" secondAttribute="bottom" id="gnX-P4-pnP"/>
                             <constraint firstAttribute="trailing" secondItem="HlD-Me-D8n" secondAttribute="trailing" id="nT7-Y8-zVP"/>
                             <constraint firstAttribute="bottom" secondItem="DOJ-2z-Gyn" secondAttribute="bottom" id="xWO-1N-Qzo"/>
                             <constraint firstItem="HlD-Me-D8n" firstAttribute="leading" secondItem="DOJ-2z-Gyn" secondAttribute="trailing" constant="12" id="ynl-ue-7BP"/>
@@ -77,6 +100,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bookMarkImageView" destination="zly-lh-Omx" id="knq-Ad-YsN"/>
                 <outlet property="promotionCreateAtLabel" destination="gEk-VU-3NZ" id="CPu-15-0QK"/>
                 <outlet property="promotionImageView" destination="DOJ-2z-Gyn" id="eXo-uR-siG"/>
                 <outlet property="promotionTitleLabel" destination="HlD-Me-D8n" id="ziM-LK-DD1"/>
@@ -85,6 +109,8 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Group" width="12" height="15"/>
+        <image name="bookmark" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

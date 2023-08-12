@@ -18,6 +18,11 @@ class DoctorTableViewController: UIViewController {
         super.viewDidLoad()
         getData()
         setupTableView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupNavigation()
     }
     

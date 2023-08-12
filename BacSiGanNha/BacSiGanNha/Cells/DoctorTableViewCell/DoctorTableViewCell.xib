@@ -46,7 +46,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UM0-A3-RN4">
-                                <rect key="frame" x="128" y="68" width="150" height="21"/>
+                                <rect key="frame" x="132" y="71" width="150" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="hV6-jt-coZ"/>
                                 </constraints>
@@ -63,12 +63,12 @@
                             <constraint firstItem="usX-i9-BIa" firstAttribute="leading" secondItem="1iy-fk-ayo" secondAttribute="trailing" constant="15" id="PdU-jw-gKG"/>
                             <constraint firstAttribute="trailing" secondItem="cbU-gC-dC4" secondAttribute="trailing" id="la6-4A-IXb"/>
                             <constraint firstItem="1iy-fk-ayo" firstAttribute="leading" secondItem="zk1-hU-2wH" secondAttribute="leading" constant="12" id="ldS-3t-HCI"/>
-                            <constraint firstItem="UM0-A3-RN4" firstAttribute="leading" secondItem="fdY-vF-LEf" secondAttribute="trailing" id="moo-2K-0fb"/>
+                            <constraint firstItem="UM0-A3-RN4" firstAttribute="leading" secondItem="fdY-vF-LEf" secondAttribute="trailing" constant="4" id="moo-2K-0fb"/>
                             <constraint firstAttribute="bottom" secondItem="1iy-fk-ayo" secondAttribute="bottom" constant="12" id="r6a-pP-Iud"/>
                             <constraint firstAttribute="trailing" secondItem="usX-i9-BIa" secondAttribute="trailing" id="uH8-vn-iKf"/>
                             <constraint firstItem="cbU-gC-dC4" firstAttribute="top" secondItem="usX-i9-BIa" secondAttribute="bottom" constant="6" id="ujq-8H-JzP"/>
                             <constraint firstItem="usX-i9-BIa" firstAttribute="top" secondItem="zk1-hU-2wH" secondAttribute="top" constant="14" id="yd6-dv-61X"/>
-                            <constraint firstItem="UM0-A3-RN4" firstAttribute="top" secondItem="cbU-gC-dC4" secondAttribute="bottom" constant="6" id="yfo-3b-SDQ"/>
+                            <constraint firstItem="UM0-A3-RN4" firstAttribute="top" secondItem="cbU-gC-dC4" secondAttribute="bottom" constant="9" id="yfo-3b-SDQ"/>
                             <constraint firstItem="fdY-vF-LEf" firstAttribute="top" secondItem="cbU-gC-dC4" secondAttribute="bottom" constant="6" id="zPO-9T-QeB"/>
                         </constraints>
                     </view>

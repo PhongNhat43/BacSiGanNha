@@ -7,7 +7,7 @@
 
 import UIKit
 import Kingfisher
-import DGLabelSize
+
 class NewsCollectionViewCell: UICollectionViewCell {
     
     static let indentifier = "NewsCollectionViewCell"

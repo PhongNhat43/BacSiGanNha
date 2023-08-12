@@ -27,9 +27,6 @@ class NewsDetailViewController: UIViewController {
         setupNavigation()
     }
     
-
-
-    
     func getData() {
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
                 self.newsArr = articleData
@@ -83,12 +80,10 @@ extension NewsDetailViewController: UITableViewDataSource {
                 cell.configure(data: data)
                 cell.bookmarkTapped = {
                         cell.bookMarkImageView.isHighlighted = !cell.bookMarkImageView.isHighlighted
-                    }
+                }
                 cell.selectionStyle = .none
                 return cell
             }
-            
-            
             return UITableViewCell()
         }
 }
@@ -105,8 +100,6 @@ extension NewsDetailViewController: UITableViewDelegate {
              navigationController?.pushViewController(webViewController, animated: true)
          }
     }
-    
-
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
