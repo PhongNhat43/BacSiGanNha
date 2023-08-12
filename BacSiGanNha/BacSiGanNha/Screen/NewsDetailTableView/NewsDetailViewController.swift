@@ -19,13 +19,20 @@ class NewsDetailViewController: UIViewController {
         super.viewDidLoad()
         getData()
         setupTableView()
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupNavigation()
     }
+    
+
+
     
     func getData() {
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
                 self.newsArr = articleData
-              
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -42,6 +49,11 @@ class NewsDetailViewController: UIViewController {
     func setupNavigation() {
         self.navigationItem.title = "Tin Tức"
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        if let navigationBar = self.navigationController?.navigationBar {
+            let borderView = UIView(frame: CGRect(x: 0, y: navigationBar.frame.height - 1, width: navigationBar.frame.width, height: 1))
+            borderView.backgroundColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1)
+            navigationBar.addSubview(borderView)
+        }
     }
 
     @objc func backButtonTapped() {
@@ -69,8 +81,14 @@ extension NewsDetailViewController: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.indentifier, for: indexPath) as! NewsTableViewCell
                 let data = newsArr[indexPath.section]
                 cell.configure(data: data)
+                cell.bookmarkTapped = {
+                        cell.bookMarkImageView.isHighlighted = !cell.bookMarkImageView.isHighlighted
+                    }
+                cell.selectionStyle = .none
                 return cell
             }
+            
+            
             return UITableViewCell()
         }
 }
@@ -87,6 +105,8 @@ extension NewsDetailViewController: UITableViewDelegate {
              navigationController?.pushViewController(webViewController, animated: true)
          }
     }
+    
+
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {

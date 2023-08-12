@@ -19,8 +19,13 @@ class PromotionDeatailTableView: UIViewController {
         super.viewDidLoad()
         getData()
         setupTableView()
-        setupNavigation()
+       
         view.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigation()
     }
     
     func getData() {
@@ -35,6 +40,11 @@ class PromotionDeatailTableView: UIViewController {
     func setupNavigation() {
         self.navigationItem.title = "Danh sách khuyến mại"
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        if let navigationBar = self.navigationController?.navigationBar {
+            let borderView = UIView(frame: CGRect(x: 0, y: navigationBar.frame.height - 1, width: navigationBar.frame.width, height: 1))
+            borderView.backgroundColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1)
+            navigationBar.addSubview(borderView)
+        }
     }
 
     

@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import DGLabelSize
 class NewsCollectionViewCell: UICollectionViewCell {
     
     static let indentifier = "NewsCollectionViewCell"
@@ -25,14 +26,27 @@ class NewsCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-              contentView.layer.cornerRadius = cornerRadius
-              contentView.layer.masksToBounds = true
-              layer.cornerRadius = cornerRadius
-              layer.masksToBounds = false
-              layer.shadowRadius = 5.0
-              layer.shadowOpacity = 1.0
-              layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
-              layer.shadowOffset = CGSize(width: 0, height: 5)
+        setupUI()
+    }
+    
+    func setupUI() {
+        contentView.layer.cornerRadius = cornerRadius
+        contentView.layer.masksToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = false
+        layer.shadowRadius = 5.0
+        layer.shadowOpacity = 1.0
+        layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 5)
+  
+        newsTitleLabel.textColor = UIColor(red: 0.094, green: 0.098, blue: 0.122, alpha: 1)
+        newsTitleLabel.font = UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15)
+        newsTitleLabel.numberOfLines = 2
+        newsTitleLabel.lineBreakMode = .byWordWrapping
+  
+        newshHotSale.text = "Ưu đãi hot"
+        newshHotSale.textColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
+        newshHotSale.font = UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13)
     }
     
     override func layoutSubviews() {
@@ -43,30 +57,16 @@ class NewsCollectionViewCell: UICollectionViewCell {
            ).cgPath
     }
 
-    private func calculateLabelHeight(label: UILabel, width: CGFloat) -> CGFloat {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
-        label.text = label.text
-        label.font = label.font
-        label.numberOfLines = label.numberOfLines
-        label.lineBreakMode = label.lineBreakMode
-        label.sizeToFit()
-        return label.frame.height
+    func calculateLabelHeight(label: UILabel) -> CGFloat {
+        let width = label.frame.size.width
+        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let result = label.sizeThatFits(size)
+        return result.height
     }
-    /// calculateCellHeight
-    /// - Parameter width: with of title label of cell
-    /// - Returns: height of cell
 
     func configure(data: ArticleList) {
-            newsTitleLabel.textColor = UIColor(red: 0.094, green: 0.098, blue: 0.122, alpha: 1)
-            newsTitleLabel.font = UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15)
-            newsTitleLabel.numberOfLines = 2
-            newsTitleLabel.lineBreakMode = .byWordWrapping
-            newsTitleLabel.text = data.title
-
-          newshHotSale.text = "Ưu đãi hot"
-          newshHotSale.textColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
-          newshHotSale.font = UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13)
-          newshHotSale.numberOfLines = 1
+        newsTitleLabel.text = data.title
+        newshHotSale.numberOfLines = 1
         
         if let imageUrl = URL(string: data.picture) {
             newsImageView.kf.setImage(with: imageUrl, placeholder: nil, options: nil, completionHandler: { result in
@@ -81,13 +81,14 @@ class NewsCollectionViewCell: UICollectionViewCell {
         }
     }
 }
-
-
 extension NewsCollectionViewCell {
-    func calculateCellHeight(titleLabel: UILabel, hotSaleLabel: UILabel, width: CGFloat) ->  CGFloat {
-        let titleHeight = calculateLabelHeight(label: titleLabel, width: width)
-        let hotSaleHeight = calculateLabelHeight(label: hotSaleLabel, width: width)
-        let totalHeight = titleHeight + hotSaleHeight + 163
+    func calculateCellHeight() -> CGFloat {
+        let titleHeight = calculateLabelHeight(label: newsTitleLabel)
+        let hotSaleHeight = calculateLabelHeight(label: newshHotSale)
+        let additionalHeight: CGFloat = 168
+        let totalHeight = titleHeight + hotSaleHeight + additionalHeight
         return totalHeight
     }
 }
+
+

@@ -19,13 +19,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageViewController" customModule="BacSiGanNha" customModuleProvider="target">
             <connections>
                 <outlet property="doctorCollectionView" destination="UIs-fg-4iV" id="IMH-b2-Qzw"/>
-                <outlet property="heightOfNewsConstraint" destination="0Ga-H4-sv8" id="ijd-z3-1CG"/>
-                <outlet property="heightOfPromotionConstraint" destination="4HC-DM-o3h" id="ndw-qc-Z9F"/>
+                <outlet property="hegihtofPromotion" destination="WuZ-pK-BBR" id="W7x-sI-xyD"/>
+                <outlet property="heightOfDoctor" destination="dKc-QS-g2y" id="ulw-Ai-gJp"/>
+                <outlet property="heightOfNewsConstraint" destination="pzt-Rg-oas" id="Yd3-HW-sCg"/>
                 <outlet property="homePageImageView" destination="9Hq-GL-HJ9" id="Kwb-iH-pEW"/>
                 <outlet property="homePageScrollView" destination="YFK-BU-EHi" id="gsH-h1-MaO"/>
                 <outlet property="newsCollectionView" destination="2UW-LW-bOi" id="e0Q-ng-I2m"/>
                 <outlet property="promotionCollectionView" destination="V3v-ce-Poe" id="0uU-qR-KyH"/>
                 <outlet property="roundView" destination="bSm-p4-EjA" id="Agp-uS-jKa"/>
+                <outlet property="topImageView" destination="9Hq-GL-HJ9" id="GwP-jR-Vmu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,7 +49,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KAQ-x4-kWR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="938.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="958.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvr-p0-Gor">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="359.5"/>
@@ -65,7 +67,7 @@
                                                     <rect key="frame" x="16" y="117.5" width="382" height="242"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="242" id="0Ga-H4-sv8"/>
+                                                        <constraint firstAttribute="height" constant="242" id="pzt-Rg-oas"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mbz-4E-uu6">
                                                         <size key="itemSize" width="128" height="128"/>
@@ -123,7 +125,7 @@
                                                     <rect key="frame" x="16" y="67.5" width="382" height="244"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="244" id="h57-Kz-0gc"/>
+                                                        <constraint firstAttribute="height" constant="244" id="WuZ-pK-BBR"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uZ0-Ts-icX">
                                                         <size key="itemSize" width="128" height="128"/>
@@ -177,7 +179,7 @@
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Xs-sq-oZo">
-                                            <rect key="frame" x="0.0" y="671" width="414" height="267.5"/>
+                                            <rect key="frame" x="0.0" y="671" width="414" height="287.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giới thiệu bác sĩ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuN-xb-4Jr">
                                                     <rect key="frame" x="16" y="28" width="124.5" height="23.5"/>
@@ -186,10 +188,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UIs-fg-4iV">
-                                                    <rect key="frame" x="16" y="67.5" width="382" height="200"/>
+                                                    <rect key="frame" x="16" y="67.5" width="382" height="220"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="4HC-DM-o3h"/>
+                                                        <constraint firstAttribute="height" constant="220" id="dKc-QS-g2y"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eUx-Rz-RrR">
                                                         <size key="itemSize" width="128" height="128"/>

@@ -68,6 +68,10 @@
                                         <color key="textColor" red="0.58823529411764708" green="0.60784313725490191" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tjl-ZM-nVJ">
+                                        <rect key="frame" x="175" y="36" width="49" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -105,6 +109,7 @@
             </constraints>
             <size key="customSize" width="284" height="237"/>
             <connections>
+                <outlet property="hotSaleLabel" destination="smy-hh-WyG" id="PqI-62-yEe"/>
                 <outlet property="promotionCreateAt" destination="fdz-rO-oK2" id="XTY-1Z-L9E"/>
                 <outlet property="promotionImageView" destination="r7p-dO-R7e" id="Opn-zy-9kS"/>
                 <outlet property="promotionMainView" destination="szn-es-rda" id="mXZ-Xz-byQ"/>

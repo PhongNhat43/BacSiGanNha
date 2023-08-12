@@ -21,7 +21,8 @@ class PromotionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var promotionImageView: UIImageView!
     @IBOutlet weak var promotionTitleLabel: UILabel!
     @IBOutlet weak var promotionCreateAt: UILabel!
-
+    @IBOutlet weak var hotSaleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,7 +42,14 @@ class PromotionCollectionViewCell: UICollectionViewCell {
                roundedRect: bounds,
                cornerRadius: cornerRadius
            ).cgPath
-       }
+    }
+    
+    func calculateLabelHeight(label: UILabel) -> CGFloat {
+        let width = label.frame.size.width
+        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let result = label.sizeThatFits(size)
+        return result.height
+    }
     
     func configure(dataPromotion: PromotionList) {
         promotionTitleLabel.text = dataPromotion.name
@@ -49,4 +57,14 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         promotionImageView.setImage(imageUrl: dataPromotion.picture)
     }
 
+}
+
+extension PromotionCollectionViewCell {
+    func calculateCellHeight() -> CGFloat {
+        let titleHeight = calculateLabelHeight(label: promotionTitleLabel)
+        let hotSaleHeight = calculateLabelHeight(label: hotSaleLabel)
+        let additionalHeight: CGFloat = 146
+        let totalHeight = titleHeight + hotSaleHeight + additionalHeight
+        return totalHeight
+    }
 }

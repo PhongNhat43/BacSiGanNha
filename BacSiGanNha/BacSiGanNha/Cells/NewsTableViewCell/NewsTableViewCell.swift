@@ -14,12 +14,14 @@ class NewsTableViewCell: UITableViewCell {
        return UINib(nibName: "NewsTableViewCell", bundle: nil)
     }
     
+    var bookmarkTapped: (() -> Void)?
+    
     @IBOutlet weak var newsMainView: UIView!
     @IBOutlet weak var newsTitleLabel: UILabel!
     @IBOutlet weak var newsCreateNews: UILabel!
     @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet weak var bookMarkImageView: UIImageView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -34,6 +36,10 @@ class NewsTableViewCell: UITableViewCell {
         newsImageView.layer.borderWidth = 1
         newsImageView.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1).cgColor
 
+    }
+    
+    @IBAction func bookMarkButtonTapped(_ sender: Any) {
+            bookmarkTapped?()
     }
     
     func configure(data: ArticleList) {

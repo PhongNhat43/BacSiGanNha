@@ -46,18 +46,41 @@
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group" highlightedImage="bookmark" translatesAutoresizingMaskIntoConstraints="NO" id="bYe-6e-Ixh">
+                                <rect key="frame" x="314" y="77" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="6cq-Z8-CM4"/>
+                                    <constraint firstAttribute="width" constant="16" id="kpA-Tz-BtK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSh-py-7yd">
+                                <rect key="frame" x="312" y="75" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="FKV-Gg-rCp"/>
+                                    <constraint firstAttribute="width" constant="18" id="Scc-fp-W02"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="bookMarkButtonTapped:" destination="KGk-i7-Jjw" eventType="touchDown" id="uuK-du-G2y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1xv-fK-dBK" firstAttribute="top" secondItem="QlX-ln-8xL" secondAttribute="top" id="2en-2b-U7v"/>
                             <constraint firstAttribute="trailing" secondItem="17t-qx-kI6" secondAttribute="trailing" id="4id-zW-ZWc"/>
+                            <constraint firstAttribute="bottom" secondItem="bYe-6e-Ixh" secondAttribute="bottom" id="5uz-f9-8iX"/>
                             <constraint firstItem="dWY-Bu-jmt" firstAttribute="leading" secondItem="1xv-fK-dBK" secondAttribute="trailing" constant="12" id="66h-Vk-91T"/>
                             <constraint firstItem="17t-qx-kI6" firstAttribute="leading" secondItem="1xv-fK-dBK" secondAttribute="trailing" constant="12" id="6JS-Gg-Ar3"/>
                             <constraint firstItem="dWY-Bu-jmt" firstAttribute="top" secondItem="QlX-ln-8xL" secondAttribute="top" id="8Ds-ic-72A"/>
                             <constraint firstAttribute="trailing" secondItem="dWY-Bu-jmt" secondAttribute="trailing" id="BLM-iR-bWh"/>
                             <constraint firstAttribute="bottom" secondItem="1xv-fK-dBK" secondAttribute="bottom" id="Ed2-Hu-S39"/>
+                            <constraint firstAttribute="bottom" secondItem="oSh-py-7yd" secondAttribute="bottom" id="JK8-Si-5gC"/>
                             <constraint firstItem="17t-qx-kI6" firstAttribute="top" secondItem="dWY-Bu-jmt" secondAttribute="bottom" id="LxS-l9-IhN"/>
+                            <constraint firstAttribute="trailing" secondItem="oSh-py-7yd" secondAttribute="trailing" id="Wjh-Wt-AYH"/>
                             <constraint firstItem="1xv-fK-dBK" firstAttribute="leading" secondItem="QlX-ln-8xL" secondAttribute="leading" id="ZGH-2X-D7f"/>
+                            <constraint firstAttribute="trailing" secondItem="bYe-6e-Ixh" secondAttribute="trailing" id="hKN-Y1-ScV"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2i-eg-L66">
@@ -80,6 +103,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bookMarkImageView" destination="bYe-6e-Ixh" id="e7m-CO-9Nt"/>
                 <outlet property="newsCreateNews" destination="17t-qx-kI6" id="cdq-at-OuR"/>
                 <outlet property="newsImageView" destination="1xv-fK-dBK" id="oDi-tP-A8k"/>
                 <outlet property="newsMainView" destination="QlX-ln-8xL" id="L3e-QV-Ekl"/>
@@ -89,6 +113,8 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Group" width="12" height="15"/>
+        <image name="bookmark" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

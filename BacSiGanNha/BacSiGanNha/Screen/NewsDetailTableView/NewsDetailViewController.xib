@@ -19,8 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZTn-WA-njf">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZTn-WA-njf">
+                    <rect key="frame" x="0.0" y="46" width="414" height="816"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -28,7 +28,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ZTn-WA-njf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4EE-Q7-4Vh"/>
-                <constraint firstItem="ZTn-WA-njf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4xp-W8-vEU"/>
+                <constraint firstItem="ZTn-WA-njf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="2" id="4xp-W8-vEU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZTn-WA-njf" secondAttribute="bottom" id="Aeq-87-4Dx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZTn-WA-njf" secondAttribute="trailing" id="Dnh-sa-AVk"/>
             </constraints>

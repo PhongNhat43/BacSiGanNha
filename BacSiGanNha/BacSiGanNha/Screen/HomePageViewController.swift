@@ -10,6 +10,7 @@ import Alamofire
 class HomePageViewController: UIViewController {
     
     // MARK: - Outlet
+    @IBOutlet weak var topImageView: UIImageView!
     @IBOutlet weak var homePageImageView: UIImageView!
     @IBOutlet weak var homePageScrollView: UIScrollView!
     @IBOutlet weak var roundView: UIView!
@@ -17,35 +18,34 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var promotionCollectionView: UICollectionView!
     @IBOutlet weak var newsCollectionView: UICollectionView!
     @IBOutlet weak var heightOfNewsConstraint: NSLayoutConstraint!
-    @IBOutlet weak var heightOfPromotionConstraint: NSLayoutConstraint!
+    @IBOutlet weak var hegihtofPromotion: NSLayoutConstraint!
+    @IBOutlet weak var heightOfDoctor: NSLayoutConstraint!
     
     // MARK: - Property
     var newsArr = [ArticleList]()
     var promotionArr = [PromotionList]()
     var doctorArr = [DoctorList]()
+    var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        
         setupCollecitonView()
         setupUI()
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+        getData()
+        
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        let loader = self.loader()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            self.stopLoader(loader: loader)
-//        }
-//    }
     
     func setupUI() {
         roundView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         roundView.layer.cornerRadius = 15
-//        roundView.layer.borderWidth = 1
-//        roundView.layer.borderColor = UIColor.red.cgColor
+        roundView.layer.borderWidth = 1
+        roundView.layer.borderColor = UIColor.red.cgColor
         roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
     
     func setupCollecitonView() {
         newsCollectionView.delegate = self
@@ -67,18 +67,21 @@ class HomePageViewController: UIViewController {
     
     
     func getData() {
+        activityIndicator.startAnimating()
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
-                self.newsArr = articleData
-                self.promotionArr = promotionData
-                self.doctorArr = doctorData
-                
-        DispatchQueue.main.async {
+            self.newsArr = articleData
+            self.promotionArr = promotionData
+            self.doctorArr = doctorData
+            
+            DispatchQueue.main.async {
                 self.newsCollectionView.reloadData()
                 self.promotionCollectionView.reloadData()
                 self.doctorCollectionView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
             }
+        }
     }
+
     
     @IBAction func didTapNextNewsBtn(_ sender: Any) {
         let vc = NewsDetailViewController(nibName: "NewsDetailViewController", bundle: nil)
@@ -98,6 +101,11 @@ class HomePageViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         navigationController?.isNavigationBarHidden = false
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            navigationController?.isNavigationBarHidden = true
+        }
 }
 
 extension HomePageViewController: UICollectionViewDataSource {
@@ -127,8 +135,6 @@ extension HomePageViewController: UICollectionViewDataSource {
             navigationController?.pushViewController(webViewController, animated: true)
         }
     }
-
-
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -172,24 +178,37 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
       
         switch collectionView {
         case newsCollectionView:
-//            let cellWidth: CGFloat = 258
-//            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell else {
-//                fatalError("Failed to dequeue NewsCollectionViewCell")
-//            }
-//
-//                    let totalHeight = cell.calculateCellHeight(titleLabel: cell.newsTitleLabel, hotSaleLabel: cell.newshHotSale, width: cellWidth)
-//                    print("News CollectionView Cell Size - Width: \(cellWidth), Height: \(totalHeight)")
-//                    return CGSize(width: cellWidth, height: totalHeight)
-            return CGSize(width: 258, height: 220)
-        case promotionCollectionView:
-            return CGSize(width: 258, height: 220)
-        case doctorCollectionView:
-            return CGSize(width: 121, height: 185)
-        default: return CGSize(width: 0, height: 0)
+            let cellWidth: CGFloat = 258
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell else {
+                fatalError("Failed to dequeue NewsCollectionViewCell")
+            }
+            let totalHeight = cell.calculateCellHeight()
+            heightOfNewsConstraint.constant = totalHeight
+            print("newsCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
+            return CGSize(width: cellWidth, height: totalHeight)
             
+        case promotionCollectionView:
+            let cellWidth: CGFloat = 258
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PromotionCollectionViewCell", for: indexPath) as? PromotionCollectionViewCell else {
+                fatalError("Failed to dequeue NewsCollectionViewCell")
+            }
+            let totalHeight = cell.calculateCellHeight()
+            hegihtofPromotion.constant = totalHeight
+            print("promotionCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
+            return CGSize(width: cellWidth, height: totalHeight)
+            
+        case doctorCollectionView:
+            let cellWidth: CGFloat = 121
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DoctorCollectionViewCell", for: indexPath) as? DoctorCollectionViewCell else {
+                fatalError("Failed to dequeue NewsCollectionViewCell")
+            }
+            let totalHeight = cell.calculateCellHeight()
+            heightOfDoctor.constant = totalHeight
+            print("doctorCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
+            return CGSize(width: cellWidth, height: totalHeight)
+//            return CGSize(width: 121, height: 200)
+        default: return CGSize(width: 0, height: 0)
         }
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
