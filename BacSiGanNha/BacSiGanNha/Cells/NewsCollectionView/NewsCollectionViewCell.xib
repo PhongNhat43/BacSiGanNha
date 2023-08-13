@@ -29,13 +29,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="284" height="217"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MQE-qn-sL5">
-                                <rect key="frame" x="0.0" y="0.0" width="284" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="284" height="145"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="UaJ-Ck-se8"/>
+                                    <constraint firstAttribute="height" constant="145" id="2el-Qe-3dm"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJw-Su-co7">
-                                <rect key="frame" x="12" y="172" width="260" height="33"/>
+                                <rect key="frame" x="12" y="157" width="260" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jio Health khởi động chương trình Doctor Tour 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s43-DN-w3v">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="41"/>
@@ -84,12 +84,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="oJw-Su-co7" secondAttribute="bottom" constant="12" id="5e0-Mg-Iuq"/>
-                            <constraint firstItem="oJw-Su-co7" firstAttribute="top" secondItem="MQE-qn-sL5" secondAttribute="bottom" constant="12" id="G7q-fQ-scq"/>
-                            <constraint firstAttribute="trailing" secondItem="MQE-qn-sL5" secondAttribute="trailing" id="OMZ-na-Iuj"/>
+                            <constraint firstAttribute="trailing" secondItem="MQE-qn-sL5" secondAttribute="trailing" id="Jju-y2-LOg"/>
+                            <constraint firstItem="MQE-qn-sL5" firstAttribute="leading" secondItem="8hD-t4-dFE" secondAttribute="leading" id="O3o-tE-cRM"/>
                             <constraint firstItem="oJw-Su-co7" firstAttribute="leading" secondItem="8hD-t4-dFE" secondAttribute="leading" constant="12" id="Tgy-gp-nHs"/>
                             <constraint firstAttribute="trailing" secondItem="oJw-Su-co7" secondAttribute="trailing" constant="12" id="Zxs-Pa-jJ6"/>
-                            <constraint firstItem="MQE-qn-sL5" firstAttribute="leading" secondItem="8hD-t4-dFE" secondAttribute="leading" id="sjl-p4-FWx"/>
-                            <constraint firstItem="MQE-qn-sL5" firstAttribute="top" secondItem="8hD-t4-dFE" secondAttribute="top" id="wsk-qH-nDd"/>
+                            <constraint firstItem="oJw-Su-co7" firstAttribute="top" secondItem="MQE-qn-sL5" secondAttribute="bottom" constant="12" id="pb8-uJ-PWp"/>
+                            <constraint firstItem="MQE-qn-sL5" firstAttribute="top" secondItem="8hD-t4-dFE" secondAttribute="top" id="rZn-s1-n9l"/>
                         </constraints>
                     </view>
                 </subviews>

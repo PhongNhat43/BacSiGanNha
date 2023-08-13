@@ -29,13 +29,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="284" height="237"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r7p-dO-R7e">
-                                <rect key="frame" x="0.0" y="0.0" width="284" height="160"/>
+                                <rect key="frame" x="0.0" y="0.0" width="284" height="145"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="r7p-dO-R7e" secondAttribute="height" multiplier="16:9" id="jo9-D6-z6h"/>
+                                    <constraint firstAttribute="height" constant="145" id="ZEw-vh-jXT"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoI-DK-Dz1">
-                                <rect key="frame" x="12" y="172" width="260" height="53"/>
+                                <rect key="frame" x="12" y="157" width="260" height="68"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đổi Jio Points - Rinh quà sức khỏe bệnh nhân" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeA-ik-Qxy">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="41"/>
@@ -85,13 +85,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PoI-DK-Dz1" firstAttribute="top" secondItem="r7p-dO-R7e" secondAttribute="bottom" constant="12" id="2ga-k9-jBI"/>
+                            <constraint firstAttribute="trailing" secondItem="r7p-dO-R7e" secondAttribute="trailing" id="2vY-g3-c5c"/>
                             <constraint firstItem="PoI-DK-Dz1" firstAttribute="leading" secondItem="szn-es-rda" secondAttribute="leading" constant="12" id="4bz-jO-afa"/>
-                            <constraint firstAttribute="trailing" secondItem="r7p-dO-R7e" secondAttribute="trailing" id="4uj-46-fkF"/>
-                            <constraint firstItem="r7p-dO-R7e" firstAttribute="leading" secondItem="szn-es-rda" secondAttribute="leading" id="J5s-0G-iID"/>
-                            <constraint firstItem="r7p-dO-R7e" firstAttribute="top" secondItem="szn-es-rda" secondAttribute="top" id="ej7-WY-Ayd"/>
+                            <constraint firstItem="r7p-dO-R7e" firstAttribute="leading" secondItem="szn-es-rda" secondAttribute="leading" id="NhJ-Wh-apy"/>
+                            <constraint firstItem="PoI-DK-Dz1" firstAttribute="top" secondItem="r7p-dO-R7e" secondAttribute="bottom" constant="12" id="SwZ-jF-c3k"/>
                             <constraint firstAttribute="bottom" secondItem="PoI-DK-Dz1" secondAttribute="bottom" constant="12" id="tgM-4u-43n"/>
                             <constraint firstAttribute="trailing" secondItem="PoI-DK-Dz1" secondAttribute="trailing" constant="12" id="v0d-nl-kMC"/>
+                            <constraint firstItem="r7p-dO-R7e" firstAttribute="top" secondItem="szn-es-rda" secondAttribute="top" id="zbf-is-i20"/>
                         </constraints>
                     </view>
                 </subviews>
