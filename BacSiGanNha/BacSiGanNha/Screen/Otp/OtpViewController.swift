@@ -31,8 +31,12 @@ class OtpViewController: UIViewController {
         super.viewDidLoad()
         setupTextfield()
         setupNavigation()
-        setupUI()
         setupWrongLabel()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupUI()
     }
     
     func setupWrongLabel() {
