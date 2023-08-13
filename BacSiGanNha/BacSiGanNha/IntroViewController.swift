@@ -27,11 +27,12 @@ class IntroViewController: UIViewController {
         setupCollectionView()
         fillData()
         setupPage()
+        setupUI()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupUI()
+        
     }
     
     func setupPage(){
