@@ -26,6 +26,10 @@ class PromotionCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        setupUI()
+    }
+    
+    func setupUI() {
         contentView.layer.cornerRadius = cornerRadius
         contentView.layer.masksToBounds = true
         layer.cornerRadius = cornerRadius
@@ -63,7 +67,7 @@ extension PromotionCollectionViewCell {
     func calculateCellHeight() -> CGFloat {
         let titleHeight = calculateLabelHeight(label: promotionTitleLabel)
         let hotSaleHeight = calculateLabelHeight(label: hotSaleLabel)
-        let additionalHeight: CGFloat = 146
+        let additionalHeight: CGFloat = 188
         let totalHeight = titleHeight + hotSaleHeight + additionalHeight
         return totalHeight
     }

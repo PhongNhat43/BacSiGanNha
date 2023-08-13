@@ -29,13 +29,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="284" height="217"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MQE-qn-sL5">
-                                <rect key="frame" x="0.0" y="0.0" width="284" height="134"/>
+                                <rect key="frame" x="0.0" y="0.0" width="284" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="134" id="hjM-fW-rY7"/>
+                                    <constraint firstAttribute="height" constant="160" id="UaJ-Ck-se8"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJw-Su-co7">
-                                <rect key="frame" x="12" y="146" width="260" height="59"/>
+                                <rect key="frame" x="12" y="172" width="260" height="33"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jio Health khởi động chương trình Doctor Tour 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s43-DN-w3v">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="41"/>

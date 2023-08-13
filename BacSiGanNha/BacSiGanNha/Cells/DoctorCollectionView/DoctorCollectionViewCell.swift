@@ -83,7 +83,7 @@ extension DoctorCollectionViewCell {
         let nameHeight = calculateLabelHeight(label: doctorNameLabel)
         let majorHeight = calculateLabelHeight(label: doctorLastNameLabel)
         let rateHeight = calculateLabelHeight(label: doctorStarRateabel)
-        let additionalHeight: CGFloat = 146
+        let additionalHeight: CGFloat = 145
         let totalHeight = nameHeight + majorHeight + rateHeight + additionalHeight
         return totalHeight
     }

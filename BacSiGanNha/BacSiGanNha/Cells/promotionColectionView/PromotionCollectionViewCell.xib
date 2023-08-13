@@ -29,13 +29,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="284" height="237"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r7p-dO-R7e">
-                                <rect key="frame" x="0.0" y="0.0" width="284" height="134"/>
+                                <rect key="frame" x="0.0" y="0.0" width="284" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="134" id="TIc-Au-tuY"/>
+                                    <constraint firstAttribute="width" secondItem="r7p-dO-R7e" secondAttribute="height" multiplier="16:9" id="jo9-D6-z6h"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoI-DK-Dz1">
-                                <rect key="frame" x="12" y="146" width="260" height="79"/>
+                                <rect key="frame" x="12" y="172" width="260" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đổi Jio Points - Rinh quà sức khỏe bệnh nhân" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeA-ik-Qxy">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="41"/>

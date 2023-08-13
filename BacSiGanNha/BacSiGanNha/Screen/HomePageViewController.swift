@@ -183,9 +183,9 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
                 fatalError("Failed to dequeue NewsCollectionViewCell")
             }
             let totalHeight = cell.calculateCellHeight()
-            heightOfNewsConstraint.constant = totalHeight + 10
+            heightOfNewsConstraint.constant = totalHeight
             print("newsCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
-            return CGSize(width: cellWidth, height: totalHeight)
+            return CGSize(width: cellWidth, height: totalHeight + 10)
             
         case promotionCollectionView:
             let cellWidth: CGFloat = 258
@@ -193,7 +193,7 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
                 fatalError("Failed to dequeue NewsCollectionViewCell")
             }
             let totalHeight = cell.calculateCellHeight()
-            hegihtofPromotion.constant = totalHeight + 10
+            hegihtofPromotion.constant = totalHeight
             print("promotionCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight + 10)
             
@@ -203,10 +203,9 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
                 fatalError("Failed to dequeue NewsCollectionViewCell")
             }
             let totalHeight = cell.calculateCellHeight()
-            heightOfDoctor.constant = totalHeight + 10
+            heightOfDoctor.constant = totalHeight
             print("doctorCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
-            return CGSize(width: cellWidth, height: totalHeight)
-//            return CGSize(width: 121, height: 200)
+            return CGSize(width: cellWidth, height: totalHeight + 10)
         default: return CGSize(width: 0, height: 0)
         }
     }

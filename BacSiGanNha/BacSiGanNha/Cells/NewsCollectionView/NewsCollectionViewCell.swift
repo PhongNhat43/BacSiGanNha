@@ -85,7 +85,7 @@ extension NewsCollectionViewCell {
     func calculateCellHeight() -> CGFloat {
         let titleHeight = calculateLabelHeight(label: newsTitleLabel)
         let hotSaleHeight = calculateLabelHeight(label: newshHotSale)
-        let additionalHeight: CGFloat = 168
+        let additionalHeight: CGFloat = 188
         let totalHeight = titleHeight + hotSaleHeight + additionalHeight
         return totalHeight
     }

@@ -34,7 +34,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gtq-qo-jbI">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="97"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="97" id="kX4-EJ-XzC"/>
+                                            <constraint firstAttribute="width" secondItem="gtq-qo-jbI" secondAttribute="height" multiplier="1:1" id="4et-fU-NdH"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Stephen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axl-nc-LQz">
