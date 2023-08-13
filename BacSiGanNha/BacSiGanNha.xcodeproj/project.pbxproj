@@ -23,6 +23,8 @@
 		E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A1BD02A80E59800EFB0D7 /* LaunchScreen.storyboard */; };
 		E72A1BDD2A80F32600EFB0D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A1BDB2A80F32600EFB0D7 /* LoginViewController.swift */; };
 		E72A1BDE2A80F32600EFB0D7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E72A1BDC2A80F32600EFB0D7 /* LoginViewController.xib */; };
+		E763D5252A889097007942C3 /* IntroSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763D5242A889097007942C3 /* IntroSlide.swift */; };
+		E763D5282A8890BB007942C3 /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E763D5272A8890BB007942C3 /* IntroCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		E72A1BD32A80E59800EFB0D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E72A1BDB2A80F32600EFB0D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E72A1BDC2A80F32600EFB0D7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		E763D5242A889097007942C3 /* IntroSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroSlide.swift; sourceTree = "<group>"; };
+		E763D5272A8890BB007942C3 /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,6 @@
 				9CEB1F9BFC1E4127ED2853C0 /* Pods-BacSiGanNha.debug.xcconfig */,
 				B3CDD4B67B42C4C8503F5B6D /* Pods-BacSiGanNha.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,6 +113,7 @@
 		E727BD3F2A81DFA100769D69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E763D5242A889097007942C3 /* IntroSlide.swift */,
 				E727BD402A81DFC000769D69 /* User.swift */,
 			);
 			path = Model;
@@ -136,6 +140,7 @@
 		E72A1BC42A80E58F00EFB0D7 /* BacSiGanNha */ = {
 			isa = PBXGroup;
 			children = (
+				E763D5262A8890B1007942C3 /* cells */,
 				E72A1BDA2A80F2F200EFB0D7 /* Delegate */,
 				E72A1BC92A80E58F00EFB0D7 /* ViewController.swift */,
 				E72A1BD92A80F2DA00EFB0D7 /* Screen */,
@@ -165,6 +170,14 @@
 				E72A1BC72A80E58F00EFB0D7 /* SceneDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		E763D5262A8890B1007942C3 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				E763D5272A8890BB007942C3 /* IntroCollectionViewCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E763D5252A889097007942C3 /* IntroSlide.swift in Sources */,
+				E763D5282A8890BB007942C3 /* IntroCollectionViewCell.swift in Sources */,
 				E727BD3B2A81DF4C00769D69 /* OtpViewController.swift in Sources */,
 				E72A1BDD2A80F32600EFB0D7 /* LoginViewController.swift in Sources */,
 				E72A1BCA2A80E58F00EFB0D7 /* ViewController.swift in Sources */,
