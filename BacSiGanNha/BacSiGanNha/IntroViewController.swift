@@ -32,7 +32,8 @@ class IntroViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+        loginBtn.layer.cornerRadius = 24
+        registerBtn.layer.cornerRadius = 24
     }
     
     func setupPage(){
@@ -44,7 +45,7 @@ class IntroViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         // Thiết lập thuộc tính cho nút loginBtn
         loginBtn.layer.backgroundColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1).cgColor
-        loginBtn.layer.cornerRadius = 24
+       
         loginBtn.setTitle("Đăng Nhập", for: .normal)
         loginBtn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         loginBtn.titleLabel?.font = UIFont(name: "NunitoSans-Bold", size: 15)
@@ -54,7 +55,7 @@ class IntroViewController: UIViewController {
                
         // Thiết lập thuộc tính cho nút registerBtn
         registerBtn.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        registerBtn.layer.cornerRadius = 24
+        
         registerBtn.setTitle("Tạo tài khoản", for: .normal)
         registerBtn.layer.borderWidth = 1
         registerBtn.layer.borderColor = UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1).cgColor

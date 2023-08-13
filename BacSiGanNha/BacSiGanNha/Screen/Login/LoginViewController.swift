@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        viewTextfield.layer.cornerRadius = 28
+        nexBtnImageView.layer.cornerRadius = 24
     }
     
     func setupNavigation() {
@@ -38,7 +40,7 @@ class LoginViewController: UIViewController {
         // Thiết lập các thuộc tính UI
         phoneTextField.delegate = self
         phoneTextField.keyboardType = .numberPad
-        viewTextfield.layer.cornerRadius = 28
+        
         viewTextfield.layer.borderWidth = 1
         viewTextfield.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1).cgColor
         viewTextfield.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
@@ -47,7 +49,7 @@ class LoginViewController: UIViewController {
         viewTextfield.layer.shadowOpacity = 1.0
         
         nextBtn.isEnabled = false
-        nexBtnImageView.layer.cornerRadius = 24
+      
         nexBtnImageView.alpha = 0.5
         
         phoneTextField.borderStyle = .none

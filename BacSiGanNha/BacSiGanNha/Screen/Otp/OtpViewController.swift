@@ -37,6 +37,7 @@ class OtpViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        resendLabel.layer.cornerRadius = 18
     }
     
     func setupWrongLabel() {
@@ -84,7 +85,7 @@ class OtpViewController: UIViewController {
         for textField in textFieldsOutletCollection {
             textField.keyboardType = .numberPad
             textField.textAlignment = .center
-            textField.layer.cornerRadius = 8
+           
             textField.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.08).cgColor
             textField.layer.shadowOpacity = 1
             textField.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -108,7 +109,7 @@ class OtpViewController: UIViewController {
                ])
                
                attributedInstructionText.addAttributes(phoneNumberAttributes, range: (instructionText as NSString).range(of: "+84 \(data.phoneNumber.toPhoneNumber())"))
-               
+               instructionLabel.textAlignment = .center
                instructionLabel.numberOfLines = 0
                instructionLabel.lineBreakMode = .byWordWrapping
                instructionLabel.attributedText = attributedInstructionText
