@@ -64,10 +64,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RrC-Oa-MR7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="746" id="6xU-82-YWD"/>
+                                            <constraint firstAttribute="height" constant="600" id="6xU-82-YWD"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qPN-Bo-7m0">
                                             <size key="itemSize" width="433" height="745"/>
@@ -77,14 +77,14 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="LEd-Q4-0ki" customClass="IntroCollectionViewCell" customModule="BacSiGanNha" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.5" width="433" height="745"/>
+                                                <rect key="frame" x="0.0" y="-72.5" width="433" height="745"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fVo-qg-0Uu">
                                                     <rect key="frame" x="0.0" y="0.0" width="433" height="745"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn chuyên khoa, bác sĩ phù hợp và được thăm khám trong không gian thoải mái tại nhà" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mm-kU-8hd">
-                                                            <rect key="frame" x="66.5" y="495" width="300" height="40"/>
+                                                            <rect key="frame" x="66.5" y="515" width="300" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="18q-Eq-MGS"/>
                                                                 <constraint firstAttribute="width" constant="300" id="NNe-yP-eY3"/>
@@ -94,7 +94,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bác sĩ sẵn lòng chăm sóc khi bạn cần" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htF-a6-6z1">
-                                                            <rect key="frame" x="66.5" y="420" width="300" height="65"/>
+                                                            <rect key="frame" x="66.5" y="440" width="300" height="65"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="65" id="aqV-pB-hwK"/>
                                                                 <constraint firstAttribute="width" constant="300" id="rto-hu-qC7"/>
@@ -103,7 +103,7 @@
                                                             <color key="textColor" red="0.14117647059999999" green="0.1647058824" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro 1" translatesAutoresizingMaskIntoConstraints="NO" id="62j-fz-Ly3">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Intro1" translatesAutoresizingMaskIntoConstraints="NO" id="62j-fz-Ly3">
                                                             <rect key="frame" x="0.0" y="0.0" width="433" height="400"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="400" id="LXc-Lh-G6v"/>
@@ -112,7 +112,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="62j-fz-Ly3" firstAttribute="top" secondItem="fVo-qg-0Uu" secondAttribute="top" id="48r-45-b6m"/>
-                                                        <constraint firstItem="htF-a6-6z1" firstAttribute="top" secondItem="62j-fz-Ly3" secondAttribute="bottom" constant="20" id="6kc-k8-ZR8"/>
+                                                        <constraint firstItem="htF-a6-6z1" firstAttribute="top" secondItem="62j-fz-Ly3" secondAttribute="bottom" constant="40" id="6kc-k8-ZR8"/>
                                                         <constraint firstAttribute="trailing" secondItem="62j-fz-Ly3" secondAttribute="trailing" id="9xh-Dv-YLH"/>
                                                         <constraint firstItem="62j-fz-Ly3" firstAttribute="leading" secondItem="fVo-qg-0Uu" secondAttribute="leading" id="Onk-66-Rab"/>
                                                         <constraint firstItem="4mm-kU-8hd" firstAttribute="top" secondItem="htF-a6-6z1" secondAttribute="bottom" constant="10" id="c7K-ow-HoO"/>
@@ -131,7 +131,7 @@
                                         </cells>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Iv9-FA-4Hy">
-                                        <rect key="frame" x="149.5" y="550" width="115.5" height="26"/>
+                                        <rect key="frame" x="149.5" y="636" width="115.5" height="26"/>
                                         <color key="pageIndicatorTintColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="currentPageIndicatorTintColor" red="0.2156862745" green="0.52549019610000003" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
@@ -141,8 +141,9 @@
                                     <constraint firstItem="RrC-Oa-MR7" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" id="5f4-5n-4bm"/>
                                     <constraint firstItem="RrC-Oa-MR7" firstAttribute="leading" secondItem="4Ng-8v-Gpu" secondAttribute="leading" id="6fY-f8-VCg"/>
                                     <constraint firstAttribute="trailing" secondItem="RrC-Oa-MR7" secondAttribute="trailing" id="QOH-4m-OiG"/>
-                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" constant="550" id="Ymx-VB-6a0"/>
+                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="top" secondItem="RrC-Oa-MR7" secondAttribute="bottom" constant="36" id="Rb0-zS-j2R"/>
                                     <constraint firstAttribute="height" constant="750" id="a3A-Tk-pad"/>
+                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="centerX" secondItem="4Ng-8v-Gpu" secondAttribute="centerX" id="cBG-Qw-WmN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -151,7 +152,6 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Vif-cl-Po7" secondAttribute="bottom" id="150-FW-3kA"/>
                             <constraint firstItem="Vif-cl-Po7" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="2mF-dU-N0t"/>
-                            <constraint firstItem="Iv9-FA-4Hy" firstAttribute="centerX" secondItem="3FZ-9m-f80" secondAttribute="centerX" id="4zI-jx-KPX"/>
                             <constraint firstItem="4Ng-8v-Gpu" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="Nb2-vB-zL2"/>
                             <constraint firstItem="4Ng-8v-Gpu" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="eTD-0J-L7v"/>
                             <constraint firstItem="Vif-cl-Po7" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="kR8-gp-V2e"/>
@@ -173,7 +173,7 @@
     <resources>
         <image name="DangKi" width="177" height="48"/>
         <image name="DangNhap" width="150" height="48"/>
-        <image name="Intro 1" width="375" height="375"/>
+        <image name="Intro1" width="375" height="375"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
