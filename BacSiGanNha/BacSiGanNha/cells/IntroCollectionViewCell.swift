@@ -35,38 +35,59 @@ class IntroCollectionViewCell: UICollectionViewCell {
             introTitleLabel.numberOfLines = 0
             introTitleLabel.lineBreakMode = .byWordWrapping
             
-            let descriptionTextColor = UIColor(red: 0.212, green: 0.239, blue: 0.306, alpha: 1)
+        let descriptionTextColor = UIColor(red: 0.212, green: 0.239, blue: 0.306, alpha: 1)
             let descriptionFont = UIFont(name: "NunitoSans-Regular", size: 14)
             let descriptionParagraphStyle = NSMutableParagraphStyle()
             descriptionParagraphStyle.lineHeightMultiple = 1.05
             descriptionParagraphStyle.alignment = .center
-            
+
             let descriptionAttributes: [NSAttributedString.Key: Any] = [
                 .foregroundColor: descriptionTextColor,
                 .font: descriptionFont,
                 .paragraphStyle: descriptionParagraphStyle
             ]
-            
-            let attributedDescription = NSAttributedString(string: data.description, attributes: descriptionAttributes)
+
+        let attributedDescription = NSAttributedString(string: data.description, attributes: descriptionAttributes)
             introDescriptionLabel.attributedText = attributedDescription
             introDescriptionLabel.numberOfLines = 0
             introDescriptionLabel.lineBreakMode = .byWordWrapping
         }
+        
     
-    func calculateLabelHeight(label: UILabel) -> CGFloat {
-            let width = label.frame.size.width
-            let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-            let result = label.sizeThatFits(size)
-            return result.height
+//    func calculateLabelHeight(label: UILabel) -> CGFloat {
+//            let width = label.frame.size.width
+//            let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+//            let result = label.sizeThatFits(size)
+//            return result.height
+//    }
+    
+    func calculateLabelHeight(label: UILabel, width: CGFloat) -> CGFloat {
+        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let result = label.sizeThatFits(size)
+        return result.height
     }
+
 }
+
+//extension IntroCollectionViewCell {
+//    func calculateCellHeight() -> CGFloat {
+//        let titleHeight = calculateLabelHeight(label: introTitleLabel)
+//        let introHeight = calculateLabelHeight(label: introDescriptionLabel)
+//        let additionalHeight: CGFloat = 427
+//        let totalHeight = titleHeight + introHeight + additionalHeight
+//        return totalHeight
+//    }
+//}
 
 extension IntroCollectionViewCell {
     func calculateCellHeight() -> CGFloat {
-        let titleHeight = calculateLabelHeight(label: introTitleLabel)
-        let introHeight = calculateLabelHeight(label: introDescriptionLabel)
+        let width = introTitleLabel.frame.size.width // Hoặc bạn có thể sử dụng một giá trị cố định tùy theo thiết kế của bạn
+        
+        let titleHeight = calculateLabelHeight(label: introTitleLabel, width: width)
+        let introHeight = calculateLabelHeight(label: introDescriptionLabel, width: width)
         let additionalHeight: CGFloat = 427
         let totalHeight = titleHeight + introHeight + additionalHeight
         return totalHeight
     }
 }
+
