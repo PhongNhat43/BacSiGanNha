@@ -9,15 +9,17 @@ import UIKit
 import IQKeyboardManagerSwift
 class OtpViewController: UIViewController {
     
+    // MARK: - Outlet
     @IBOutlet var textFieldsOutletCollection: [UITextField]!
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var reSendBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var nextImageView: UIImageView!
     @IBOutlet weak var resendLabel: UILabel!
-    
     @IBOutlet weak var resendView: UIView!
     @IBOutlet weak var nextBtnView: UIView!
+    
+    // MARK: - Property
     var user: User?
     var activeTextField: UITextField?
     var countDownTimer = 60
@@ -116,32 +118,33 @@ class OtpViewController: UIViewController {
     
     func textFieldAction() {
         let otpCode = textFieldsOutletCollection.map { $0.text ?? "" }.joined()
-        if otpCode.count == 6 {
-            if otpCode == "111111" {
-                nextBtn.isEnabled = true
-                nextImageView.alpha = 1
-                wrongLabel.isHidden = true
-                resendView.transform = .identity
-                nextBtnView.transform = .identity
-            } else {
-                nextBtn.isEnabled = false
-                nextImageView.alpha = 0.5
-                
-                wrongLabel.isHidden = false
-                UIView.animate(withDuration: 0.2) {
-                    self.resendView.transform = CGAffineTransform(translationX: 0, y: 40)
-                    self.nextBtnView.transform = CGAffineTransform(translationX: 0, y: 300)
-                }
-            }
-        } else {
+        
+        if otpCode.count != 6 {
             nextBtn.isEnabled = false
             nextImageView.alpha = 0.5
             wrongLabel.isHidden = true
             nextBtn.transform = .identity
             nextImageView.transform = .identity
+            return
+        }
+        
+        if otpCode == "111111" {
+            nextBtn.isEnabled = true
+            nextImageView.alpha = 1
+            wrongLabel.isHidden = true
+            resendView.transform = .identity
+            nextBtnView.transform = .identity
+        } else {
+            nextBtn.isEnabled = false
+            nextImageView.alpha = 0.5
+            wrongLabel.isHidden = false
+            UIView.animate(withDuration: 0.2) {
+                self.resendView.transform = CGAffineTransform(translationX: 0, y: 40)
+                self.nextBtnView.transform = CGAffineTransform(translationX: 0, y: 300)
+            }
         }
     }
-    
+
     @IBAction func didChanged(_ textField: UITextField) {
         if textField.text!.count == 1 {
             if IQKeyboardManager.shared.canGoNext {

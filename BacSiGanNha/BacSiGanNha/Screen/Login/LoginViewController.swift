@@ -9,6 +9,7 @@ import UIKit
 import IQKeyboardManagerSwift
 class LoginViewController: UIViewController {
     
+    // MARK: - Outlet
     @IBOutlet weak var viewTextfield: UIView!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var nextBtn: UIButton!
@@ -30,6 +31,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupUI() {
+        // Thiết lập các thuộc tính UI
         phoneTextField.delegate = self
         phoneTextField.keyboardType = .numberPad
         viewTextfield.layer.cornerRadius = 28
@@ -104,8 +106,6 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
 }
-
-
 
 extension String {
     func isValidPhoneNumber() -> Bool {

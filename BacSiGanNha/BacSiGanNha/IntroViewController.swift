@@ -7,12 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IntroViewController: UIViewController {
     
     // MARK: - Outlet
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var introPageControl: UIPageControl!
     @IBOutlet weak var heightOfIntroContrains: NSLayoutConstraint!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
+    
     // MARK: - Property
     var intros: [Intro] = []
     
@@ -24,12 +27,37 @@ class ViewController: UIViewController {
         setupCollectionView()
         fillData()
         setupPage()
-//        startTimer()
+        setupUI()
     }
     
     func setupPage(){
         introPageControl.currentPage = 0
         introPageControl.numberOfPages = intros.count
+    }
+    
+    func setupUI() {
+        navigationController?.navigationBar.isHidden = true
+        // Thiết lập thuộc tính cho nút loginBtn
+        loginBtn.layer.backgroundColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1).cgColor
+        loginBtn.layer.cornerRadius = 24
+        loginBtn.setTitle("Đăng Nhập", for: .normal)
+        loginBtn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        loginBtn.titleLabel?.font = UIFont(name: "NunitoSans-Bold", size: 15)
+        let paragraphStyleLogin = NSMutableParagraphStyle()
+        paragraphStyleLogin.lineHeightMultiple = 0.95
+        loginBtn.titleLabel?.textAlignment = .center
+               
+        // Thiết lập thuộc tính cho nút registerBtn
+        registerBtn.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        registerBtn.layer.cornerRadius = 24
+        registerBtn.setTitle("Tạo tài khoản", for: .normal)
+        registerBtn.layer.borderWidth = 1
+        registerBtn.layer.borderColor = UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1).cgColor
+        registerBtn.setTitleColor(UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1), for: .normal)
+        registerBtn.titleLabel?.font = UIFont(name: "NunitoSans-Bold", size: 15)
+        let paragraphStyleRegister = NSMutableParagraphStyle()
+        paragraphStyleRegister.lineHeightMultiple = 0.95
+        registerBtn.titleLabel?.textAlignment = .center
     }
     
     // fill data to model
@@ -58,15 +86,13 @@ class ViewController: UIViewController {
     
     @IBAction func didTapLoginBtn(_ sender: Any) {
         let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true, completion: nil)
         navigationController?.pushViewController(vc, animated: true)
-
+        navigationController?.navigationBar.isHidden = false
     }
 }
 
 // MARK: - CollectionView
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return intros.count
     }

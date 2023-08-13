@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UDc-Wa-aD8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P0k-hX-yKJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -17,16 +17,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="UQK-Ft-tCe">
             <objects>
-                <viewController storyboardIdentifier="IntroViewController" id="UDc-Wa-aD8" customClass="ViewController" customModule="BacSiGanNha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroViewController" id="UDc-Wa-aD8" customClass="IntroViewController" customModule="BacSiGanNha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8qa-No-SIn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ng-8v-Gpu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="776"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RrC-Oa-MR7">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
@@ -42,7 +42,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="LEd-Q4-0ki" customClass="IntroCollectionViewCell" customModule="BacSiGanNha" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="-72.5" width="433" height="745"/>
+                                                <rect key="frame" x="0.0" y="-116.5" width="433" height="745"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fVo-qg-0Uu">
                                                     <rect key="frame" x="0.0" y="0.0" width="433" height="745"/>
@@ -97,27 +97,38 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.96078431369999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" id="5f4-5n-4bm"/>
-                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="leading" secondItem="4Ng-8v-Gpu" secondAttribute="leading" id="6fY-f8-VCg"/>
-                                    <constraint firstAttribute="trailing" secondItem="RrC-Oa-MR7" secondAttribute="trailing" id="QOH-4m-OiG"/>
+                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" id="Cgg-OQ-46n"/>
+                                    <constraint firstAttribute="trailing" secondItem="RrC-Oa-MR7" secondAttribute="trailing" id="Oc8-0X-rhx"/>
+                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="centerX" secondItem="4Ng-8v-Gpu" secondAttribute="centerX" id="Oh9-KD-QvQ"/>
+                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="leading" secondItem="4Ng-8v-Gpu" secondAttribute="leading" id="P3Y-z3-bpB"/>
                                     <constraint firstItem="Iv9-FA-4Hy" firstAttribute="top" secondItem="RrC-Oa-MR7" secondAttribute="bottom" constant="36" id="Rb0-zS-j2R"/>
-                                    <constraint firstAttribute="height" constant="750" id="a3A-Tk-pad"/>
-                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="centerX" secondItem="4Ng-8v-Gpu" secondAttribute="centerX" id="cBG-Qw-WmN"/>
+                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="top" secondItem="RrC-Oa-MR7" secondAttribute="bottom" constant="36" id="o8T-fv-aGy"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWK-w6-VdX">
-                                <rect key="frame" x="0.0" y="750" width="414" height="146"/>
+                                <rect key="frame" x="0.0" y="776" width="414" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-5a-7Av">
-                                        <rect key="frame" x="16" y="16" width="382" height="114"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="54"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPT-xH-Mqj">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="114"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="54"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Button">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Helvetica"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="didTapLoginBtn:" destination="UDc-Wa-aD8" eventType="touchDown" id="zt1-sX-e0h"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6O-rR-8fM">
-                                                <rect key="frame" x="199" y="0.0" width="183" height="114"/>
+                                                <rect key="frame" x="199" y="0.0" width="183" height="54"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                             </button>
@@ -126,23 +137,24 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="gdV-5a-7Av" firstAttribute="leading" secondItem="YWK-w6-VdX" secondAttribute="leading" constant="16" id="G0K-hz-3Yv"/>
-                                    <constraint firstAttribute="bottom" secondItem="gdV-5a-7Av" secondAttribute="bottom" constant="16" id="mKY-Ro-VCX"/>
-                                    <constraint firstAttribute="trailing" secondItem="gdV-5a-7Av" secondAttribute="trailing" constant="16" id="qWY-sM-0Hr"/>
-                                    <constraint firstItem="gdV-5a-7Av" firstAttribute="top" secondItem="YWK-w6-VdX" secondAttribute="top" constant="16" id="s6r-fw-WFV"/>
+                                    <constraint firstAttribute="height" constant="120" id="9h5-t2-Gig"/>
+                                    <constraint firstItem="gdV-5a-7Av" firstAttribute="leading" secondItem="YWK-w6-VdX" secondAttribute="leading" constant="16" id="9zj-Kk-l0P"/>
+                                    <constraint firstAttribute="bottom" secondItem="gdV-5a-7Av" secondAttribute="bottom" constant="50" id="D8b-Z4-lTh"/>
+                                    <constraint firstItem="gdV-5a-7Av" firstAttribute="top" secondItem="YWK-w6-VdX" secondAttribute="top" constant="16" id="K7o-SS-Iyg"/>
+                                    <constraint firstAttribute="trailing" secondItem="gdV-5a-7Av" secondAttribute="trailing" constant="16" id="KSY-aD-7w4"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3FZ-9m-f80"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YWK-w6-VdX" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="8BA-8j-JBP"/>
-                            <constraint firstItem="YWK-w6-VdX" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="bottom" id="KhD-lI-TZD"/>
-                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="Nb2-vB-zL2"/>
-                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="eTD-0J-L7v"/>
-                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="top" secondItem="8qa-No-SIn" secondAttribute="top" id="mTg-Uc-DFe"/>
-                            <constraint firstItem="3FZ-9m-f80" firstAttribute="trailing" secondItem="YWK-w6-VdX" secondAttribute="trailing" id="sYH-v9-PVt"/>
-                            <constraint firstAttribute="bottom" secondItem="YWK-w6-VdX" secondAttribute="bottom" id="tNr-ZY-bT4"/>
+                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="AyS-EW-X54"/>
+                            <constraint firstItem="YWK-w6-VdX" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="bottom" id="IeU-9Q-7fR"/>
+                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="top" secondItem="8qa-No-SIn" secondAttribute="top" id="LYU-da-4fH"/>
+                            <constraint firstAttribute="bottom" secondItem="YWK-w6-VdX" secondAttribute="bottom" id="QkY-sl-L5j"/>
+                            <constraint firstItem="YWK-w6-VdX" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="VH9-wp-QpV"/>
+                            <constraint firstItem="YWK-w6-VdX" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="rPU-tN-7fL"/>
+                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="smG-nf-1ti"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qsr-pK-ibm"/>
@@ -150,11 +162,31 @@
                         <outlet property="collectionView" destination="RrC-Oa-MR7" id="A6C-CG-dAp"/>
                         <outlet property="heightOfIntroContrains" destination="6xU-82-YWD" id="5w4-dA-570"/>
                         <outlet property="introPageControl" destination="Iv9-FA-4Hy" id="hxZ-k3-TJL"/>
+                        <outlet property="loginBtn" destination="UPT-xH-Mqj" id="w2O-EV-Axs"/>
+                        <outlet property="registerBtn" destination="u6O-rR-8fM" id="zhb-SI-0EB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y4J-1O-b6G" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="729" y="14"/>
+            <point key="canvasLocation" x="1639.1304347826087" y="13.392857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KTj-pa-AFp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P0k-hX-yKJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GJc-Vm-TUa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UDc-Wa-aD8" kind="relationship" relationship="rootViewController" id="6q1-hq-W8F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bp6-06-8td" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728.98550724637687" y="13.392857142857142"/>
         </scene>
     </scenes>
     <resources>
