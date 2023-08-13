@@ -61,11 +61,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ng-8v-Gpu">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RrC-Oa-MR7">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="746"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="746" id="6xU-82-YWD"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qPN-Bo-7m0">
                                             <size key="itemSize" width="433" height="745"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -73,7 +76,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="LEd-Q4-0ki" customClass="IntroCollectionViewCell" customModule="BacSi_App" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="LEd-Q4-0ki" customClass="IntroCollectionViewCell" customModule="BacSiGanNha" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.5" width="433" height="745"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fVo-qg-0Uu">
@@ -135,30 +138,30 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.96078431369999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" constant="550" id="Lqt-lf-cy0"/>
-                                    <constraint firstAttribute="bottom" secondItem="RrC-Oa-MR7" secondAttribute="bottom" id="Mqh-7b-To6"/>
-                                    <constraint firstAttribute="trailing" secondItem="RrC-Oa-MR7" secondAttribute="trailing" id="TAZ-gY-8m0"/>
-                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" id="W00-FI-Wpp"/>
-                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="leading" secondItem="4Ng-8v-Gpu" secondAttribute="leading" id="xua-OG-drI"/>
+                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" id="5f4-5n-4bm"/>
+                                    <constraint firstItem="RrC-Oa-MR7" firstAttribute="leading" secondItem="4Ng-8v-Gpu" secondAttribute="leading" id="6fY-f8-VCg"/>
+                                    <constraint firstAttribute="trailing" secondItem="RrC-Oa-MR7" secondAttribute="trailing" id="QOH-4m-OiG"/>
+                                    <constraint firstItem="Iv9-FA-4Hy" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="top" constant="550" id="Ymx-VB-6a0"/>
+                                    <constraint firstAttribute="height" constant="750" id="a3A-Tk-pad"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3FZ-9m-f80"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="0yh-Cf-nUs"/>
                             <constraint firstAttribute="bottom" secondItem="Vif-cl-Po7" secondAttribute="bottom" id="150-FW-3kA"/>
                             <constraint firstItem="Vif-cl-Po7" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="2mF-dU-N0t"/>
                             <constraint firstItem="Iv9-FA-4Hy" firstAttribute="centerX" secondItem="3FZ-9m-f80" secondAttribute="centerX" id="4zI-jx-KPX"/>
-                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="top" secondItem="8qa-No-SIn" secondAttribute="top" id="W0A-iV-Eq1"/>
+                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="Nb2-vB-zL2"/>
+                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="eTD-0J-L7v"/>
                             <constraint firstItem="Vif-cl-Po7" firstAttribute="trailing" secondItem="3FZ-9m-f80" secondAttribute="trailing" id="kR8-gp-V2e"/>
-                            <constraint firstItem="Vif-cl-Po7" firstAttribute="top" secondItem="4Ng-8v-Gpu" secondAttribute="bottom" id="pZA-La-S2s"/>
-                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="leading" secondItem="3FZ-9m-f80" secondAttribute="leading" id="qMr-EL-z3l"/>
+                            <constraint firstItem="4Ng-8v-Gpu" firstAttribute="top" secondItem="8qa-No-SIn" secondAttribute="top" id="mTg-Uc-DFe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qsr-pK-ibm"/>
                     <connections>
                         <outlet property="collectionView" destination="RrC-Oa-MR7" id="A6C-CG-dAp"/>
+                        <outlet property="heightOfIntroContrains" destination="6xU-82-YWD" id="5w4-dA-570"/>
                         <outlet property="introPageControl" destination="Iv9-FA-4Hy" id="hxZ-k3-TJL"/>
                     </connections>
                 </viewController>

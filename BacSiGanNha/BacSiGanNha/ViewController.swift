@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var introPageControl: UIPageControl!
-    
+    @IBOutlet weak var heightOfIntroContrains: NSLayoutConstraint!
     // MARK: - Property
     var intros: [Intro] = []
     
