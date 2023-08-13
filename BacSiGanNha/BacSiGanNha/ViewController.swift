@@ -79,7 +79,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? IntroCollectionViewCell else {
+            fatalError("Failed to dequeue NewsCollectionViewCell")
+        }
+        let totalHeight = cell.calculateCellHeight()
+        heightOfIntroContrains.constant = totalHeight + 10
+        print("doctorCollectionView Cell - Width: \(collectionView.frame.width), Height: \(totalHeight)")
+        return CGSize(width: collectionView.frame.width, height: totalHeight)
        
     }
     
