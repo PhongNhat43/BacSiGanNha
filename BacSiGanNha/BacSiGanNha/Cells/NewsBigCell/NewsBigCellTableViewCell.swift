@@ -14,9 +14,9 @@ class NewsBigCellTableViewCell: UITableViewCell {
        return UINib(nibName: "NewsBigCellTableViewCell", bundle: nil)
     }
     
-    @IBOutlet weak var newsTitleLabel: UILabel!
-    @IBOutlet weak var newsCreateAt: UILabel!
-    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet private weak var newsTitleLabel: UILabel!
+    @IBOutlet private weak var newsCreateAt: UILabel!
+    @IBOutlet private weak var newsImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

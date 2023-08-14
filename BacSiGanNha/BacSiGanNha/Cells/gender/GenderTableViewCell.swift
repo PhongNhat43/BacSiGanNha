@@ -46,8 +46,11 @@ class GenderTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configure(with data: (title: String, placeholder: String),selectionStyle: UITableViewCell.SelectionStyle) {
+        titleLabel.text = data.title
+        self.selectionStyle = selectionStyle
     }
     
   

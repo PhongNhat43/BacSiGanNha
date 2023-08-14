@@ -10,17 +10,18 @@ import Alamofire
 class HomePageViewController: UIViewController {
     
     // MARK: - Outlet
-    @IBOutlet weak var topImageView: UIImageView!
-    @IBOutlet weak var homePageImageView: UIImageView!
-    @IBOutlet weak var homePageScrollView: UIScrollView!
-    @IBOutlet weak var roundView: UIView!
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var doctorCollectionView: UICollectionView!
-    @IBOutlet weak var promotionCollectionView: UICollectionView!
-    @IBOutlet weak var newsCollectionView: UICollectionView!
-    @IBOutlet weak var heightOfNewsConstraint: NSLayoutConstraint!
-    @IBOutlet weak var hegihtofPromotion: NSLayoutConstraint!
-    @IBOutlet weak var heightOfDoctor: NSLayoutConstraint!
+    @IBOutlet private weak var topImageView: UIImageView!
+    @IBOutlet private weak var homePageImageView: UIImageView!
+    @IBOutlet private weak var homePageScrollView: UIScrollView!
+    @IBOutlet private weak var roundView: UIView!
+    @IBOutlet private weak var firstNameLabel: UILabel!
+    @IBOutlet private weak var doctorCollectionView: UICollectionView!
+    @IBOutlet private weak var promotionCollectionView: UICollectionView!
+    @IBOutlet private weak var newsCollectionView: UICollectionView!
+    @IBOutlet private weak var heightOfNewsConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var hegihtofPromotion: NSLayoutConstraint!
+    @IBOutlet private weak var heightOfDoctor: NSLayoutConstraint!
+    @IBOutlet private weak var avatarImageView: UIImageView!
     
     // MARK: - Property
     var newsArr = [ArticleList]()
@@ -31,13 +32,16 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollecitonView()
-        setupUI()
         activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.center = self.view.center
         self.view.addSubview(activityIndicator)
         getData()
         updateFirstNameText()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange(_:)), name: UserDefaults.didChangeNotification, object: nil)
+    }
+    
+    @objc func userDefaultsDidChange(_ notification: Notification) {
+        updateFirstNameText()
     }
     
     func updateFirstNameText() {
@@ -47,12 +51,17 @@ class HomePageViewController: UIViewController {
             firstNameLabel.text = "Họ và Tên"
         }
     }
-    
+
     func setupUI() {
         roundView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         roundView.layer.cornerRadius = 15
         roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        var transform3D = CATransform3DIdentity
+        avatarImageView.layer.cornerRadius = 20
+        avatarImageView.layer.borderWidth = 1
+        avatarImageView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
     }
+
     
     func setupCollecitonView() {
         newsCollectionView.delegate = self
@@ -72,7 +81,6 @@ class HomePageViewController: UIViewController {
         newsCollectionView.reloadData()
     }
     
-    
     func getData() {
         activityIndicator.startAnimating()
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
@@ -87,6 +95,11 @@ class HomePageViewController: UIViewController {
                 self.activityIndicator.stopAnimating()
             }
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setupUI()
     }
 
     
@@ -118,7 +131,11 @@ class HomePageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             navigationController?.isNavigationBarHidden = true
-        }
+    }
+    
+    deinit {
+           NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
+    }
 }
 
 extension HomePageViewController: UICollectionViewDataSource {
@@ -144,8 +161,9 @@ extension HomePageViewController: UICollectionViewDataSource {
         if let urlString = urlString, let url = URL(string: urlString) {
             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
             webViewController.url = url
-            webViewController.titleString = titleString // Thiết lập titleString
+            webViewController.titleString = titleString
             navigationController?.pushViewController(webViewController, animated: true)
+            navigationController?.isNavigationBarHidden = false
         }
     }
 

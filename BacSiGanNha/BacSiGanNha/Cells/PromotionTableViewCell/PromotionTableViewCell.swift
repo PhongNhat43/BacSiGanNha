@@ -16,9 +16,9 @@ class PromotionTableViewCell: UITableViewCell {
     }
     var bookmarkTapped: (() -> Void)?
     
-    @IBOutlet weak var promotionImageView: UIImageView!
-    @IBOutlet weak var promotionCreateAtLabel: UILabel!
-    @IBOutlet weak var promotionTitleLabel: UILabel!
+    @IBOutlet private weak var promotionImageView: UIImageView!
+    @IBOutlet private weak var promotionCreateAtLabel: UILabel!
+    @IBOutlet private weak var promotionTitleLabel: UILabel!
     @IBOutlet weak var bookMarkImageView: UIImageView!
     
     override func awakeFromNib() {

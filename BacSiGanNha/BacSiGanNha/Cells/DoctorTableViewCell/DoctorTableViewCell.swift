@@ -15,11 +15,11 @@ class DoctorTableViewCell: UITableViewCell {
        return UINib(nibName: "DoctorTableViewCell", bundle: nil)
     }
 
-    @IBOutlet weak var doctorMainView: UIView!
-    @IBOutlet weak var doctorNameLabel: UILabel!
-    @IBOutlet weak var doctorMajorLabel: UILabel!
-    @IBOutlet weak var doctorRateLabel: UILabel!
-    @IBOutlet weak var doctorImageView: UIImageView!
+    @IBOutlet private weak var doctorMainView: UIView!
+    @IBOutlet private weak var doctorNameLabel: UILabel!
+    @IBOutlet private weak var doctorMajorLabel: UILabel!
+    @IBOutlet private weak var doctorRateLabel: UILabel!
+    @IBOutlet private weak var doctorImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

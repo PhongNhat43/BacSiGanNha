@@ -8,11 +8,14 @@
 import UIKit
 import IQKeyboardManagerSwift
 class InfoViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nextBtnImageView: UIImageView!
-    @IBOutlet weak var infoNextBtn: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var nextBtnImageView: UIImageView!
+    @IBOutlet private weak var infoNextBtn: UIButton!
     
     var isDataSavedSuccessfully: Bool = false
+    
+    var selectedIndexPath: IndexPath?
+
     
     var data: [(title: String, placeholder: String)] = [
         ("Tên *", "Nhập tên của bạn"),
@@ -78,7 +81,6 @@ class InfoViewController: UIViewController {
         }
     }
     
-    
     @IBAction func didTapDoneBtn(_ sender: Any) {
         var isAnyFieldEmpty = false
         
@@ -100,23 +102,16 @@ class InfoViewController: UIViewController {
            let email = emailCell.infoTextField.text,
            !isValidEmail(email) {
             emailCell.wrongLabel.text = "Email không hợp lệ"
+            emailCell.wrongLabel.textColor = UIColor.red
             return
         }
         
         saveData()
-        
-//        nextBtnImageView.alpha = 1.0
-//        infoNextBtn.isEnabled = true
-        
-        // Display success alert
+    
         let alertController = UIAlertController(title: "Lưu dữ liệu thành công", message: nil, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
-
-
-
-  
 
 }
 
@@ -173,24 +168,22 @@ extension InfoViewController: UITableViewDataSource {
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: GenderTableViewCell.indentifier, for: indexPath) as! GenderTableViewCell
-            cell.titleLabel.text = currentData.title
+            cell.configure(with: currentData, selectionStyle: .none)
             cell.generoSegmentControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "genderKey")
-            
             return cell
         case 6...10:
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.indentifier, for: indexPath) as! InfoUserTableViewCell
             cell.configure(with: currentData, isDropDownButtonHidden: false, isUserInteractionEnabled: false, selectionStyle: .none)
+            cell.infoTextField.text = ""
             if indexPath.section == 9 {
                 cell.dropDownBtn.isHidden = true
             }
+           
             return cell
         default:
             return UITableViewCell()
         }
     }
-
-
-
 }
 
 extension InfoViewController: UITableViewDelegate {
@@ -206,12 +199,14 @@ extension InfoViewController: UITextFieldDelegate {
            indexPath.section >= 0 && indexPath.section <= 2 {
             cell.wrongLabel.text = ""
             nextBtnImageView.alpha = 1.0
-            infoNextBtn.isEnabled = true
+            DispatchQueue.main.async {
+               self.tableView.beginUpdates()
+               self.tableView.endUpdates()
+            }
         }
         return true
     }
 }
-
 
 func isValidEmail(_ email: String) -> Bool {
     let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.(com|net|org|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum|co\\.vn|vn)$"

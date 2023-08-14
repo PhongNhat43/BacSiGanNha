@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageViewController" customModule="BacSiGanNha" customModuleProvider="target">
             <connections>
+                <outlet property="avatarImageView" destination="xM7-K1-DXF" id="Ho2-SG-ii2"/>
                 <outlet property="doctorCollectionView" destination="UIs-fg-4iV" id="IMH-b2-Qzw"/>
                 <outlet property="firstNameLabel" destination="tNY-Zb-IsQ" id="wqy-1w-QuV"/>
                 <outlet property="hegihtofPromotion" destination="WuZ-pK-BBR" id="W7x-sI-xyD"/>
@@ -297,10 +298,10 @@
                         <constraint firstAttribute="width" constant="8" id="WYE-ze-AzC"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-Hd-9E2">
-                    <rect key="frame" x="29" y="110.5" width="80" height="16.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đang trực tuyến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f8k-Hd-9E2">
+                    <rect key="frame" x="29" y="110.5" width="150" height="16.5"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="kl8-AL-qmh"/>
+                        <constraint firstAttribute="width" constant="150" id="kl8-AL-qmh"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

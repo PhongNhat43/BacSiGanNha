@@ -8,8 +8,10 @@
 import UIKit
 
 class InfoUserTableViewCell: UITableViewCell {
+    
     var isDatePickerEnabled = false
-
+    var selectedIndexPath: IndexPath?
+    
     static let indentifier = "InfoUserTableViewCell"
 
     static func nib() -> UINib {
@@ -20,6 +22,7 @@ class InfoUserTableViewCell: UITableViewCell {
     @IBOutlet weak var infoTitleLabel: UILabel!
     @IBOutlet weak var infoTextField: UITextField!
     @IBOutlet weak var wrongLabel: UILabel!
+    @IBOutlet weak var lineLabel: UILabel!
     
     override func awakeFromNib() {
            super.awakeFromNib()
@@ -37,6 +40,7 @@ class InfoUserTableViewCell: UITableViewCell {
     @IBAction func didTapDropDownBtn(_ sender: Any) {
         print("did Tap")
         showDatePicker()
+        infoTextField.becomeFirstResponder()
     }
         
     
@@ -50,8 +54,6 @@ class InfoUserTableViewCell: UITableViewCell {
         formatter.timeStyle = .none
         let dateString = formatter.string(from: datePicker.date)
         infoTextField.text = dateString
-//        UserDefaults.standard.set(datePicker.date, forKey: "dateKey")
-//        UserDefaults.standard.synchronize()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -67,7 +69,6 @@ class InfoUserTableViewCell: UITableViewCell {
         infoTextField.isUserInteractionEnabled = isUserInteractionEnabled
         self.selectionStyle = selectionStyle
     }
-    
 }
 
 

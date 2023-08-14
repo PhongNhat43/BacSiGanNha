@@ -17,11 +17,11 @@ class PromotionCollectionViewCell: UICollectionViewCell {
     
     var cornerRadius: CGFloat = 8.0
 
-    @IBOutlet weak var promotionMainView: UIView!
-    @IBOutlet weak var promotionImageView: UIImageView!
-    @IBOutlet weak var promotionTitleLabel: UILabel!
-    @IBOutlet weak var promotionCreateAt: UILabel!
-    @IBOutlet weak var hotSaleLabel: UILabel!
+    @IBOutlet private weak var promotionMainView: UIView!
+    @IBOutlet private weak var promotionImageView: UIImageView!
+    @IBOutlet private weak var promotionTitleLabel: UILabel!
+    @IBOutlet private weak var promotionCreateAt: UILabel!
+    @IBOutlet private weak var hotSaleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -15,11 +15,11 @@ class DoctorCollectionViewCell: UICollectionViewCell {
        return UINib(nibName: "DoctorCollectionViewCell", bundle: nil)
     }
 
-    @IBOutlet weak var doctorMainView: UIView!
-    @IBOutlet weak var doctorImageView: UIImageView!
-    @IBOutlet weak var doctorNameLabel: UILabel!
-    @IBOutlet weak var doctorLastNameLabel: UILabel!
-    @IBOutlet weak var doctorStarRateabel: UILabel!
+    @IBOutlet private weak var doctorMainView: UIView!
+    @IBOutlet private weak var doctorImageView: UIImageView!
+    @IBOutlet private weak var doctorNameLabel: UILabel!
+    @IBOutlet private weak var doctorLastNameLabel: UILabel!
+    @IBOutlet private weak var doctorStarRateabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

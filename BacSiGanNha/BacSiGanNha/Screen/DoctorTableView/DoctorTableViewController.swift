@@ -44,6 +44,18 @@ class DoctorTableViewController: UIViewController {
     
     func setupNavigation() {
         self.navigationItem.title = "Bác sĩ"
+        if let navigationBar = self.navigationController?.navigationBar {
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                    .foregroundColor: UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1),
+                    .font: UIFont(name: "NunitoSans-Bold", size: 18) ?? UIFont.boldSystemFont(ofSize: 18),
+                    .paragraphStyle: { () -> NSMutableParagraphStyle in
+                        let paragraphStyle = NSMutableParagraphStyle()
+                        paragraphStyle.lineHeightMultiple = 0.81
+                        return paragraphStyle
+                    }()
+                ]
+                navigationBar.titleTextAttributes = titleTextAttributes
+        }
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
        
         if let navigationBar = self.navigationController?.navigationBar {

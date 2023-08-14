@@ -16,10 +16,10 @@ class NewsTableViewCell: UITableViewCell {
     
     var bookmarkTapped: (() -> Void)?
     
-    @IBOutlet weak var newsMainView: UIView!
-    @IBOutlet weak var newsTitleLabel: UILabel!
-    @IBOutlet weak var newsCreateNews: UILabel!
-    @IBOutlet weak var newsImageView: UIImageView!
+    @IBOutlet private weak var newsMainView: UIView!
+    @IBOutlet private weak var newsTitleLabel: UILabel!
+    @IBOutlet private weak var newsCreateNews: UILabel!
+    @IBOutlet private weak var newsImageView: UIImageView!
     @IBOutlet weak var bookMarkImageView: UIImageView!
     
     override func awakeFromNib() {

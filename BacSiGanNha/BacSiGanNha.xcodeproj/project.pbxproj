@@ -254,8 +254,8 @@
 		E73473C42A89C37F0076624F /* InformationUserCell */ = {
 			isa = PBXGroup;
 			children = (
-				E73473C52A89C37F0076624F /* InfoUserTableViewCell.xib */,
 				E73473C62A89C37F0076624F /* InfoUserTableViewCell.swift */,
+				E73473C52A89C37F0076624F /* InfoUserTableViewCell.xib */,
 			);
 			path = InformationUserCell;
 			sourceTree = "<group>";

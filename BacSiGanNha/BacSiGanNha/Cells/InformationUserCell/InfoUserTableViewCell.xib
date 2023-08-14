@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoUserTableViewCell" rowHeight="107" id="KGk-i7-Jjw" customClass="InfoUserTableViewCell" customModule="VD_PP" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoUserTableViewCell" rowHeight="107" id="KGk-i7-Jjw" customClass="InfoUserTableViewCell" customModule="BacSiGanNha" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="333" height="107"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -26,13 +26,12 @@
                         <rect key="frame" x="24" y="12" width="285" height="83"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1P1-tu-RnR">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="16"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="7Ri-YH-n2c"/>
                                     <constraint firstAttribute="height" constant="16" id="Wp3-JX-4kv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.58823529411764708" green="0.60784313725490191" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XnF-9q-tTg">
@@ -71,9 +70,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-WH-vLd">
-                                <rect key="frame" x="0.0" y="55" width="285" height="12"/>
+                                <rect key="frame" x="0.0" y="55" width="285" height="1"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="12" id="Nug-Nx-n7s"/>
+                                    <constraint firstAttribute="height" constant="1" id="Nug-Nx-n7s"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -96,6 +96,7 @@
                             <constraint firstItem="1P1-tu-RnR" firstAttribute="top" secondItem="PyO-Qe-9Ax" secondAttribute="top" id="P9x-eb-12l"/>
                             <constraint firstAttribute="trailing" secondItem="6Ee-L9-K6r" secondAttribute="trailing" id="QTu-Go-SC8"/>
                             <constraint firstItem="1P1-tu-RnR" firstAttribute="leading" secondItem="PyO-Qe-9Ax" secondAttribute="leading" id="WpB-6N-Gio"/>
+                            <constraint firstAttribute="trailing" secondItem="1P1-tu-RnR" secondAttribute="trailing" id="X4R-jM-Rr1"/>
                             <constraint firstItem="hMk-3e-fG9" firstAttribute="leading" secondItem="PyO-Qe-9Ax" secondAttribute="leading" id="bU8-Bh-Mz0"/>
                             <constraint firstItem="XnF-9q-tTg" firstAttribute="leading" secondItem="PyO-Qe-9Ax" secondAttribute="leading" id="duk-Rf-ZkY"/>
                             <constraint firstItem="4Nc-RG-AEg" firstAttribute="leading" secondItem="PyO-Qe-9Ax" secondAttribute="leading" id="jbU-hi-6rN"/>
@@ -118,6 +119,7 @@
                 <outlet property="dropDownBtn" destination="6Ee-L9-K6r" id="9iU-B0-LaU"/>
                 <outlet property="infoTextField" destination="XnF-9q-tTg" id="Eqf-29-R5s"/>
                 <outlet property="infoTitleLabel" destination="1P1-tu-RnR" id="uJQ-J4-qvO"/>
+                <outlet property="lineLabel" destination="gQz-WH-vLd" id="Ovg-Ze-okR"/>
                 <outlet property="validationLabel" destination="PyO-Qe-9Ax" id="YaG-vo-4cu"/>
                 <outlet property="wrongLabel" destination="4Nc-RG-AEg" id="BTb-GR-FtZ"/>
             </connections>

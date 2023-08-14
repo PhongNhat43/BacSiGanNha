@@ -18,11 +18,11 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     var cornerRadius: CGFloat = 8.0
    
-    @IBOutlet weak var newscContentView: UIView!
-    @IBOutlet weak var newsImageView: UIImageView!
-    @IBOutlet weak var newsTitleLabel: UILabel!
-    @IBOutlet weak var newsCreatedAtLabel: UILabel!
-    @IBOutlet weak var newshHotSale: UILabel!
+    @IBOutlet private weak var newscContentView: UIView!
+    @IBOutlet private weak var newsImageView: UIImageView!
+    @IBOutlet private weak var newsTitleLabel: UILabel!
+    @IBOutlet private weak var newsCreatedAtLabel: UILabel!
+    @IBOutlet private weak var newshHotSale: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,9 +41,10 @@ class NewsCollectionViewCell: UICollectionViewCell {
   
         newsTitleLabel.textColor = UIColor(red: 0.094, green: 0.098, blue: 0.122, alpha: 1)
         newsTitleLabel.font = UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15)
-        newsTitleLabel.numberOfLines = 2
+        newsTitleLabel.numberOfLines = 0
         newsTitleLabel.lineBreakMode = .byWordWrapping
-  
+        
+        newshHotSale.numberOfLines = 1
         newshHotSale.text = "Ưu đãi hot"
         newshHotSale.textColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
         newshHotSale.font = UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13)
@@ -66,8 +67,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
 
     func configure(data: ArticleList) {
         newsTitleLabel.text = data.title
-        newshHotSale.numberOfLines = 1
-        
+  
         if let imageUrl = URL(string: data.picture) {
             newsImageView.kf.setImage(with: imageUrl, placeholder: nil, options: nil, completionHandler: { result in
                 switch result {
