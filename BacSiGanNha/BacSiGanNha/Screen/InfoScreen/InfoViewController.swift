@@ -52,11 +52,12 @@ class InfoViewController: UIViewController {
         tableView.register(InfoUserTableViewCell.nib(), forCellReuseIdentifier: InfoUserTableViewCell.indentifier)
         tableView.register(GenderTableViewCell.nib(), forCellReuseIdentifier: GenderTableViewCell.indentifier)
         
-        for section in 0...2 {
-               if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? InfoUserTableViewCell {
-                   cell.infoTextField.delegate = self
-               }
-           }
+//        for section in 0...2 {
+//               if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? InfoUserTableViewCell {
+////                   cell.infoTextField.delegate = self
+//                   cell.infoTextField.addTarget(self, action: #selector(textIsChanging), for: UIControlEvents.editingChanged)
+//               }
+//           }
     }
     
     func saveData() {
@@ -92,10 +93,11 @@ class InfoViewController: UIViewController {
                 cell.wrongLabel.text = "Không để trống"
                 cell.wrongLabel.textColor = UIColor.red
                 nextBtnImageView.alpha = 0.5
-                infoNextBtn.isEnabled = true
+                infoNextBtn.isEnabled = false
                 return
             }
         }
+        saveData()
         
         let emailIndexPath = IndexPath(row: 0, section: 5)
         if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell,
@@ -106,7 +108,7 @@ class InfoViewController: UIViewController {
             return
         }
         
-        saveData()
+        
     
         let alertController = UIAlertController(title: "Lưu dữ liệu thành công", message: nil, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -130,16 +132,15 @@ extension InfoViewController: UITableViewDataSource {
         case 0, 1, 2, 4, 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.indentifier, for: indexPath) as! InfoUserTableViewCell
             cell.configure(with: currentData, isDropDownButtonHidden: true, isUserInteractionEnabled: true, selectionStyle: .none)
+            cell.delegate = self
+            cell.indexPath = indexPath
             if indexPath.section == 0 {
-                
                 cell.infoTextField.text = UserDefaults.standard.string(forKey: "firstNameKey")
             }
             if indexPath.section == 1 {
-               
                 cell.infoTextField.text = UserDefaults.standard.string(forKey: "lastNameKey")
             }
             if indexPath.section == 2 {
-               
                 cell.dropDownBtn.isHidden = false
                 if let dateOfBirth = UserDefaults.standard.object(forKey: "dateKey") as? String {
                     let dateFormatter = DateFormatter()
@@ -150,6 +151,7 @@ extension InfoViewController: UITableViewDataSource {
                         formatter.timeStyle = .none
                         let dateString = formatter.string(from: birthDate)
                         cell.infoTextField.text = dateString
+                        
                     }
                 }
             }
@@ -165,6 +167,8 @@ extension InfoViewController: UITableViewDataSource {
             if indexPath.section == 5 {
                 cell.infoTextField.text = UserDefaults.standard.string(forKey: "emailKey")
             }
+            
+        
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: GenderTableViewCell.indentifier, for: indexPath) as! GenderTableViewCell
@@ -178,11 +182,12 @@ extension InfoViewController: UITableViewDataSource {
             if indexPath.section == 9 {
                 cell.dropDownBtn.isHidden = true
             }
-           
             return cell
         default:
             return UITableViewCell()
         }
+        
+       
     }
 }
 
@@ -193,20 +198,27 @@ extension InfoViewController: UITableViewDelegate {
 }
 
 extension InfoViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let cell = textField.superview?.superview as? InfoUserTableViewCell,
-           let indexPath = tableView.indexPath(for: cell),
-           indexPath.section >= 0 && indexPath.section <= 2 {
+
+}
+
+extension InfoViewController: InfoUserTableViewCellDelegate {
+    func infoTextFieldDidChange(_ cell: InfoUserTableViewCell) {
+        if let indexPath = tableView.indexPath(for: cell),
+           [0, 1, 2].contains(indexPath.section),
+           cell.infoTextField.isEditing,
+           let updatedText = cell.infoTextField.text, !updatedText.isEmpty {
             cell.wrongLabel.text = ""
             nextBtnImageView.alpha = 1.0
-            DispatchQueue.main.async {
-               self.tableView.beginUpdates()
-               self.tableView.endUpdates()
-            }
+            infoNextBtn.isEnabled = true
         }
-        return true
     }
 }
+
+
+
+
+
+    
 
 func isValidEmail(_ email: String) -> Bool {
     let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.(com|net|org|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum|co\\.vn|vn)$"

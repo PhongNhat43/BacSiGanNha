@@ -28,12 +28,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szn-es-rda">
                         <rect key="frame" x="0.0" y="0.0" width="284" height="237"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r7p-dO-R7e">
-                                <rect key="frame" x="0.0" y="0.0" width="284" height="145"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="145" id="ZEw-vh-jXT"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoI-DK-Dz1">
                                 <rect key="frame" x="12" y="157" width="260" height="68"/>
                                 <subviews>
@@ -82,16 +76,22 @@
                                     <constraint firstItem="GuZ-ar-FlF" firstAttribute="top" secondItem="GeA-ik-Qxy" secondAttribute="bottom" constant="11" id="xk5-dx-6QY"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9KF-td-IMc">
+                                <rect key="frame" x="0.0" y="0.0" width="284" height="145"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="76l-62-UDM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="r7p-dO-R7e" secondAttribute="trailing" id="2vY-g3-c5c"/>
                             <constraint firstItem="PoI-DK-Dz1" firstAttribute="leading" secondItem="szn-es-rda" secondAttribute="leading" constant="12" id="4bz-jO-afa"/>
-                            <constraint firstItem="r7p-dO-R7e" firstAttribute="leading" secondItem="szn-es-rda" secondAttribute="leading" id="NhJ-Wh-apy"/>
-                            <constraint firstItem="PoI-DK-Dz1" firstAttribute="top" secondItem="r7p-dO-R7e" secondAttribute="bottom" constant="12" id="SwZ-jF-c3k"/>
+                            <constraint firstItem="9KF-td-IMc" firstAttribute="leading" secondItem="szn-es-rda" secondAttribute="leading" id="DJF-ti-Upz"/>
+                            <constraint firstItem="9KF-td-IMc" firstAttribute="top" secondItem="szn-es-rda" secondAttribute="top" id="IGA-oK-w4X"/>
                             <constraint firstAttribute="bottom" secondItem="PoI-DK-Dz1" secondAttribute="bottom" constant="12" id="tgM-4u-43n"/>
                             <constraint firstAttribute="trailing" secondItem="PoI-DK-Dz1" secondAttribute="trailing" constant="12" id="v0d-nl-kMC"/>
-                            <constraint firstItem="r7p-dO-R7e" firstAttribute="top" secondItem="szn-es-rda" secondAttribute="top" id="zbf-is-i20"/>
+                            <constraint firstAttribute="trailing" secondItem="9KF-td-IMc" secondAttribute="trailing" id="yRe-d8-eMz"/>
+                            <constraint firstItem="PoI-DK-Dz1" firstAttribute="top" secondItem="9KF-td-IMc" secondAttribute="bottom" constant="12" id="ygj-5B-tHq"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -107,7 +107,7 @@
             <connections>
                 <outlet property="hotSaleLabel" destination="smy-hh-WyG" id="PqI-62-yEe"/>
                 <outlet property="promotionCreateAt" destination="fdz-rO-oK2" id="XTY-1Z-L9E"/>
-                <outlet property="promotionImageView" destination="r7p-dO-R7e" id="Opn-zy-9kS"/>
+                <outlet property="promotionImageView" destination="9KF-td-IMc" id="p4Q-CG-cvC"/>
                 <outlet property="promotionMainView" destination="szn-es-rda" id="mXZ-Xz-byQ"/>
                 <outlet property="promotionTitleLabel" destination="GeA-ik-Qxy" id="WCu-4V-nMw"/>
             </connections>
