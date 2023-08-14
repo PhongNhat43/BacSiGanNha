@@ -14,6 +14,7 @@ class HomePageViewController: UIViewController {
     @IBOutlet weak var homePageImageView: UIImageView!
     @IBOutlet weak var homePageScrollView: UIScrollView!
     @IBOutlet weak var roundView: UIView!
+    @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var doctorCollectionView: UICollectionView!
     @IBOutlet weak var promotionCollectionView: UICollectionView!
     @IBOutlet weak var newsCollectionView: UICollectionView!
@@ -29,21 +30,27 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupCollecitonView()
         setupUI()
         activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.center = self.view.center
         self.view.addSubview(activityIndicator)
         getData()
+        updateFirstNameText()
         
+    }
+    
+    func updateFirstNameText() {
+        if let data = UserDefaults.standard.string(forKey: "firstNameKey") {
+            firstNameLabel.text = data
+        } else {
+            firstNameLabel.text = "Họ và Tên"
+        }
     }
     
     func setupUI() {
         roundView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         roundView.layer.cornerRadius = 15
-        roundView.layer.borderWidth = 1
-        roundView.layer.borderColor = UIColor.red.cgColor
         roundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
@@ -98,6 +105,12 @@ class HomePageViewController: UIViewController {
     
     @IBAction func didTapNextDoctor(_ sender: Any) {
         let vc = DoctorTableViewController(nibName: "DoctorTableViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    @IBAction func didTapNextInfo(_ sender: Any) {
+        let vc = InfoViewController(nibName: "InfoViewController", bundle: nil)
         navigationController?.pushViewController(vc, animated: true)
         navigationController?.isNavigationBarHidden = false
     }

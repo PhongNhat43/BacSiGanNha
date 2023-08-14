@@ -29,6 +29,12 @@
 		E73057E62A83969F00A59E09 /* PromotionDeatailTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73057E42A83969F00A59E09 /* PromotionDeatailTableView.xib */; };
 		E73057EA2A83974100A59E09 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73057E82A83974100A59E09 /* PromotionTableViewCell.swift */; };
 		E73057EB2A83974100A59E09 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73057E92A83974100A59E09 /* PromotionTableViewCell.xib */; };
+		E73473C22A89C2F20076624F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73473C02A89C2F20076624F /* InfoViewController.swift */; };
+		E73473C32A89C2F20076624F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73473C12A89C2F20076624F /* InfoViewController.xib */; };
+		E73473C72A89C37F0076624F /* InfoUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73473C52A89C37F0076624F /* InfoUserTableViewCell.xib */; };
+		E73473C82A89C37F0076624F /* InfoUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73473C62A89C37F0076624F /* InfoUserTableViewCell.swift */; };
+		E73473CC2A89C38C0076624F /* GenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73473CA2A89C38C0076624F /* GenderTableViewCell.swift */; };
+		E73473CD2A89C38C0076624F /* GenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73473CB2A89C38C0076624F /* GenderTableViewCell.xib */; };
 		E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */; };
 		E755ED052A83486000C9BCC6 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */; };
 		E755ED062A83486000C9BCC6 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED032A83486000C9BCC6 /* NunitoSans-SemiBold.ttf */; };
@@ -73,6 +79,12 @@
 		E73057E42A83969F00A59E09 /* PromotionDeatailTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionDeatailTableView.xib; sourceTree = "<group>"; };
 		E73057E82A83974100A59E09 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
 		E73057E92A83974100A59E09 /* PromotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionTableViewCell.xib; sourceTree = "<group>"; };
+		E73473C02A89C2F20076624F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		E73473C12A89C2F20076624F /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		E73473C52A89C37F0076624F /* InfoUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoUserTableViewCell.xib; sourceTree = "<group>"; };
+		E73473C62A89C37F0076624F /* InfoUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoUserTableViewCell.swift; sourceTree = "<group>"; };
+		E73473CA2A89C38C0076624F /* GenderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewCell.swift; sourceTree = "<group>"; };
+		E73473CB2A89C38C0076624F /* GenderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenderTableViewCell.xib; sourceTree = "<group>"; };
 		E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 		E755ED032A83486000C9BCC6 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -230,6 +242,33 @@
 			path = PromotionTableViewCell;
 			sourceTree = "<group>";
 		};
+		E73473BF2A89C2D10076624F /* InfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E73473C02A89C2F20076624F /* InfoViewController.swift */,
+				E73473C12A89C2F20076624F /* InfoViewController.xib */,
+			);
+			path = InfoScreen;
+			sourceTree = "<group>";
+		};
+		E73473C42A89C37F0076624F /* InformationUserCell */ = {
+			isa = PBXGroup;
+			children = (
+				E73473C52A89C37F0076624F /* InfoUserTableViewCell.xib */,
+				E73473C62A89C37F0076624F /* InfoUserTableViewCell.swift */,
+			);
+			path = InformationUserCell;
+			sourceTree = "<group>";
+		};
+		E73473C92A89C38C0076624F /* gender */ = {
+			isa = PBXGroup;
+			children = (
+				E73473CA2A89C38C0076624F /* GenderTableViewCell.swift */,
+				E73473CB2A89C38C0076624F /* GenderTableViewCell.xib */,
+			);
+			path = gender;
+			sourceTree = "<group>";
+		};
 		E755ED002A83486000C9BCC6 /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +291,7 @@
 		E76AD5632A8232230010485F /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				E73473BF2A89C2D10076624F /* InfoScreen */,
 				E71F76192A8473B8005DDA06 /* WebView */,
 				E79425DA2A83CC790051EB4C /* DoctorTableView */,
 				E73057E12A83966900A59E09 /* PromotionDeatailTableView */,
@@ -274,6 +314,8 @@
 		E76AD56F2A82415C0010485F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E73473C92A89C38C0076624F /* gender */,
+				E73473C42A89C37F0076624F /* InformationUserCell */,
 				E79425D52A83C8280051EB4C /* DoctorTableViewCell */,
 				E73057E72A83971D00A59E09 /* PromotionTableViewCell */,
 				E73057D22A838E0D00A59E09 /* NewsTableViewCell */,
@@ -372,6 +414,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73473C72A89C37F0076624F /* InfoUserTableViewCell.xib in Resources */,
+				E73473C32A89C2F20076624F /* InfoViewController.xib in Resources */,
 				E76AD5672A8232480010485F /* HomePageViewController.xib in Resources */,
 				E755ED062A83486000C9BCC6 /* NunitoSans-SemiBold.ttf in Resources */,
 				E73057D12A838BCA00A59E09 /* NewsBigCellTableViewCell.xib in Resources */,
@@ -384,6 +428,7 @@
 				E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */,
 				E73057E02A83917C00A59E09 /* NewsDetailViewController.xib in Resources */,
 				E76AD5742A82419B0010485F /* NewsCollectionViewCell.xib in Resources */,
+				E73473CD2A89C38C0076624F /* GenderTableViewCell.xib in Resources */,
 				E73057EB2A83974100A59E09 /* PromotionTableViewCell.xib in Resources */,
 				E79425DE2A83CCCC0051EB4C /* DoctorTableViewController.xib in Resources */,
 				E73057C82A8375AB00A59E09 /* DoctorCollectionViewCell.xib in Resources */,
@@ -456,8 +501,11 @@
 				E76AD56E2A823E280010485F /* APICaller.swift in Sources */,
 				E72A1BC62A80E58F00EFB0D7 /* AppDelegate.swift in Sources */,
 				E72A1BC82A80E58F00EFB0D7 /* SceneDelegate.swift in Sources */,
+				E73473C22A89C2F20076624F /* InfoViewController.swift in Sources */,
 				E73057C72A8375AB00A59E09 /* DoctorCollectionViewCell.swift in Sources */,
+				E73473C82A89C37F0076624F /* InfoUserTableViewCell.swift in Sources */,
 				E755ED0A2A834A8000C9BCC6 /* PromotionCollectionViewCell.swift in Sources */,
+				E73473CC2A89C38C0076624F /* GenderTableViewCell.swift in Sources */,
 				E76AD56C2A823E220010485F /* UIImageViewExtention.swift in Sources */,
 				E71F761C2A8474C6005DDA06 /* WebViewViewController.swift in Sources */,
 				E73057EA2A83974100A59E09 /* PromotionTableViewCell.swift in Sources */,

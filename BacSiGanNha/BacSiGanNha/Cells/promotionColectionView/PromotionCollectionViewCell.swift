@@ -67,7 +67,7 @@ extension PromotionCollectionViewCell {
     func calculateCellHeight() -> CGFloat {
         let titleHeight = calculateLabelHeight(label: promotionTitleLabel)
         let hotSaleHeight = calculateLabelHeight(label: hotSaleLabel)
-        let additionalHeight: CGFloat = 188
+        let additionalHeight: CGFloat = 173
         let totalHeight = titleHeight + hotSaleHeight + additionalHeight
         return totalHeight
     }
