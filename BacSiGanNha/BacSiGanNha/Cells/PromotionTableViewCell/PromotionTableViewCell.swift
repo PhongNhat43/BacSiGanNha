@@ -58,6 +58,11 @@ class PromotionTableViewCell: UITableViewCell {
         promotionTitleLabel.numberOfLines = 0
         promotionTitleLabel.lineBreakMode = .byWordWrapping
         promotionCreateAtLabel.text = data.createdAt
+        
+        bookmarkTapped = {
+              self.bookMarkImageView.isHighlighted = !self.bookMarkImageView.isHighlighted
+          }
+          selectionStyle = .none
     }
 
     

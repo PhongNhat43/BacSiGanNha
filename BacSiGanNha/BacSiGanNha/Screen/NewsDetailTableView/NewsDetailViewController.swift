@@ -89,10 +89,6 @@ extension NewsDetailViewController: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.indentifier, for: indexPath) as! NewsTableViewCell
                 let data = newsArr[indexPath.section]
                 cell.configure(data: data)
-                cell.bookmarkTapped = {
-                        cell.bookMarkImageView.isHighlighted = !cell.bookMarkImageView.isHighlighted
-                }
-                cell.selectionStyle = .none
                 return cell
             }
             return UITableViewCell()

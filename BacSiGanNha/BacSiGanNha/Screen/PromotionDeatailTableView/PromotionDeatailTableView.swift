@@ -80,10 +80,6 @@ extension PromotionDeatailTableView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: PromotionTableViewCell.indentifier, for: indexPath) as! PromotionTableViewCell
         let data = promotionArr[indexPath.row]
         cell.configure(data: data)
-        cell.bookmarkTapped = {
-            cell.bookMarkImageView.isHighlighted = !cell.bookMarkImageView.isHighlighted
-        }
-        cell.selectionStyle = .none
         return cell
     }
 }

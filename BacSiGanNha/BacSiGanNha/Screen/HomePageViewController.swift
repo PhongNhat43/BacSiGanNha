@@ -40,10 +40,12 @@ class HomePageViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange(_:)), name: UserDefaults.didChangeNotification, object: nil)
     }
     
+    // update userDefaults data
     @objc func userDefaultsDidChange(_ notification: Notification) {
         updateFirstNameText()
     }
-
+    
+    // fill data to firstNameLabel
     func updateFirstNameText() {
         if let data = UserDefaults.standard.string(forKey: "firstNameKey") {
             firstNameLabel.text = data
@@ -51,7 +53,8 @@ class HomePageViewController: UIViewController {
             firstNameLabel.text = "Họ và Tên"
         }
     }
-
+    
+    // setup UI
     func setupUI() {
         roundView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         roundView.layer.cornerRadius = 20
@@ -78,7 +81,8 @@ class HomePageViewController: UIViewController {
         newsCollectionView.layoutIfNeeded()
         newsCollectionView.reloadData()
     }
-
+    
+    // call api
     func getData() {
         activityIndicator.startAnimating()
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
@@ -118,7 +122,7 @@ class HomePageViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
         navigationController?.isNavigationBarHidden = false
     }
-//
+
     @IBAction func didTapNextInfo(_ sender: Any) {
         let vc = InfoViewController(nibName: "InfoViewController", bundle: nil)
         navigationController?.pushViewController(vc, animated: true)

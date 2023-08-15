@@ -5,12 +5,11 @@ protocol InfoUserTableViewCellDelegate: AnyObject {
 }
 
 class InfoUserTableViewCell: UITableViewCell {
+    
     var indexPath: IndexPath?
-
     weak var delegate: InfoUserTableViewCellDelegate?
-
+    var isEditingTextField: Bool = false
     static let indentifier = "InfoUserTableViewCell"
-
     static func nib() -> UINib {
        return UINib(nibName: "InfoUserTableViewCell", bundle: nil)
     }
@@ -20,32 +19,23 @@ class InfoUserTableViewCell: UITableViewCell {
     @IBOutlet weak var infoTextField: UITextField!
     @IBOutlet weak var wrongLabel: UILabel!
     @IBOutlet weak var lineLabel: UILabel!
-    
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
-        return formatter
-    }()
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(infoTextFieldTapped))
-        infoTextField.addGestureRecognizer(tapGesture)
         infoTextField.inputView = nil
     }
-
-    @objc func infoTextFieldTapped() {
-        if indexPath?.section == 2 {
-            showDatePicker()
-            infoTextField.becomeFirstResponder()
+    
+    private func updateTitleLabelColor() {
+        if isEditingTextField {
+            infoTitleLabel.textColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
+            lineLabel.backgroundColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
         } else {
-            infoTextField.inputView = nil
-            infoTextField.reloadInputViews()
-            infoTextField.becomeFirstResponder()
+            infoTitleLabel.textColor = UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1)
+            lineLabel.backgroundColor = UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1)
         }
     }
-    
-    
+
     func showDatePicker() {
         let datePicker = UIDatePicker()
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
@@ -60,8 +50,7 @@ class InfoUserTableViewCell: UITableViewCell {
           print("did Tap")
           showDatePicker()
           infoTextField.becomeFirstResponder()
-          
-      }
+    }
     
     @IBAction func textFieldidChanged(_ textField: UITextField) {
             delegate?.infoTextFieldDidChange(self)
@@ -84,12 +73,30 @@ class InfoUserTableViewCell: UITableViewCell {
         infoTitleLabel.text = data.title
         infoTextField.placeholder = data.placeholder
         infoTextField.delegate = delegate
+        infoTextField.delegate = self
         dropDownBtn.isHidden = isDropDownButtonHidden
         infoTextField.isUserInteractionEnabled = isUserInteractionEnabled
         self.selectionStyle = selectionStyle
+        updateTitleLabelColor()
     }
-
-
-
+    
 }
 
+extension InfoUserTableViewCell: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        isEditingTextField = true
+        updateTitleLabelColor()
+        if indexPath?.section == 2 {
+            showDatePicker()
+        } else {
+            infoTextField.inputView = nil
+            infoTextField.reloadInputViews()
+        }
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        isEditingTextField = false
+         updateTitleLabelColor()
+    }
+
+}

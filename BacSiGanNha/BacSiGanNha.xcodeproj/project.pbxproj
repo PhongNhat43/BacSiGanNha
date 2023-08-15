@@ -187,6 +187,14 @@
 			path = IntroViewController;
 			sourceTree = "<group>";
 		};
+		E71A700B2A8B445600EE6305 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				E71A70062A8B2CF100EE6305 /* IntroCollectionViewCell.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		E71F76192A8473B8005DDA06 /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,7 +380,7 @@
 		E76AD56F2A82415C0010485F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E71A70062A8B2CF100EE6305 /* IntroCollectionViewCell.swift */,
+				E71A700B2A8B445600EE6305 /* Intro */,
 				E73473C92A89C38C0076624F /* gender */,
 				E73473C42A89C37F0076624F /* InformationUserCell */,
 				E79425D52A83C8280051EB4C /* DoctorTableViewCell */,

@@ -49,7 +49,7 @@ class InfoViewController: UIViewController {
         tableView.register(InfoUserTableViewCell.nib(), forCellReuseIdentifier: InfoUserTableViewCell.indentifier)
         tableView.register(GenderTableViewCell.nib(), forCellReuseIdentifier: GenderTableViewCell.indentifier)
     }
-    
+    // Save data to user defaults
     func saveData() {
         let firstNameIndexPath = IndexPath(row: 0, section: 0)
         let lastNameIndexPath = IndexPath(row: 0, section: 1)
@@ -73,8 +73,8 @@ class InfoViewController: UIViewController {
     }
     
     @IBAction func didTapDoneBtn(_ sender: Any) {
+        // Kiểm tra textfiled có bị bỏ trống không
         var isAnyFieldEmpty = false
-        
         for section in 0...2 {
             let indexPath = IndexPath(row: 0, section: section)
             if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell,
@@ -87,8 +87,8 @@ class InfoViewController: UIViewController {
                 return
             }
         }
-        saveData()
         
+        // Kiểm tra email hợp lệ
         let emailIndexPath = IndexPath(row: 0, section: 5)
         if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell,
            let email = emailCell.infoTextField.text,
@@ -97,13 +97,19 @@ class InfoViewController: UIViewController {
             emailCell.wrongLabel.textColor = UIColor.red
             return
         }
+        // Lưu dữ liệu vào UserDefaults khi email hợp lệ
+        saveData()
         
+        // xoá text "Email không hợp lệ"
+        if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell {
+                emailCell.wrongLabel.text = ""
+        }
         
-    
         let alertController = UIAlertController(title: "Lưu dữ liệu thành công", message: nil, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
+
 
 }
 
@@ -145,7 +151,6 @@ extension InfoViewController: UITableViewDataSource {
                     }
                 }
             }
-            
             if indexPath.section == 4 {
                 if let phoneNumber = UserDefaults.standard.string(forKey: "phoneNumber") {
                         cell.infoTextField.text = phoneNumber
@@ -153,12 +158,10 @@ extension InfoViewController: UITableViewDataSource {
                         cell.infoTextField.text = ""
                 }
             }
-
             if indexPath.section == 5 {
                 cell.infoTextField.text = UserDefaults.standard.string(forKey: "emailKey")
             }
             
-        
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: GenderTableViewCell.indentifier, for: indexPath) as! GenderTableViewCell
