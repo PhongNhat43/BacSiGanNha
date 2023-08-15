@@ -23,8 +23,9 @@ class DoctorCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
+        
     }
+
     
     func setupUI() {
         doctorImageView.layer.cornerRadius = 8
@@ -32,7 +33,7 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         doctorMainView.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         doctorMainView.layer.cornerRadius = 8
         doctorMainView.layer.borderWidth = 1
-        doctorMainView.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1).cgColor
+        doctorMainView.layer.borderColor = UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1).cgColor
     }
     
     func calculateLabelHeight(label: UILabel) -> CGFloat {
@@ -40,6 +41,11 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         let size = CGSize(width: width, height: .greatestFiniteMagnitude)
         let result = label.sizeThatFits(size)
         return result.height
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupUI()
     }
     
     

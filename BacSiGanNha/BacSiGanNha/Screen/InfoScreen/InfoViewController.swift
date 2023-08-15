@@ -48,13 +48,6 @@ class InfoViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(InfoUserTableViewCell.nib(), forCellReuseIdentifier: InfoUserTableViewCell.indentifier)
         tableView.register(GenderTableViewCell.nib(), forCellReuseIdentifier: GenderTableViewCell.indentifier)
-        
-//        for section in 0...2 {
-//               if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: section)) as? InfoUserTableViewCell {
-////                   cell.infoTextField.delegate = self
-//                   cell.infoTextField.addTarget(self, action: #selector(textIsChanging), for: UIControlEvents.editingChanged)
-//               }
-//           }
     }
     
     func saveData() {
@@ -192,23 +185,6 @@ extension InfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 85
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        // Bỏ chọn cell cũ (nếu có)
-//        if let selectedIndexPath = selectedIndexPath {
-//            if let cell = tableView.cellForRow(at: selectedIndexPath) as? InfoUserTableViewCell {
-//                cell.lineLabel.textColor = .black // Đổi màu lineLabel về màu ban đầu
-//                cell.infoTitleLabel.textColor = .black // Đổi màu infoTitleLabel về màu ban đầu
-//            }
-//        }
-//
-//        // Chọn cell mới
-//        selectedIndexPath = indexPath
-//        if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
-//            cell.lineLabel.textColor = .red // Đổi màu lineLabel thành màu đỏ
-//            cell.infoTitleLabel.textColor = .red // Đổi màu infoTitleLabel thành màu đỏ
-//        }
-//    }
 }
 
 
@@ -224,7 +200,6 @@ extension InfoViewController: InfoUserTableViewCellDelegate {
         }
     }
 }
-
 
 
 func isValidEmail(_ email: String) -> Bool {

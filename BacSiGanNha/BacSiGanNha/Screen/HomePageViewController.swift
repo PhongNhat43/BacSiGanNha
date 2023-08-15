@@ -213,7 +213,7 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             let totalHeight = cell.calculateCellHeight()
             heightOfNewsConstraint.constant = totalHeight
             print("newsCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
-            return CGSize(width: cellWidth, height: totalHeight + 10)
+            return CGSize(width: cellWidth, height: totalHeight)
 
         case promotionCollectionView:
             let cellWidth: CGFloat = 258
@@ -223,7 +223,7 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             let totalHeight = cell.calculateCellHeight()
             hegihtofPromotion.constant = totalHeight
             print("promotionCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
-            return CGSize(width: cellWidth, height: totalHeight + 10)
+            return CGSize(width: cellWidth, height: totalHeight)
 
         case doctorCollectionView:
             let cellWidth: CGFloat = 121
@@ -233,7 +233,7 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             let totalHeight = cell.calculateCellHeight()
             heightOfDoctor.constant = totalHeight
             print("doctorCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
-            return CGSize(width: cellWidth, height: totalHeight + 10)
+            return CGSize(width: cellWidth, height: totalHeight)
         default: return CGSize(width: 0, height: 0)
         }
     }

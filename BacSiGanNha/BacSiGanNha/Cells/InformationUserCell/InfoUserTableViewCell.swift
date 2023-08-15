@@ -43,12 +43,7 @@ class InfoUserTableViewCell: UITableViewCell {
             infoTextField.reloadInputViews()
             infoTextField.becomeFirstResponder()
         }
-        lineLabel.textColor = .black
-            infoTitleLabel.textColor = .black
     }
-
-
-
 
     func showDatePicker() {
         let datePicker = UIDatePicker()
@@ -62,8 +57,8 @@ class InfoUserTableViewCell: UITableViewCell {
 
     @IBAction func didTapDropDownBtn(_ sender: Any) {
           print("did Tap")
-              showDatePicker()
-              infoTextField.becomeFirstResponder()
+          showDatePicker()
+          infoTextField.becomeFirstResponder()
           
       }
     
@@ -84,15 +79,6 @@ class InfoUserTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-//    func configure(with data: (title: String, placeholder: String), isDropDownButtonHidden: Bool,isUserInteractionEnabled : Bool ,selectionStyle: UITableViewCell.SelectionStyle ,delegate: UITextFieldDelegate? = nil) {
-//        infoTitleLabel.text = data.title
-//        infoTextField.placeholder = data.placeholder
-//        infoTextField.delegate = delegate
-//        dropDownBtn.isHidden = isDropDownButtonHidden
-//        infoTextField.isUserInteractionEnabled = isUserInteractionEnabled
-//        self.selectionStyle = selectionStyle
-//    }
-    
     func configure(with data: (title: String, placeholder: String), isDropDownButtonHidden: Bool,isUserInteractionEnabled : Bool ,selectionStyle: UITableViewCell.SelectionStyle ,delegate: UITextFieldDelegate? = nil) {
         infoTitleLabel.text = data.title
         infoTextField.placeholder = data.placeholder
@@ -101,19 +87,23 @@ class InfoUserTableViewCell: UITableViewCell {
         infoTextField.isUserInteractionEnabled = isUserInteractionEnabled
         self.selectionStyle = selectionStyle
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(infoTextFieldTapped1))
-        infoTextField.addGestureRecognizer(tapGesture)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(infoTextFieldTouch))
+//        infoTextField.addGestureRecognizer(tapGesture)
     }
 
-    @objc func infoTextFieldTapped1() {
-        lineLabel.textColor = .red // Đổi màu lineLabel thành màu đỏ
-        infoTitleLabel.textColor = .red // Đổi màu infoTitleLabel thành màu đỏ
-    }
-
-    
-
-
-
+//    @objc func infoTextFieldTouch() {
+//        lineLabel.textColor = .red
+//        infoTitleLabel.textColor = .red
+//
+//        if let tableView = superview as? UITableView, let indexPaths = tableView.indexPathsForVisibleRows {
+//            for indexPath in indexPaths {
+//                if indexPath != self.indexPath, let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
+//                    cell.lineLabel.textColor = .black
+//                    cell.infoTitleLabel.textColor = .black
+//                }
+//            }
+//        }
+//    }
 
 }
 
