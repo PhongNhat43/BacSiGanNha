@@ -41,7 +41,7 @@ class NewsCollectionViewCell: UICollectionViewCell {
   
         newsTitleLabel.textColor = UIColor(red: 0.094, green: 0.098, blue: 0.122, alpha: 1)
         newsTitleLabel.font = UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15)
-        newsTitleLabel.numberOfLines = 0
+        newsTitleLabel.numberOfLines = 3
         newsTitleLabel.lineBreakMode = .byWordWrapping
         
         newshHotSale.numberOfLines = 1
@@ -62,12 +62,13 @@ class NewsCollectionViewCell: UICollectionViewCell {
         let width = label.frame.size.width
         let size = CGSize(width: width, height: .greatestFiniteMagnitude)
         let result = label.sizeThatFits(size)
-        return result.height
+        let maxHeight = label.font.lineHeight * CGFloat(label.numberOfLines)
+        return min(result.height, maxHeight)
     }
+
 
     func configure(data: ArticleList) {
         newsTitleLabel.text = data.title
-  
         if let imageUrl = URL(string: data.picture) {
             newsImageView.kf.setImage(with: imageUrl, placeholder: nil, options: nil, completionHandler: { result in
                 switch result {

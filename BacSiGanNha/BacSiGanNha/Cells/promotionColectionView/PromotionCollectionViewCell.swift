@@ -52,7 +52,8 @@ class PromotionCollectionViewCell: UICollectionViewCell {
         let width = label.frame.size.width
         let size = CGSize(width: width, height: .greatestFiniteMagnitude)
         let result = label.sizeThatFits(size)
-        return result.height
+        let maxHeight = label.font.lineHeight * CGFloat(label.numberOfLines)
+        return min(result.height, maxHeight)
     }
     
     func configure(dataPromotion: PromotionList) {

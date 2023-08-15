@@ -44,7 +44,8 @@ class InfoUserTableViewCell: UITableViewCell {
             infoTextField.becomeFirstResponder()
         }
     }
-
+    
+    
     func showDatePicker() {
         let datePicker = UIDatePicker()
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
@@ -63,9 +64,9 @@ class InfoUserTableViewCell: UITableViewCell {
       }
     
     @IBAction func textFieldidChanged(_ textField: UITextField) {
-                delegate?.infoTextFieldDidChange(self)
-        
-        }
+            delegate?.infoTextFieldDidChange(self)
+    }
+    
     
     @objc func dateChange(datePicker: UIDatePicker) {
         let formatter = DateFormatter()
@@ -86,24 +87,9 @@ class InfoUserTableViewCell: UITableViewCell {
         dropDownBtn.isHidden = isDropDownButtonHidden
         infoTextField.isUserInteractionEnabled = isUserInteractionEnabled
         self.selectionStyle = selectionStyle
-        
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(infoTextFieldTouch))
-//        infoTextField.addGestureRecognizer(tapGesture)
     }
 
-//    @objc func infoTextFieldTouch() {
-//        lineLabel.textColor = .red
-//        infoTitleLabel.textColor = .red
-//
-//        if let tableView = superview as? UITableView, let indexPaths = tableView.indexPathsForVisibleRows {
-//            for indexPath in indexPaths {
-//                if indexPath != self.indexPath, let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
-//                    cell.lineLabel.textColor = .black
-//                    cell.infoTitleLabel.textColor = .black
-//                }
-//            }
-//        }
-//    }
+
 
 }
 

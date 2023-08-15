@@ -46,20 +46,17 @@ class OtpViewController: UIViewController {
            wrongLabel.text = "Nhập sai mã xác thực"
            wrongLabel.textColor = UIColor(red: 0.988, green: 0.141, blue: 0.208, alpha: 1)
            wrongLabel.font = UIFont(name: "NunitoSans-Regular", size: 12)
-           wrongLabel.textAlignment = .center
+//           wrongLabel.textAlignment = .center
            wrongLabel.isHidden = true
 
            view.addSubview(wrongLabel)
 
            NSLayoutConstraint.activate([
-               wrongLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-               wrongLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+               wrongLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 150),
                wrongLabel.topAnchor.constraint(equalTo: textFieldsOutletCollection[0].bottomAnchor, constant: 16),
                wrongLabel.heightAnchor.constraint(equalToConstant: 20)
            ])
        }
-    
-
     
     func setupNavigation() {
         self.navigationItem.title = "Xác minh số điện thoại"
@@ -90,7 +87,7 @@ class OtpViewController: UIViewController {
             textField.layer.shadowOpacity = 1
             textField.layer.shadowOffset = CGSize(width: 0, height: 4)
             textField.layer.shadowRadius = 8
-            textField.layer.masksToBounds = false // Important to display shadow properly
+            textField.layer.masksToBounds = false
         }
         
         if let data = user {
@@ -201,8 +198,8 @@ class OtpViewController: UIViewController {
     }
 
     @IBAction func didTapNextBtn(_ sender: Any) {
-//        let vc = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 

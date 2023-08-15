@@ -116,7 +116,7 @@ extension IntroViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         let totalHeight = cell.calculateCellHeight()
         heightOfIntroContrains.constant = totalHeight + 10
-        print("doctorCollectionView Cell - Width: \(collectionView.frame.width), Height: \(totalHeight)")
+        print("IntroCollectionView Cell - Width: \(collectionView.frame.width), Height: \(totalHeight)")
         return CGSize(width: collectionView.frame.width, height: totalHeight)
        
     }

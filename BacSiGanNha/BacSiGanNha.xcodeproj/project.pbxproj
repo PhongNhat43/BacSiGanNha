@@ -163,8 +163,8 @@
 		E71A6FFA2A8B2CAE00EE6305 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E71A6FFB2A8B2CAE00EE6305 /* LoginViewController.xib */,
 				E71A6FFC2A8B2CAE00EE6305 /* LoginViewController.swift */,
+				E71A6FFB2A8B2CAE00EE6305 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 		E71A6FFD2A8B2CAF00EE6305 /* Otp */ = {
 			isa = PBXGroup;
 			children = (
-				E71A6FFE2A8B2CAF00EE6305 /* OtpViewController.xib */,
 				E71A6FFF2A8B2CAF00EE6305 /* OtpViewController.swift */,
+				E71A6FFE2A8B2CAF00EE6305 /* OtpViewController.xib */,
 				E71A70002A8B2CAF00EE6305 /* OTPTextField.swift */,
 			);
 			path = Otp;
