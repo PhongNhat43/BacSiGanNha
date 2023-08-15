@@ -13,10 +13,7 @@ class InfoViewController: UIViewController {
     @IBOutlet private weak var infoNextBtn: UIButton!
     
     var isDataSavedSuccessfully: Bool = false
-    
     var selectedIndexPath: IndexPath?
-
-    
     var data: [(title: String, placeholder: String)] = [
         ("Tên *", "Nhập tên của bạn"),
         ("Họ *", "Nhập họ của bạn"),
@@ -195,11 +192,25 @@ extension InfoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 85
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        // Bỏ chọn cell cũ (nếu có)
+//        if let selectedIndexPath = selectedIndexPath {
+//            if let cell = tableView.cellForRow(at: selectedIndexPath) as? InfoUserTableViewCell {
+//                cell.lineLabel.textColor = .black // Đổi màu lineLabel về màu ban đầu
+//                cell.infoTitleLabel.textColor = .black // Đổi màu infoTitleLabel về màu ban đầu
+//            }
+//        }
+//
+//        // Chọn cell mới
+//        selectedIndexPath = indexPath
+//        if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
+//            cell.lineLabel.textColor = .red // Đổi màu lineLabel thành màu đỏ
+//            cell.infoTitleLabel.textColor = .red // Đổi màu infoTitleLabel thành màu đỏ
+//        }
+//    }
 }
 
-extension InfoViewController: UITextFieldDelegate {
-
-}
 
 extension InfoViewController: InfoUserTableViewCellDelegate {
     func infoTextFieldDidChange(_ cell: InfoUserTableViewCell) {
@@ -215,10 +226,6 @@ extension InfoViewController: InfoUserTableViewCellDelegate {
 }
 
 
-
-
-
-    
 
 func isValidEmail(_ email: String) -> Bool {
     let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.(com|net|org|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum|co\\.vn|vn)$"
