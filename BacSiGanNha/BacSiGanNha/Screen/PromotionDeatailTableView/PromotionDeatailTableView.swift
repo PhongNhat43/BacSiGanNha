@@ -83,6 +83,7 @@ extension PromotionDeatailTableView: UITableViewDataSource {
         cell.bookmarkTapped = {
             cell.bookMarkImageView.isHighlighted = !cell.bookMarkImageView.isHighlighted
         }
+        cell.selectionStyle = .none
         return cell
     }
 }
