@@ -64,11 +64,25 @@ class PromotionCollectionViewCell: UICollectionViewCell {
 }
 
 extension PromotionCollectionViewCell {
-    func calculateCellHeight() -> CGFloat {
-        let titleHeight = calculateLabelHeight(label: promotionTitleLabel)
+    func calculateCellHeight(promotion: [PromotionList]) -> CGFloat {
+        var maxHeight: CGFloat = 0
+        for dataPromotion in promotion {
+            let label = UILabel()
+            label.text = dataPromotion.name
+            label.font = promotionTitleLabel.font
+            label.numberOfLines = promotionTitleLabel.numberOfLines
+            label.lineBreakMode = promotionTitleLabel.lineBreakMode
+            label.frame.size.width = promotionTitleLabel.frame.size.width
+            label.sizeToFit()
+            let height = label.frame.size.height
+            if height > maxHeight {
+                maxHeight = height
+            }
+        }
+ 
         let hotSaleHeight = calculateLabelHeight(label: hotSaleLabel)
         let additionalHeight: CGFloat = 173
-        let totalHeight = titleHeight + hotSaleHeight + additionalHeight
+        let totalHeight = maxHeight + hotSaleHeight + additionalHeight
         return totalHeight
     }
 }

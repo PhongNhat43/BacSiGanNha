@@ -39,7 +39,10 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     @IBAction func bookMarkButtonTapped(_ sender: Any) {
-            bookmarkTapped?()
+        bookmarkTapped?()
+        bookmarkTapped = {
+              self.bookMarkImageView.isHighlighted = !self.bookMarkImageView.isHighlighted
+        }
     }
     
     func configure(data: ArticleList) {
@@ -68,10 +71,7 @@ class NewsTableViewCell: UITableViewCell {
             )
         newsTitleLabel.attributedText = attributedText
         newsCreateNews.text = data.createdAt
-        
-        bookmarkTapped = {
-              self.bookMarkImageView.isHighlighted = !self.bookMarkImageView.isHighlighted
-          }
+     
         selectionStyle = .none
     }
     

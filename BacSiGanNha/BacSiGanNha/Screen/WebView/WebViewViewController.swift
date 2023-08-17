@@ -11,23 +11,26 @@ import WebKit
 class WebViewViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet private weak var webView: WKWebView!
-    
+    private var activityIndicator: UIActivityIndicatorView?
     // MARK: - Property
     var url: URL?
-    var titleString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
-        
+        setupWebView()
         if let url = url {
             let request = URLRequest(url: url)
             webView.load(request)
         }
-        if let titleString = titleString {
-            navigationItem.title = titleString
-        }
     }
+    
+    func setupWebView() {
+           webView.navigationDelegate = self
+           activityIndicator = UIActivityIndicatorView(style: .large)
+           activityIndicator?.center = view.center
+           view.addSubview(activityIndicator!)
+       }
 
     
     func setupNavigation() {
@@ -44,5 +47,20 @@ class WebViewViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: [urlString], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
+
+}
+
+extension WebViewViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+           activityIndicator?.startAnimating()
+       }
+       
+       func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+           activityIndicator?.stopAnimating()
+       }
+       
+       func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+           activityIndicator?.stopAnimating()
+       }
 
 }

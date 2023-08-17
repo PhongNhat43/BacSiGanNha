@@ -23,6 +23,7 @@ class OtpViewController: UIViewController {
     var user: User?
     var activeTextField: UITextField?
     var countDownTimer = 60
+    var counter = 60
     var timer: Timer?
     var wrongLabel: UILabel!
     var hapticGenerator: UIImpactFeedbackGenerator?
@@ -33,6 +34,7 @@ class OtpViewController: UIViewController {
         setupNavigation()
         setupUI()
         setupWrongLabel()
+        startTimer()
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,13 +42,39 @@ class OtpViewController: UIViewController {
         resendLabel.layer.cornerRadius = 18
     }
     
+    func startTimer() {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: false)
+    }
+
+    @objc func updateCounter() {
+        if counter > 0 {
+//            print("\(counter) seconds to the end of the world")
+            counter -= 1
+            UIView.animate(withDuration: 0.2) {
+                self.resendLabel.alpha = 0.5
+            } completion: { _ in
+                UIView.animate(withDuration: 0.2) {
+                    self.resendLabel.alpha = 0.5
+                }
+                self.startTimer()
+            }
+            self.resendLabel.text = "Gửi lại mã sau \(self.counter)s"
+            self.reSendBtn.isEnabled = false
+        } else {
+            counter = 60
+            self.resendLabel.text = "Gửi lại mã sau \(self.counter)s"
+            self.resendLabel.alpha = 1
+            self.reSendBtn.isEnabled = true
+        }
+    }
+
     func setupWrongLabel() {
            wrongLabel = UILabel()
            wrongLabel.translatesAutoresizingMaskIntoConstraints = false
            wrongLabel.text = "Nhập sai mã xác thực"
            wrongLabel.textColor = UIColor(red: 0.988, green: 0.141, blue: 0.208, alpha: 1)
            wrongLabel.font = UIFont(name: "NunitoSans-Regular", size: 12)
-//           wrongLabel.textAlignment = .center
            wrongLabel.isHidden = true
 
            view.addSubview(wrongLabel)

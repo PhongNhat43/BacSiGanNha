@@ -4,7 +4,6 @@
 //
 //  Created by devsenior on 09/08/2023.
 //
-
 import UIKit
 
 class PromotionTableViewCell: UITableViewCell {
@@ -38,7 +37,10 @@ class PromotionTableViewCell: UITableViewCell {
     }
     
     @IBAction func bookMarkButtonTapped(_ sender: Any) {
-            bookmarkTapped?()
+        bookmarkTapped?()
+        bookmarkTapped = {
+              self.bookMarkImageView.isHighlighted = !self.bookMarkImageView.isHighlighted
+        }
     }
     
     func configure(data: PromotionList) {
@@ -58,11 +60,7 @@ class PromotionTableViewCell: UITableViewCell {
         promotionTitleLabel.numberOfLines = 0
         promotionTitleLabel.lineBreakMode = .byWordWrapping
         promotionCreateAtLabel.text = data.createdAt
-        
-        bookmarkTapped = {
-              self.bookMarkImageView.isHighlighted = !self.bookMarkImageView.isHighlighted
-          }
-          selectionStyle = .none
+        selectionStyle = .none
     }
 
     

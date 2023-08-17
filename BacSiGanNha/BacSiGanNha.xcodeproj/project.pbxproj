@@ -38,6 +38,8 @@
 		E73057E62A83969F00A59E09 /* PromotionDeatailTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73057E42A83969F00A59E09 /* PromotionDeatailTableView.xib */; };
 		E73057EA2A83974100A59E09 /* PromotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73057E82A83974100A59E09 /* PromotionTableViewCell.swift */; };
 		E73057EB2A83974100A59E09 /* PromotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73057E92A83974100A59E09 /* PromotionTableViewCell.xib */; };
+		E73100992A8DF99700598DF4 /* IntroImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73100972A8DF99700598DF4 /* IntroImageCollectionViewCell.swift */; };
+		E731009A2A8DF99700598DF4 /* IntroImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73100982A8DF99700598DF4 /* IntroImageCollectionViewCell.xib */; };
 		E73473C22A89C2F20076624F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73473C02A89C2F20076624F /* InfoViewController.swift */; };
 		E73473C32A89C2F20076624F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73473C12A89C2F20076624F /* InfoViewController.xib */; };
 		E73473C72A89C37F0076624F /* InfoUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73473C52A89C37F0076624F /* InfoUserTableViewCell.xib */; };
@@ -56,6 +58,8 @@
 		E76AD56E2A823E280010485F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76AD56D2A823E280010485F /* APICaller.swift */; };
 		E76AD5732A82419B0010485F /* NewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76AD5712A82419B0010485F /* NewsCollectionViewCell.swift */; };
 		E76AD5742A82419B0010485F /* NewsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76AD5722A82419B0010485F /* NewsCollectionViewCell.xib */; };
+		E76AFD9A2A8CDB6700F2F63E /* IntroImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76AFD982A8CDB6700F2F63E /* IntroImageViewController.swift */; };
+		E76AFD9B2A8CDB6700F2F63E /* IntroImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E76AFD992A8CDB6700F2F63E /* IntroImageViewController.xib */; };
 		E79425D82A83C84B0051EB4C /* DoctorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79425D62A83C84B0051EB4C /* DoctorTableViewCell.swift */; };
 		E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79425D72A83C84B0051EB4C /* DoctorTableViewCell.xib */; };
 		E79425DD2A83CCCC0051EB4C /* DoctorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79425DB2A83CCCC0051EB4C /* DoctorTableViewController.swift */; };
@@ -97,6 +101,8 @@
 		E73057E42A83969F00A59E09 /* PromotionDeatailTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionDeatailTableView.xib; sourceTree = "<group>"; };
 		E73057E82A83974100A59E09 /* PromotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionTableViewCell.swift; sourceTree = "<group>"; };
 		E73057E92A83974100A59E09 /* PromotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromotionTableViewCell.xib; sourceTree = "<group>"; };
+		E73100972A8DF99700598DF4 /* IntroImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		E73100982A8DF99700598DF4 /* IntroImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		E73473C02A89C2F20076624F /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		E73473C12A89C2F20076624F /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		E73473C52A89C37F0076624F /* InfoUserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoUserTableViewCell.xib; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 		E76AD56D2A823E280010485F /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		E76AD5712A82419B0010485F /* NewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E76AD5722A82419B0010485F /* NewsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCollectionViewCell.xib; sourceTree = "<group>"; };
+		E76AFD982A8CDB6700F2F63E /* IntroImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroImageViewController.swift; sourceTree = "<group>"; };
+		E76AFD992A8CDB6700F2F63E /* IntroImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroImageViewController.xib; sourceTree = "<group>"; };
 		E79425D62A83C84B0051EB4C /* DoctorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewCell.swift; sourceTree = "<group>"; };
 		E79425D72A83C84B0051EB4C /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
 		E79425DB2A83CCCC0051EB4C /* DoctorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				E71A70062A8B2CF100EE6305 /* IntroCollectionViewCell.swift */,
+				E73100972A8DF99700598DF4 /* IntroImageCollectionViewCell.swift */,
+				E73100982A8DF99700598DF4 /* IntroImageCollectionViewCell.xib */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -352,6 +362,7 @@
 		E76AD5632A8232230010485F /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				E76AFD972A8CDB1D00F2F63E /* Intro */,
 				E71A70082A8B2DBC00EE6305 /* IntroViewController */,
 				E71A6FFA2A8B2CAE00EE6305 /* Login */,
 				E71A6FFD2A8B2CAF00EE6305 /* Otp */,
@@ -401,6 +412,15 @@
 				E76AD5722A82419B0010485F /* NewsCollectionViewCell.xib */,
 			);
 			path = NewsCollectionView;
+			sourceTree = "<group>";
+		};
+		E76AFD972A8CDB1D00F2F63E /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				E76AFD982A8CDB6700F2F63E /* IntroImageViewController.swift */,
+				E76AFD992A8CDB6700F2F63E /* IntroImageViewController.xib */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 		E79425D52A83C8280051EB4C /* DoctorTableViewCell */ = {
@@ -492,7 +512,9 @@
 				E73057E62A83969F00A59E09 /* PromotionDeatailTableView.xib in Resources */,
 				E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */,
 				E71F761D2A8474C6005DDA06 /* WebViewViewController.xib in Resources */,
+				E76AFD9B2A8CDB6700F2F63E /* IntroImageViewController.xib in Resources */,
 				E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */,
+				E731009A2A8DF99700598DF4 /* IntroImageCollectionViewCell.xib in Resources */,
 				E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */,
 				E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */,
 				E73057E02A83917C00A59E09 /* NewsDetailViewController.xib in Resources */,
@@ -565,11 +587,13 @@
 				E73057D52A838E2500A59E09 /* NewsTableViewCell.swift in Sources */,
 				E72A1BCA2A80E58F00EFB0D7 /* ViewController.swift in Sources */,
 				E71A6FF52A8B2BBE00EE6305 /* SceneDelegate.swift in Sources */,
+				E76AFD9A2A8CDB6700F2F63E /* IntroImageViewController.swift in Sources */,
 				E71A6FF92A8B2C5200EE6305 /* IntroSlide.swift in Sources */,
 				E76AD5732A82419B0010485F /* NewsCollectionViewCell.swift in Sources */,
 				E79425DD2A83CCCC0051EB4C /* DoctorTableViewController.swift in Sources */,
 				E71A70072A8B2CF200EE6305 /* IntroCollectionViewCell.swift in Sources */,
 				E73057D02A838BCA00A59E09 /* NewsBigCellTableViewCell.swift in Sources */,
+				E73100992A8DF99700598DF4 /* IntroImageCollectionViewCell.swift in Sources */,
 				E71A70042A8B2CAF00EE6305 /* OtpViewController.swift in Sources */,
 				E73057DF2A83917C00A59E09 /* NewsDetailViewController.swift in Sources */,
 				E71A70052A8B2CAF00EE6305 /* OTPTextField.swift in Sources */,
@@ -739,7 +763,6 @@
 				INFOPLIST_FILE = BacSiGanNha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -768,7 +791,6 @@
 				INFOPLIST_FILE = BacSiGanNha/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

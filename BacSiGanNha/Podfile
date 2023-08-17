@@ -9,4 +9,5 @@ target 'BacSiGanNha' do
 pod 'Alamofire'
 pod 'Kingfisher', '~> 7.0'
 pod 'IQKeyboardManagerSwift'
+pod 'DGLabelSize', :git => 'https://github.com/donggyushin/DGLabelSize'
 end

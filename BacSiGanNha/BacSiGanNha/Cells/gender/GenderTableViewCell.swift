@@ -6,12 +6,11 @@
 //
 
 import UIKit
-protocol GenderTableViewCellDelegate: AnyObject {
-    func genderTableViewCell(_ cell: GenderTableViewCell, didSelectGender gender: String)
-}
+//protocol GenderTableViewCellDelegate: AnyObject {
+//    func genderTableViewCell(_ cell: GenderTableViewCell, didSelectGender gender: String)
+//}
 class GenderTableViewCell: UITableViewCell {
-
-    weak var delegate: GenderTableViewCellDelegate?
+//    weak var delegate: GenderTableViewCellDelegate?
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var generoSegmentControl: UISegmentedControl!
@@ -27,10 +26,8 @@ class GenderTableViewCell: UITableViewCell {
         switch genIndex {
         case 0:
             print("Male")
-            delegate?.genderTableViewCell(self, didSelectGender: "Nam")
         case 1:
             print("FeMale")
-            delegate?.genderTableViewCell(self, didSelectGender: "Nữ")
         default:
             print("zero")
         }

@@ -1,10 +1,12 @@
 PODS:
   - Alamofire (5.6.4)
+  - DGLabelSize (1.0.0)
   - IQKeyboardManagerSwift (6.5.11)
   - Kingfisher (7.6.2)
 
 DEPENDENCIES:
   - Alamofire
+  - DGLabelSize (from `https://github.com/donggyushin/DGLabelSize`)
   - IQKeyboardManagerSwift
   - Kingfisher (~> 7.0)
 
@@ -14,11 +16,21 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Kingfisher
 
+EXTERNAL SOURCES:
+  DGLabelSize:
+    :git: https://github.com/donggyushin/DGLabelSize
+
+CHECKOUT OPTIONS:
+  DGLabelSize:
+    :commit: d0a2132c29c856faf4c9eaed7188c766432cada0
+    :git: https://github.com/donggyushin/DGLabelSize
+
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  DGLabelSize: b2968033e51fa17572effad9d56527f6a799fcbb
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
 
-PODFILE CHECKSUM: c4db10043693b28702c4a478bac9d1628df4ad16
+PODFILE CHECKSUM: 381c7975d6ca23df0827c857999aca628a0f714b
 
 COCOAPODS: 1.11.3

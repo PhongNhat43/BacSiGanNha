@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     }
     
     func setupNavigation() {
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .done , target: self, action: #selector(backButtonTapped))]
     }
 
     @objc func backButtonTapped() {
@@ -40,18 +40,14 @@ class LoginViewController: UIViewController {
         // Thiết lập các thuộc tính UI
         phoneTextField.delegate = self
         phoneTextField.keyboardType = .numberPad
-        
         viewTextfield.layer.borderWidth = 1
         viewTextfield.layer.borderColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1).cgColor
         viewTextfield.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         viewTextfield.layer.shadowOffset = CGSize(width: 0, height: 5)
         viewTextfield.layer.shadowRadius = 20
         viewTextfield.layer.shadowOpacity = 1.0
-        
         nextBtn.isEnabled = false
-      
         nexBtnImageView.alpha = 0.5
-        
         phoneTextField.borderStyle = .none
     }
     

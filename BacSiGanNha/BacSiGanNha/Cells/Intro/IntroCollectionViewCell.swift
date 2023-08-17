@@ -10,30 +10,28 @@ import UIKit
 class IntroCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlet
-    @IBOutlet weak var introImageView: UIImageView!
-    @IBOutlet weak var introTitleLabel: UILabel!
-    @IBOutlet weak var introDescriptionLabel: UILabel!
+    @IBOutlet private weak var introImageView: UIImageView!
+    @IBOutlet private weak var introTitleLabel: UILabel!
+    @IBOutlet private weak var introDescriptionLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+    
+    func setupUI() {
+        //Thiết lập introTitleLabel
+        introTitleLabel.textColor = UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1)
+        introTitleLabel.font = UIFont(name: "NunitoSans-Bold", size: 24)
+        introTitleLabel.lineBreakMode = .byWordWrapping
+        introTitleLabel.numberOfLines = 0
+        introTitleLabel.textAlignment = .center
+        
+    }
     
     // MARK: - configure
     func configure(data: Intro) {
-            introImageView.image = UIImage(named: data.image)
-            
-            let titleTextColor = UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1)
-            let titleFont = UIFont(name: "NunitoSans-Bold", size: 24)
-            let titleParagraphStyle = NSMutableParagraphStyle()
-            titleParagraphStyle.lineHeightMultiple = 0.98
-            titleParagraphStyle.alignment = .center
-            
-            let titleAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: titleTextColor,
-                .font: titleFont,
-                .paragraphStyle: titleParagraphStyle
-            ]
-            
-            let attributedTitle = NSAttributedString(string: data.title, attributes: titleAttributes)
-            introTitleLabel.attributedText = attributedTitle
-            introTitleLabel.numberOfLines = 0
-            introTitleLabel.lineBreakMode = .byWordWrapping
+        introImageView.image = UIImage(named: data.image)
             
         let descriptionTextColor = UIColor(red: 0.212, green: 0.239, blue: 0.306, alpha: 1)
             let descriptionFont = UIFont(name: "NunitoSans-Regular", size: 14)
@@ -54,37 +52,19 @@ class IntroCollectionViewCell: UICollectionViewCell {
         }
         
     
-//    func calculateLabelHeight(label: UILabel) -> CGFloat {
-//            let width = label.frame.size.width
-//            let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-//            let result = label.sizeThatFits(size)
-//            return result.height
-//    }
-    
-    func calculateLabelHeight(label: UILabel, width: CGFloat) -> CGFloat {
-        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let result = label.sizeThatFits(size)
-        return result.height
+    func calculateLabelHeight(label: UILabel) -> CGFloat {
+            let width = label.frame.size.width
+            let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+            let result = label.sizeThatFits(size)
+            return result.height
     }
 
 }
 
-//extension IntroCollectionViewCell {
-//    func calculateCellHeight() -> CGFloat {
-//        let titleHeight = calculateLabelHeight(label: introTitleLabel)
-//        let introHeight = calculateLabelHeight(label: introDescriptionLabel)
-//        let additionalHeight: CGFloat = 427
-//        let totalHeight = titleHeight + introHeight + additionalHeight
-//        return totalHeight
-//    }
-//}
-
 extension IntroCollectionViewCell {
     func calculateCellHeight() -> CGFloat {
-        let width = introTitleLabel.frame.size.width // Hoặc bạn có thể sử dụng một giá trị cố định tùy theo thiết kế của bạn
-        
-        let titleHeight = calculateLabelHeight(label: introTitleLabel, width: width)
-        let introHeight = calculateLabelHeight(label: introDescriptionLabel, width: width)
+        let titleHeight = calculateLabelHeight(label: introTitleLabel)
+        let introHeight = calculateLabelHeight(label: introDescriptionLabel)
         let additionalHeight: CGFloat = 427
         let totalHeight = titleHeight + introHeight + additionalHeight
         return totalHeight

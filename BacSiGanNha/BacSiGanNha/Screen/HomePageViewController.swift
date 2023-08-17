@@ -12,7 +12,6 @@ class HomePageViewController: UIViewController {
     // MARK: - Outlet
     @IBOutlet private weak var topImageView: UIImageView!
     @IBOutlet private weak var homePageImageView: UIImageView!
-    @IBOutlet private weak var homePageScrollView: UIScrollView!
     @IBOutlet private weak var roundView: UIView!
     @IBOutlet private weak var firstNameLabel: UILabel!
     @IBOutlet private weak var doctorCollectionView: UICollectionView!
@@ -142,18 +141,15 @@ class HomePageViewController: UIViewController {
 extension HomePageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var urlString: String?
-        var titleString: String?
 
         switch collectionView {
         case newsCollectionView:
             let dataNews = newsArr[indexPath.row]
             urlString = dataNews.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-            titleString = "Chi tiết tin tức"
 
         case promotionCollectionView:
             let dataPromotion = promotionArr[indexPath.row]
             urlString = dataPromotion.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-            titleString = "Chi tiết khuyến mại"
 
         default:
             break
@@ -162,11 +158,13 @@ extension HomePageViewController: UICollectionViewDataSource {
         if let urlString = urlString, let url = URL(string: urlString) {
             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
             webViewController.url = url
-            webViewController.titleString = titleString
             navigationController?.pushViewController(webViewController, animated: true)
             navigationController?.isNavigationBarHidden = false
+        } else {
+           
         }
     }
+
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -214,8 +212,8 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell else {
                 fatalError("Failed to dequeue NewsCollectionViewCell")
             }
-            let totalHeight = cell.calculateCellHeight()
-            heightOfNewsConstraint.constant = totalHeight
+            let totalHeight = cell.calculateCellHeight(articles: newsArr)
+            heightOfNewsConstraint.constant = totalHeight + 5
             print("newsCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
 
@@ -224,8 +222,8 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PromotionCollectionViewCell", for: indexPath) as? PromotionCollectionViewCell else {
                 fatalError("Failed to dequeue NewsCollectionViewCell")
             }
-            let totalHeight = cell.calculateCellHeight()
-            hegihtofPromotion.constant = totalHeight
+            let totalHeight = cell.calculateCellHeight(promotion: promotionArr)
+            hegihtofPromotion.constant = totalHeight + 5
             print("promotionCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
 
@@ -235,7 +233,7 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
                 fatalError("Failed to dequeue NewsCollectionViewCell")
             }
             let totalHeight = cell.calculateCellHeight()
-            heightOfDoctor.constant = totalHeight
+            heightOfDoctor.constant = totalHeight + 5
             print("doctorCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
         default: return CGSize(width: 0, height: 0)
@@ -243,16 +241,8 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        switch collectionView {
-        case newsCollectionView:
-            return 12
-        case promotionCollectionView:
-            return 12
-        case doctorCollectionView:
-            return 12
-        default: return 0
-
-        }
+        return 12
+       
     }
 
 

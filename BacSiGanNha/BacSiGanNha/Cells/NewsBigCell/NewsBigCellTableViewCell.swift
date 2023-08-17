@@ -28,6 +28,16 @@ class NewsBigCellTableViewCell: UITableViewCell {
 
     }
     
+    func formatDate(_ date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" 
+        if let date = dateFormatter.date(from: date) {
+            dateFormatter.dateFormat = "d 'tháng' M, yyyy"
+            return dateFormatter.string(from: date)
+        }
+        return ""
+    }
+    
     func configure(data: ArticleList) {
         if let imageUrl = URL(string: data.picture) {
             newsImageView.kf.setImage(with: imageUrl, placeholder: nil, options: nil, completionHandler: { result in
@@ -42,7 +52,12 @@ class NewsBigCellTableViewCell: UITableViewCell {
         }
         
         newsTitleLabel.text = data.title
-        newsCreateAt.text = data.createdAt
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" // Adjust this format to match your date string
+           if let date = dateFormatter.date(from: data.createdAt) {
+               dateFormatter.dateFormat = "d 'tháng' M, yyyy"
+               newsCreateAt.text = dateFormatter.string(from: date)
+           }
     }
     
 }

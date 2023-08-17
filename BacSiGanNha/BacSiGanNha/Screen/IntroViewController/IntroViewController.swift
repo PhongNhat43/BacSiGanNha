@@ -45,17 +45,16 @@ class IntroViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         // Thiết lập thuộc tính cho nút loginBtn
         loginBtn.layer.backgroundColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1).cgColor
-       
         loginBtn.setTitle("Đăng Nhập", for: .normal)
         loginBtn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         loginBtn.titleLabel?.font = UIFont(name: "NunitoSans-Bold", size: 15)
         let paragraphStyleLogin = NSMutableParagraphStyle()
         paragraphStyleLogin.lineHeightMultiple = 0.95
         loginBtn.titleLabel?.textAlignment = .center
-               
+
         // Thiết lập thuộc tính cho nút registerBtn
         registerBtn.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-        
+
         registerBtn.setTitle("Tạo tài khoản", for: .normal)
         registerBtn.layer.borderWidth = 1
         registerBtn.layer.borderColor = UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1).cgColor

@@ -8,22 +8,30 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
-    func loader() -> UIAlertController {
-        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
-        let indicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        indicator.hidesWhenStopped = true
-        indicator.startAnimating()
-        indicator.style = UIActivityIndicatorView.Style.large
-        alert.view?.addSubview(indicator)
-        present(alert, animated: true, completion: nil)
-        return alert
-        
-    }
-    
-    func stopLoader(loader: UIAlertController) {
-        DispatchQueue.main.async {
-            loader.dismiss(animated: true, completion: nil)
-        }
-    }
-}
+//extension String {
+//    static func heightOfLabel(text: String, font: UIFont, maxWidth: CGFloat, lines: Int = 0) -> CGFloat {
+//            let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: maxWidth, height: CGFloat.greatestFiniteMagnitude))
+//            label.numberOfLines = lines
+//            label.lineBreakMode = NSLineBreakMode.byWordWrapping
+//            label.text = text
+//            label.font = font
+//            label.sizeToFit()
+//            return label.frame.height
+//        }
+//
+//    static func heightLabelWithLineHeight(text: String, font: UIFont, maxWidth: CGFloat, lines: CGFloat) -> CGFloat {
+//            if text.count > 0 {
+//                let attrString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: font])
+//                let style = NSMutableParagraphStyle()
+//                style.lineHeightMultiple = lines
+//                attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: NSRange(location: 0, length: text.count - 1))
+//                attrString.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: text.count - 1))
+//                let width = Constants.ScreenSize.SCREEN_WIDTH
+//                let rect = attrString.boundingRect(with: CGSize(width: width - maxWidth, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil)
+//                return rect.height
+//            }
+//            return 0
+//        }
+//}
+
+

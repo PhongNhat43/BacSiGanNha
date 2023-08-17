@@ -14,17 +14,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
-//         // Instantiate UIWindow with scene
-//         let window = UIWindow(windowScene: scene)
-//         // Assign window to SceneDelegate window property
-//         self.window = window
-//         // Set initial view controller from Main storyboard as root view controller of UIWindow
-//         let mainView = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
-//         let navigationControll = UINavigationController(rootViewController: mainView)
-//
-//         self.window?.rootViewController = navigationControll
-//         // Present window to screen
-//         self.window?.makeKeyAndVisible()
+         // Instantiate UIWindow with scene
+         let window = UIWindow(windowScene: scene)
+         // Assign window to SceneDelegate window property
+         self.window = window
+         // Set initial view controller from Main storyboard as root view controller of UIWindow
+         let mainView = IntroImageViewController(nibName: "IntroImageViewController", bundle: nil)
+         let navigationControll = UINavigationController(rootViewController: mainView)
+
+         self.window?.rootViewController = navigationControll
+         // Present window to screen
+         self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

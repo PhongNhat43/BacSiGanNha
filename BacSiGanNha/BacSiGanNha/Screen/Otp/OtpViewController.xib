@@ -36,7 +36,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vMY-5N-xut">
-                    <rect key="frame" x="40" y="104.5" width="335" height="42"/>
+                    <rect key="frame" x="40" y="125" width="335" height="42"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-Ro-D6h" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="42.5" height="42"/>
@@ -126,7 +126,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQb-cc-EnY">
-                    <rect key="frame" x="98" y="178.5" width="218" height="32"/>
+                    <rect key="frame" x="98" y="199" width="218" height="32"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gửi lại mã sau 60s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7b-Ue-bNJ">
                             <rect key="frame" x="0.0" y="0.0" width="218" height="32"/>
@@ -157,8 +157,8 @@
                         <constraint firstAttribute="trailing" secondItem="z7b-Ue-bNJ" secondAttribute="trailing" id="yHl-Go-k6B"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgO-9q-QaD">
-                    <rect key="frame" x="24" y="64" width="366" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vui lòng nhập mã gồm 6 chữ số đã được gửi đến bạn vào số điện thoại +84" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgO-9q-QaD">
+                    <rect key="frame" x="24" y="64" width="366" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
