@@ -57,6 +57,7 @@ class NewsDetailViewController: UIViewController {
                 navigationBar.titleTextAttributes = titleTextAttributes
         }
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        
         if let navigationBar = self.navigationController?.navigationBar {
             let borderView = UIView(frame: CGRect(x: 0, y: navigationBar.frame.height - 1, width: navigationBar.frame.width, height: 1))
             borderView.backgroundColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1)
@@ -96,17 +97,17 @@ extension NewsDetailViewController: UITableViewDataSource {
 }
 
 extension NewsDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        var urlString: String?
-        let data = newsArr[indexPath.row]
-        urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-        if let urlString = urlString, let url = URL(string: urlString) {
-             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
-             webViewController.url = url
-             navigationController?.pushViewController(webViewController, animated: true)
-         }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        var urlString: String?
+//        let data = newsArr[indexPath.row]
+//        urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+//        if let urlString = urlString, let url = URL(string: urlString) {
+//             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
+//             webViewController.url = url
+//             navigationController?.pushViewController(webViewController, animated: true)
+//         }
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {

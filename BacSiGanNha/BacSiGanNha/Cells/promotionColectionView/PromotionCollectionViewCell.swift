@@ -47,42 +47,12 @@ class PromotionCollectionViewCell: UICollectionViewCell {
                cornerRadius: cornerRadius
            ).cgPath
     }
-    
-    func calculateLabelHeight(label: UILabel) -> CGFloat {
-        let width = label.frame.size.width
-        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let result = label.sizeThatFits(size)
-        return result.height
-    }
+
     
     func configure(dataPromotion: PromotionList) {
         promotionTitleLabel.text = dataPromotion.name
         promotionCreateAt.text = dataPromotion.createdAt
         promotionImageView.setImage(imageUrl: dataPromotion.picture)
     }
-
 }
 
-extension PromotionCollectionViewCell {
-    func calculateCellHeight(promotion: [PromotionList]) -> CGFloat {
-        var maxHeight: CGFloat = 0
-        for dataPromotion in promotion {
-            let label = UILabel()
-            label.text = dataPromotion.name
-            label.font = promotionTitleLabel.font
-            label.numberOfLines = promotionTitleLabel.numberOfLines
-            label.lineBreakMode = promotionTitleLabel.lineBreakMode
-            label.frame.size.width = promotionTitleLabel.frame.size.width
-            label.sizeToFit()
-            let height = label.frame.size.height
-            if height > maxHeight {
-                maxHeight = height
-            }
-        }
- 
-        let hotSaleHeight = calculateLabelHeight(label: hotSaleLabel)
-        let additionalHeight: CGFloat = 173
-        let totalHeight = maxHeight + hotSaleHeight + additionalHeight
-        return totalHeight
-    }
-}

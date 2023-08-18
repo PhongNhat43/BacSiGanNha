@@ -45,21 +45,13 @@ class PromotionTableViewCell: UITableViewCell {
     
     func configure(data: PromotionList) {
         promotionImageView.setImage(imageUrl: data.picture)
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.13
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.systemFont(ofSize: 13, weight: .bold),
-            .foregroundColor: UIColor(red: 0.071, green: 0.071, blue: 0.071, alpha: 1),
-            .paragraphStyle: paragraphStyle
-        ]
-        
-        let attributedText = NSAttributedString(string: data.name, attributes: attributes)
-        promotionTitleLabel.attributedText = attributedText
-        promotionTitleLabel.numberOfLines = 0
-        promotionTitleLabel.lineBreakMode = .byWordWrapping
-        promotionCreateAtLabel.text = data.createdAt
+        promotionTitleLabel.text = data.name
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+           if let date = dateFormatter.date(from: data.createdAt) {
+               dateFormatter.dateFormat = "d 'tháng' M, yyyy"
+               promotionCreateAtLabel.text = dateFormatter.string(from: date)
+        }
         selectionStyle = .none
     }
 

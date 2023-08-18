@@ -51,18 +51,6 @@ class DoctorTableViewCell: UITableViewCell {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 0.9
         
-        let nameAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.systemFont(ofSize: 15, weight: .bold),
-            .foregroundColor: UIColor(red: 0.067, green: 0.161, blue: 0.314, alpha: 1),
-            .paragraphStyle: paragraphStyle
-        ]
-        
-        let majorAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "NunitoSans-Regular", size: 13) ?? UIFont.systemFont(ofSize: 13),
-            .foregroundColor: UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1),
-            .paragraphStyle: paragraphStyle
-        ]
-        
         let rateAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "NunitoSans-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14),
             .paragraphStyle: paragraphStyle
@@ -73,11 +61,8 @@ class DoctorTableViewCell: UITableViewCell {
             .foregroundColor: UIColor(red: 0.492, green: 0.516, blue: 0.596, alpha: 1)
         ]
         
-        let nameText = NSAttributedString(string: "BS. \(data.fullName)", attributes: nameAttributes)
-        doctorNameLabel.attributedText = nameText
-        
-        let majorText = NSAttributedString(string: "Chuyên ngành \(data.majorsName)", attributes: majorAttributes)
-        doctorMajorLabel.attributedText = majorText
+        doctorNameLabel.text = "BS. \(data.fullName)"
+        doctorMajorLabel.text = "Chuyên ngành \(data.majorsName)"
         
         let rateText = NSAttributedString(string: "\(data.ratioStar) ", attributes: rateAttributes)
         let numberOfStarsText = NSAttributedString(string: "(\(data.numberOfStars) Đánh giá)", attributes: numberOfStarsAttributes)

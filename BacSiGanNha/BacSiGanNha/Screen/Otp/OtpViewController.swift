@@ -52,7 +52,7 @@ class OtpViewController: UIViewController {
 //            print("\(counter) seconds to the end of the world")
             counter -= 1
             UIView.animate(withDuration: 0.2) {
-                self.resendLabel.alpha = 0.5
+                self.resendLabel.alpha = 1
             } completion: { _ in
                 UIView.animate(withDuration: 0.2) {
                     self.resendLabel.alpha = 0.5
@@ -110,7 +110,6 @@ class OtpViewController: UIViewController {
         for textField in textFieldsOutletCollection {
             textField.keyboardType = .numberPad
             textField.textAlignment = .center
-           
             textField.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.08).cgColor
             textField.layer.shadowOpacity = 1
             textField.layer.shadowOffset = CGSize(width: 0, height: 4)

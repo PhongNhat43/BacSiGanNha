@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroImageViewController" customModule="BacSiGanNha" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="THA-6Z-IPF" id="D3p-m0-YuH"/>
-                <outlet property="heightOfIntroContrains" destination="Np4-Kk-uFV" id="Tfy-7e-m7o"/>
+                <outlet property="collectionView" destination="Lg0-On-lxl" id="zB9-vL-f1z"/>
+                <outlet property="heightOfIntroContrains" destination="HBP-MK-N24" id="aBb-oh-faA"/>
                 <outlet property="introPageControl" destination="uRb-d1-Kua" id="zpd-nq-Qhq"/>
-                <outlet property="loginBtn" destination="95o-T9-QBe" id="q0d-fW-ass"/>
-                <outlet property="registerBtn" destination="gLz-qp-dlM" id="LIT-KH-7d6"/>
+                <outlet property="loginBtn" destination="wKd-as-fpz" id="1cy-GV-8f5"/>
+                <outlet property="registerBtn" destination="Hpe-L4-g9E" id="g0w-jl-sKN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,54 +23,67 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="THA-6Z-IPF">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-d1-Kua">
+                    <rect key="frame" x="149.5" y="606" width="115.5" height="26"/>
+                    <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="currentPageIndicatorTintColor" red="0.17254901959999999" green="0.52549019610000003" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-On-lxl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="570"/>
+                    <color key="backgroundColor" red="0.95294117649999999" green="0.96078431369999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="666" id="Np4-Kk-uFV"/>
+                        <constraint firstAttribute="height" constant="570" id="HBP-MK-N24"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9jA-Nu-uj3">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T5J-XU-BWQ">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uRb-d1-Kua">
-                    <rect key="frame" x="149.5" y="739" width="115.5" height="26"/>
-                    <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="currentPageIndicatorTintColor" red="0.17254901959999999" green="0.52549019610000003" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
-                </pageControl>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="e7S-pv-JqV">
-                    <rect key="frame" x="16" y="781" width="382" height="31"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-cv-QJa">
+                    <rect key="frame" x="0.0" y="782" width="414" height="114"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95o-T9-QBe">
-                            <rect key="frame" x="0.0" y="0.0" width="183" height="31"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            <connections>
-                                <action selector="didTapLoginBtn:" destination="-1" eventType="touchDown" id="rV5-dP-XUp"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLz-qp-dlM">
-                            <rect key="frame" x="199" y="0.0" width="183" height="31"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Yyc-u8-ndX">
+                            <rect key="frame" x="16" y="16" width="382" height="48"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-as-fpz">
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="didTapLoginBtn:" destination="-1" eventType="touchDown" id="uwg-VW-W7x"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-L4-g9E">
+                                    <rect key="frame" x="199" y="0.0" width="183" height="48"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
-                </stackView>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Yyc-u8-ndX" secondAttribute="bottom" constant="50" id="87G-iK-Lpr"/>
+                        <constraint firstAttribute="trailing" secondItem="Yyc-u8-ndX" secondAttribute="trailing" constant="16" id="F0R-r4-fmY"/>
+                        <constraint firstItem="Yyc-u8-ndX" firstAttribute="top" secondItem="U0L-cv-QJa" secondAttribute="top" constant="16" id="P4w-ne-6pl"/>
+                        <constraint firstItem="Yyc-u8-ndX" firstAttribute="leading" secondItem="U0L-cv-QJa" secondAttribute="leading" constant="16" id="lPj-3b-bGj"/>
+                        <constraint firstAttribute="height" constant="114" id="wFw-oV-OyZ"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.96078431369999995" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="e7S-pv-JqV" secondAttribute="bottom" constant="50" id="BHr-8W-oCh"/>
-                <constraint firstItem="THA-6Z-IPF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GhA-2B-tqJ"/>
-                <constraint firstItem="e7S-pv-JqV" firstAttribute="top" secondItem="uRb-d1-Kua" secondAttribute="bottom" constant="16" id="NdW-aF-kw2"/>
-                <constraint firstItem="e7S-pv-JqV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fbn-6n-SvH"/>
-                <constraint firstItem="uRb-d1-Kua" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="oyr-4L-Fy4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e7S-pv-JqV" secondAttribute="trailing" constant="16" id="z0P-Om-bqf"/>
-                <constraint firstItem="THA-6Z-IPF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zS1-nS-IFs"/>
-                <constraint firstItem="THA-6Z-IPF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zc3-Gg-ZEj"/>
+                <constraint firstItem="U0L-cv-QJa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4K7-uS-97n"/>
+                <constraint firstItem="U0L-cv-QJa" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="6gK-q0-ScC"/>
+                <constraint firstItem="uRb-d1-Kua" firstAttribute="top" secondItem="Lg0-On-lxl" secondAttribute="bottom" constant="36" id="Hb2-ib-gFg"/>
+                <constraint firstItem="uRb-d1-Kua" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Nhf-om-TeB"/>
+                <constraint firstItem="Lg0-On-lxl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RQ1-Sx-6Ie"/>
+                <constraint firstAttribute="bottom" secondItem="U0L-cv-QJa" secondAttribute="bottom" id="fD4-U9-Akk"/>
+                <constraint firstItem="Lg0-On-lxl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fJz-QJ-QVK"/>
+                <constraint firstItem="Lg0-On-lxl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yKb-1O-imL"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
         </view>

@@ -28,6 +28,7 @@ class IntroImageViewController: UIViewController {
         fillData()
         setupPage()
         setupUI()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,7 +43,7 @@ class IntroImageViewController: UIViewController {
     }
     
     func setupUI() {
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
         // Thiết lập thuộc tính cho nút loginBtn
         loginBtn.layer.backgroundColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1).cgColor
         loginBtn.setTitle("Đăng Nhập", for: .normal)
@@ -87,6 +88,9 @@ class IntroImageViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(IntroImageCollectionViewCell.nib(), forCellWithReuseIdentifier: IntroImageCollectionViewCell.indentifier)
+        collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.layoutIfNeeded()
+        collectionView.reloadData()
     }
     
     
@@ -115,8 +119,9 @@ extension IntroImageViewController: UICollectionViewDelegate, UICollectionViewDa
             fatalError("Failed to dequeue NewsCollectionViewCell")
         }
         let totalHeight = cell.calculateCellHeight()
-        heightOfIntroContrains.constant = totalHeight + 10
+        heightOfIntroContrains.constant = totalHeight
         print("IntroCollectionView Cell - Width: \(collectionView.frame.width), Height: \(totalHeight)")
+        print("CollectionView height \( heightOfIntroContrains.constant)")
         return CGSize(width: collectionView.frame.width, height: totalHeight)
        
     }

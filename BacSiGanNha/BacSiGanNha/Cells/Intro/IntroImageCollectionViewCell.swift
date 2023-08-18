@@ -22,56 +22,35 @@ class IntroImageCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
+ 
     }
     
-    func setupUI() {
-        //Thiết lập introTitleLabel
-        introTitleLabel.textColor = UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1)
-        introTitleLabel.font = UIFont(name: "NunitoSans-Bold", size: 24)
-        introTitleLabel.lineBreakMode = .byWordWrapping
-        introTitleLabel.numberOfLines = 0
-        introTitleLabel.textAlignment = .center
-        
-    }
-    
+ 
     // MARK: - configure
     func configure(data: Intro) {
         introImageView.image = UIImage(named: data.image)
-            
-        let descriptionTextColor = UIColor(red: 0.212, green: 0.239, blue: 0.306, alpha: 1)
-            let descriptionFont = UIFont(name: "NunitoSans-Regular", size: 14)
-            let descriptionParagraphStyle = NSMutableParagraphStyle()
-            descriptionParagraphStyle.lineHeightMultiple = 1.05
-            descriptionParagraphStyle.alignment = .center
-
-            let descriptionAttributes: [NSAttributedString.Key: Any] = [
-                .foregroundColor: descriptionTextColor,
-                .font: descriptionFont,
-                .paragraphStyle: descriptionParagraphStyle
-            ]
-
-        let attributedDescription = NSAttributedString(string: data.description, attributes: descriptionAttributes)
-            introDescriptionLabel.attributedText = attributedDescription
-            introDescriptionLabel.numberOfLines = 0
-            introDescriptionLabel.lineBreakMode = .byWordWrapping
-        }
+        introTitleLabel.text = data.title
+        introDescriptionLabel.text = data.description
+    }
         
     
-    func calculateLabelHeight(label: UILabel) -> CGFloat {
-            let width = label.frame.size.width
-            let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-            let result = label.sizeThatFits(size)
-            return result.height
-    }
+     func heightOfLabel(text: String, font: UIFont, maxWidth: CGFloat, lines: Int = 0) -> CGFloat {
+            let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: maxWidth, height: CGFloat.greatestFiniteMagnitude))
+            label.numberOfLines = lines
+            label.lineBreakMode = NSLineBreakMode.byWordWrapping
+            label.text = text
+            label.font = font
+            label.sizeToFit()
+            return label.frame.height
+        }
 
 }
 
 extension IntroImageCollectionViewCell {
     func calculateCellHeight() -> CGFloat {
-        let titleHeight = calculateLabelHeight(label: introTitleLabel)
-        let introHeight = calculateLabelHeight(label: introDescriptionLabel)
-        let additionalHeight: CGFloat = 427
+        let titleHeight = heightOfLabel(text: introTitleLabel.text!, font: introTitleLabel.font, maxWidth: 339, lines: 2)
+        let introHeight = heightOfLabel(text: introDescriptionLabel.text!, font: introDescriptionLabel.font, maxWidth: 339, lines: 2)
+        let additionalHeight: CGFloat = 466
         let totalHeight = titleHeight + introHeight + additionalHeight
         return totalHeight
     }

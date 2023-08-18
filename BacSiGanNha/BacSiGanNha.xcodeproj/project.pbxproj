@@ -17,11 +17,8 @@
 		E71A70032A8B2CAF00EE6305 /* OtpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71A6FFE2A8B2CAF00EE6305 /* OtpViewController.xib */; };
 		E71A70042A8B2CAF00EE6305 /* OtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A6FFF2A8B2CAF00EE6305 /* OtpViewController.swift */; };
 		E71A70052A8B2CAF00EE6305 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A70002A8B2CAF00EE6305 /* OTPTextField.swift */; };
-		E71A70072A8B2CF200EE6305 /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A70062A8B2CF100EE6305 /* IntroCollectionViewCell.swift */; };
-		E71A700A2A8B2DBD00EE6305 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A70092A8B2DBC00EE6305 /* IntroViewController.swift */; };
 		E71F761C2A8474C6005DDA06 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F761A2A8474C6005DDA06 /* WebViewViewController.swift */; };
 		E71F761D2A8474C6005DDA06 /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E71F761B2A8474C6005DDA06 /* WebViewViewController.xib */; };
-		E71F76202A848BA3005DDA06 /* ExtensionLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F761F2A848BA3005DDA06 /* ExtensionLoading.swift */; };
 		E72A1BCA2A80E58F00EFB0D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72A1BC92A80E58F00EFB0D7 /* ViewController.swift */; };
 		E72A1BCD2A80E58F00EFB0D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72A1BCB2A80E58F00EFB0D7 /* Main.storyboard */; };
 		E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E72A1BCE2A80E59800EFB0D7 /* Assets.xcassets */; };
@@ -46,6 +43,7 @@
 		E73473C82A89C37F0076624F /* InfoUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73473C62A89C37F0076624F /* InfoUserTableViewCell.swift */; };
 		E73473CC2A89C38C0076624F /* GenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73473CA2A89C38C0076624F /* GenderTableViewCell.swift */; };
 		E73473CD2A89C38C0076624F /* GenderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73473CB2A89C38C0076624F /* GenderTableViewCell.xib */; };
+		E750EDFC2A8F17440017FEE8 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750EDFB2A8F17440017FEE8 /* Extension+UILabel.swift */; };
 		E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */; };
 		E755ED052A83486000C9BCC6 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */; };
 		E755ED062A83486000C9BCC6 /* NunitoSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED032A83486000C9BCC6 /* NunitoSans-SemiBold.ttf */; };
@@ -78,11 +76,8 @@
 		E71A6FFE2A8B2CAF00EE6305 /* OtpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OtpViewController.xib; sourceTree = "<group>"; };
 		E71A6FFF2A8B2CAF00EE6305 /* OtpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtpViewController.swift; sourceTree = "<group>"; };
 		E71A70002A8B2CAF00EE6305 /* OTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
-		E71A70062A8B2CF100EE6305 /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCollectionViewCell.swift; sourceTree = "<group>"; };
-		E71A70092A8B2DBC00EE6305 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		E71F761A2A8474C6005DDA06 /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		E71F761B2A8474C6005DDA06 /* WebViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewViewController.xib; sourceTree = "<group>"; };
-		E71F761F2A848BA3005DDA06 /* ExtensionLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionLoading.swift; sourceTree = "<group>"; };
 		E72A1BC22A80E58F00EFB0D7 /* BacSiGanNha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BacSiGanNha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72A1BC92A80E58F00EFB0D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E72A1BCC2A80E58F00EFB0D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +104,7 @@
 		E73473C62A89C37F0076624F /* InfoUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoUserTableViewCell.swift; sourceTree = "<group>"; };
 		E73473CA2A89C38C0076624F /* GenderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTableViewCell.swift; sourceTree = "<group>"; };
 		E73473CB2A89C38C0076624F /* GenderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenderTableViewCell.xib; sourceTree = "<group>"; };
+		E750EDFB2A8F17440017FEE8 /* Extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
 		E755ED032A83486000C9BCC6 /* NunitoSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -187,18 +183,9 @@
 			path = Otp;
 			sourceTree = "<group>";
 		};
-		E71A70082A8B2DBC00EE6305 /* IntroViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E71A70092A8B2DBC00EE6305 /* IntroViewController.swift */,
-			);
-			path = IntroViewController;
-			sourceTree = "<group>";
-		};
 		E71A700B2A8B445600EE6305 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				E71A70062A8B2CF100EE6305 /* IntroCollectionViewCell.swift */,
 				E73100972A8DF99700598DF4 /* IntroImageCollectionViewCell.swift */,
 				E73100982A8DF99700598DF4 /* IntroImageCollectionViewCell.xib */,
 			);
@@ -217,7 +204,7 @@
 		E71F761E2A848B82005DDA06 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E71F761F2A848BA3005DDA06 /* ExtensionLoading.swift */,
+				E750EDFB2A8F17440017FEE8 /* Extension+UILabel.swift */,
 				E76AD56B2A823E220010485F /* UIImageViewExtention.swift */,
 			);
 			path = Extensions;
@@ -363,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				E76AFD972A8CDB1D00F2F63E /* Intro */,
-				E71A70082A8B2DBC00EE6305 /* IntroViewController */,
 				E71A6FFA2A8B2CAE00EE6305 /* Login */,
 				E71A6FFD2A8B2CAF00EE6305 /* Otp */,
 				E73473BF2A89C2D10076624F /* InfoScreen */,
@@ -578,12 +564,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71F76202A848BA3005DDA06 /* ExtensionLoading.swift in Sources */,
 				E73057E52A83969F00A59E09 /* PromotionDeatailTableView.swift in Sources */,
 				E76AD5662A8232480010485F /* HomePageViewController.swift in Sources */,
+				E750EDFC2A8F17440017FEE8 /* Extension+UILabel.swift in Sources */,
 				E79425D82A83C84B0051EB4C /* DoctorTableViewCell.swift in Sources */,
 				E76AD56A2A823E090010485F /* Data.swift in Sources */,
-				E71A700A2A8B2DBD00EE6305 /* IntroViewController.swift in Sources */,
 				E73057D52A838E2500A59E09 /* NewsTableViewCell.swift in Sources */,
 				E72A1BCA2A80E58F00EFB0D7 /* ViewController.swift in Sources */,
 				E71A6FF52A8B2BBE00EE6305 /* SceneDelegate.swift in Sources */,
@@ -591,7 +576,6 @@
 				E71A6FF92A8B2C5200EE6305 /* IntroSlide.swift in Sources */,
 				E76AD5732A82419B0010485F /* NewsCollectionViewCell.swift in Sources */,
 				E79425DD2A83CCCC0051EB4C /* DoctorTableViewController.swift in Sources */,
-				E71A70072A8B2CF200EE6305 /* IntroCollectionViewCell.swift in Sources */,
 				E73057D02A838BCA00A59E09 /* NewsBigCellTableViewCell.swift in Sources */,
 				E73100992A8DF99700598DF4 /* IntroImageCollectionViewCell.swift in Sources */,
 				E71A70042A8B2CAF00EE6305 /* OtpViewController.swift in Sources */,

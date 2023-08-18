@@ -53,11 +53,11 @@ class NewsBigCellTableViewCell: UITableViewCell {
         
         newsTitleLabel.text = data.title
         let dateFormatter = DateFormatter()
-           dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ" // Adjust this format to match your date string
+           dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
            if let date = dateFormatter.date(from: data.createdAt) {
                dateFormatter.dateFormat = "d 'tháng' M, yyyy"
                newsCreateAt.text = dateFormatter.string(from: date)
-           }
+        }
     }
     
 }

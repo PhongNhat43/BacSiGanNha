@@ -23,70 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "253E297E-917D-49E4-A621-FFDABBFE0C49"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BacSiGanNha/Cells/NewsCollectionView/NewsCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0C308C9A-C5DF-47FA-B223-A3ADB8C9CC3A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BacSiGanNha/Cells/NewsCollectionView/NewsCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F5691803-2CE4-4173-8719-7FD24FD5261A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BacSiGanNha/Cells/NewsCollectionView/NewsCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4DA9552D-AC2E-40E4-9EBE-3A6AD401D53B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BacSiGanNha/Cells/NewsCollectionView/NewsCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1E5CDB00-D073-4764-B8C1-97EE118EFE95"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -114,6 +50,162 @@
             endingLineNumber = "43"
             landmarkName = "printUserDefaultsKeys()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC077408-34A8-45A8-9299-674F767A3B44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BacSiGanNha/Cells/Intro/IntroImageCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "calculateCellHeight()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C99E1B56-20BA-4D33-BCAC-7E4CF1C53C4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50370FEA-27ED-4E12-9A39-ABC3E10C7CCB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BF5B8FC-5496-4AF8-B96E-C8B0B04C9ED7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "IntroImageViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2BF5B8FC-5496-4AF8-B96E-C8B0B04C9ED7 - efb2d418ec62621"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BacSiGanNha.IntroImageViewController.heightOfIntroContrains.getter : Swift.Optional&lt;__C.NSLayoutConstraint&gt;"
+                  moduleName = "BacSiGanNha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devsenior/BacSiApp/BacSiGanNha/BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "2BF5B8FC-5496-4AF8-B96E-C8B0B04C9ED7 - 731d36e5fa55e61d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BacSiGanNha.IntroImageViewController.heightOfIntroContrains.setter : Swift.Optional&lt;__C.NSLayoutConstraint&gt;"
+                  moduleName = "BacSiGanNha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devsenior/BacSiApp/BacSiGanNha/BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "2BF5B8FC-5496-4AF8-B96E-C8B0B04C9ED7 - 188f2ae007e1a43b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BacSiGanNha.IntroImageViewController.heightOfIntroContrains.modify : Swift.Optional&lt;__C.NSLayoutConstraint&gt;"
+                  moduleName = "BacSiGanNha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devsenior/BacSiApp/BacSiGanNha/BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "2BF5B8FC-5496-4AF8-B96E-C8B0B04C9ED7 - c424857cceb7223e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BacSiGanNha.IntroImageViewController.heightOfIntroContrains.modify : Swift.Optional&lt;__C.NSLayoutConstraint&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "BacSiGanNha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devsenior/BacSiApp/BacSiGanNha/BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "2BF5B8FC-5496-4AF8-B96E-C8B0B04C9ED7 - 8d91bdb0ca20ef79"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BacSiGanNha.IntroImageViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; BacSiGanNha.IntroImageViewController"
+                  moduleName = "BacSiGanNha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devsenior/BacSiApp/BacSiGanNha/BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "277">
+               </Location>
+               <Location
+                  uuid = "2BF5B8FC-5496-4AF8-B96E-C8B0B04C9ED7 - 84e2cf39d45dc8c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BacSiGanNha.IntroImageViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BacSiGanNha.IntroImageViewController&gt;"
+                  moduleName = "BacSiGanNha"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devsenior/BacSiApp/BacSiGanNha/BacSiGanNha/Screen/Intro/IntroImageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "234">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

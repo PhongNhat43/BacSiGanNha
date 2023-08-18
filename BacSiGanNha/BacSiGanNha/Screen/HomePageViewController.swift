@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 import Alamofire
 class HomePageViewController: UIViewController {
     
@@ -140,30 +141,33 @@ class HomePageViewController: UIViewController {
 
 extension HomePageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var urlString: String?
-
-        switch collectionView {
-        case newsCollectionView:
-            let dataNews = newsArr[indexPath.row]
-            urlString = dataNews.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-
-        case promotionCollectionView:
-            let dataPromotion = promotionArr[indexPath.row]
-            urlString = dataPromotion.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-
-        default:
-            break
+            switch collectionView {
+            case newsCollectionView:
+                print("did tap")
+                let dataNews = newsArr[indexPath.row]
+                let urlString = dataNews.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+                guard let url = URL(string: urlString) else { return }
+                
+                let webViewVC = WebViewViewController()
+                webViewVC.url = url
+                navigationController?.pushViewController(webViewVC, animated: true)
+                navigationController?.isNavigationBarHidden = false
+                
+            case promotionCollectionView:
+                print("did tap")
+                let dataPromotion = promotionArr[indexPath.row]
+                let urlString = dataPromotion.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+                guard let url = URL(string: urlString) else { return }
+                
+                let webViewVC = WebViewViewController()
+                webViewVC.url = url
+                navigationController?.pushViewController(webViewVC, animated: true)
+                navigationController?.isNavigationBarHidden = false
+                
+            default:
+                break
+            }
         }
-
-        if let urlString = urlString, let url = URL(string: urlString) {
-            let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
-            webViewController.url = url
-            navigationController?.pushViewController(webViewController, animated: true)
-            navigationController?.isNavigationBarHidden = false
-        } else {
-           
-        }
-    }
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -204,25 +208,25 @@ extension HomePageViewController: UICollectionViewDataSource {
 }
 
 extension HomePageViewController: UICollectionViewDelegateFlowLayout {
+   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+       
         switch collectionView {
         case newsCollectionView:
             let cellWidth: CGFloat = 258
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCollectionViewCell", for: indexPath) as? NewsCollectionViewCell else {
-                fatalError("Failed to dequeue NewsCollectionViewCell")
-            }
-            let totalHeight = cell.calculateCellHeight(articles: newsArr)
+            let titleWidth: CGFloat = 234
+            let hotSaleWidth: CGFloat = 65
+            let totalHeight = UILabel.calculateNewsCellHeight(articles: newsArr, titleFont: UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15), hotSaleText: "Ưu đãi hot", hotSaleFont: UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13), titleWidth: titleWidth, hotSaleWidth: hotSaleWidth)
+
             heightOfNewsConstraint.constant = totalHeight + 5
             print("newsCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
 
         case promotionCollectionView:
             let cellWidth: CGFloat = 258
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PromotionCollectionViewCell", for: indexPath) as? PromotionCollectionViewCell else {
-                fatalError("Failed to dequeue NewsCollectionViewCell")
-            }
-            let totalHeight = cell.calculateCellHeight(promotion: promotionArr)
+            let titleWidth: CGFloat = 234
+            let hotSaleWidth: CGFloat = 65
+            let totalHeight = UILabel.calculatePromotionCellHeight(promotion: promotionArr, titleFont: UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15), hotSaleText: "Ưu đãi hot", hotSaleFont: UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13), titleWidth: titleWidth, hotSaleWidth: hotSaleWidth)
             hegihtofPromotion.constant = totalHeight + 5
             print("promotionCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)

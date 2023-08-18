@@ -58,19 +58,14 @@ class NewsTableViewCell: UITableViewCell {
             })
         }
        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.13
-            
-        let attributedText = NSAttributedString(
-                string: data.title,
-                attributes: [
-                    .paragraphStyle: paragraphStyle,
-                    .font: newsTitleLabel.font,
-                    .foregroundColor: newsTitleLabel.textColor
-                ]
-            )
-        newsTitleLabel.attributedText = attributedText
-        newsCreateNews.text = data.createdAt
+    
+        newsTitleLabel.text = data.title
+        let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+           if let date = dateFormatter.date(from: data.createdAt) {
+               dateFormatter.dateFormat = "d 'tháng' M, yyyy"
+               newsCreateNews.text = dateFormatter.string(from: date)
+        }
      
         selectionStyle = .none
     }

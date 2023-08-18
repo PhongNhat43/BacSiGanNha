@@ -25,8 +25,6 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-
-    
     func setupUI() {
         doctorImageView.layer.cornerRadius = 8
         doctorMainView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,11 +57,6 @@ class DoctorCollectionViewCell: UICollectionViewCell {
 
         doctorNameLabel.text = "Dr. \(dataDoctor.name)"
         doctorLastNameLabel.text = dataDoctor.majorsName
-        doctorLastNameLabel.textColor = UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1)
-        doctorLastNameLabel.font = UIFont(name: "NunitoSans-Regular", size: 12)
-
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 0.87
 
         let starsText = NSAttributedString(string: "\(dataDoctor.ratioStar)", attributes: [
             .foregroundColor: UIColor(red: 0.278, green: 0.29, blue: 0.341, alpha: 1),
