@@ -7,33 +7,33 @@ protocol InfoUserTableViewCellDelegate: AnyObject {
 
 class InfoUserTableViewCell: UITableViewCell {
     
-    var infoText: String? {
-           get {
-               return infoTextField.text
-           }
-           set {
-               infoTextField.text = newValue
-           }
-       }
-       
-       var wrongLabelText: String? {
-           get {
-               return wrongLabel.text
-           }
-           set {
-               wrongLabel.text = newValue
-           }
-       }
-       
-       var wrongLabelTextColor: UIColor? {
-           get {
-               return wrongLabel.textColor
-           }
-           set {
-               wrongLabel.textColor = newValue
-           }
-       }
-    
+//    var infoText: String? {
+//           get {
+//               return infoTextField.text
+//           }
+//           set {
+//               infoTextField.text = newValue
+//           }
+//       }
+//
+//       var wrongLabelText: String? {
+//           get {
+//               return wrongLabel.text
+//           }
+//           set {
+//               wrongLabel.text = newValue
+//           }
+//       }
+//
+//       var wrongLabelTextColor: UIColor? {
+//           get {
+//               return wrongLabel.textColor
+//           }
+//           set {
+//               wrongLabel.textColor = newValue
+//           }
+//       }
+//
     var indexPath: IndexPath?
     weak var delegate: InfoUserTableViewCellDelegate?
     var isEditingTextField: Bool = false
@@ -52,14 +52,6 @@ class InfoUserTableViewCell: UITableViewCell {
         super.awakeFromNib()
         infoTextField.inputView = nil
     }
-    
-    func updateInfoText(_ text: String) {
-            infoTextField.text = text
-        }
-        
-        func updateWrongLabelText(_ text: String) {
-            wrongLabel.text = text
-        }
     
     private func updateTitleLabelColor() {
         if isEditingTextField {
@@ -88,13 +80,43 @@ class InfoUserTableViewCell: UITableViewCell {
     
     @IBAction func textFieldidChanged(_ textField: UITextField) {
             delegate?.infoTextFieldDidChange(self)
+            saveCellData()
     }
     
     func saveCellData() {
            let section = infoTextField.tag
            let text = infoTextField.text ?? ""
            delegate?.saveData(text: text, forSection: section)
-       }
+    }
+    
+    func getInfoTextFieldText() -> String? {
+        return infoTextField.text
+    }
+
+    
+    func updateInfoText(_ text: String) {
+        infoTextField.text = text
+    }
+
+    func updateWrongLabelText(_ text: String) {
+        wrongLabel.text = text
+    }
+    
+    func isInfoTextFieldEmpty() -> Bool {
+        return infoTextField.text?.isEmpty ?? true
+    }
+
+
+    func updateWrongLabelTextColor(_ color: UIColor) {
+        wrongLabel.textColor = color
+    }
+    
+    func isTextValid(_ text: String) -> Bool {
+        let characterSet = CharacterSet.letters
+        return text.rangeOfCharacter(from: characterSet.inverted) == nil
+    }
+
+
     
     @objc func dateChange(datePicker: UIDatePicker) {
         let formatter = DateFormatter()

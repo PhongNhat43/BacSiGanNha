@@ -150,6 +150,7 @@ extension HomePageViewController: UICollectionViewDataSource {
                 
                 let webViewVC = WebViewViewController()
                 webViewVC.url = url
+                webViewVC.title = "Chi tiết tin tức"
                 navigationController?.pushViewController(webViewVC, animated: true)
                 navigationController?.isNavigationBarHidden = false
                 
@@ -161,6 +162,7 @@ extension HomePageViewController: UICollectionViewDataSource {
                 
                 let webViewVC = WebViewViewController()
                 webViewVC.url = url
+                webViewVC.title = "Chi tiết Khuyến mại"
                 navigationController?.pushViewController(webViewVC, animated: true)
                 navigationController?.isNavigationBarHidden = false
                 
@@ -168,7 +170,6 @@ extension HomePageViewController: UICollectionViewDataSource {
                 break
             }
         }
-
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {

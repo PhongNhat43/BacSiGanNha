@@ -97,17 +97,17 @@ extension NewsDetailViewController: UITableViewDataSource {
 }
 
 extension NewsDetailViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        var urlString: String?
-//        let data = newsArr[indexPath.row]
-//        urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-//        if let urlString = urlString, let url = URL(string: urlString) {
-//             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
-//             webViewController.url = url
-//             navigationController?.pushViewController(webViewController, animated: true)
-//         }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let data = newsArr[indexPath.row]
+        let urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+        if let url = URL(string: urlString) {
+            let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
+            webViewController.title =  "Chi tiết tin tức"
+            navigationController?.pushViewController(webViewController, animated: true)
+        }
+
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {

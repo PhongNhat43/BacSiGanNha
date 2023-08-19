@@ -30,8 +30,8 @@
             filePath = "BacSiGanNha/Screen/InfoScreen/InfoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "saveData(text:forSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -49,22 +49,6 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "printUserDefaultsKeys()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC077408-34A8-45A8-9299-674F767A3B44"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BacSiGanNha/Cells/Intro/IntroImageCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "calculateCellHeight()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -42,13 +42,13 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0L-cv-QJa">
-                    <rect key="frame" x="0.0" y="782" width="414" height="114"/>
+                    <rect key="frame" x="0.0" y="776" width="414" height="120"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Yyc-u8-ndX">
-                            <rect key="frame" x="16" y="16" width="382" height="48"/>
+                            <rect key="frame" x="16" y="16" width="382" height="54"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKd-as-fpz">
-                                    <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="183" height="54"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                     <connections>
@@ -56,7 +56,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-L4-g9E">
-                                    <rect key="frame" x="199" y="0.0" width="183" height="48"/>
+                                    <rect key="frame" x="199" y="0.0" width="183" height="54"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 </button>
@@ -69,7 +69,7 @@
                         <constraint firstAttribute="trailing" secondItem="Yyc-u8-ndX" secondAttribute="trailing" constant="16" id="F0R-r4-fmY"/>
                         <constraint firstItem="Yyc-u8-ndX" firstAttribute="top" secondItem="U0L-cv-QJa" secondAttribute="top" constant="16" id="P4w-ne-6pl"/>
                         <constraint firstItem="Yyc-u8-ndX" firstAttribute="leading" secondItem="U0L-cv-QJa" secondAttribute="leading" constant="16" id="lPj-3b-bGj"/>
-                        <constraint firstAttribute="height" constant="114" id="wFw-oV-OyZ"/>
+                        <constraint firstAttribute="height" constant="120" id="wFw-oV-OyZ"/>
                     </constraints>
                 </view>
             </subviews>

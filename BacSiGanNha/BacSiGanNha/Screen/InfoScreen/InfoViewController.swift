@@ -44,6 +44,11 @@ class InfoViewController: UIViewController {
             }
         }
     }
+    
+    func isTextValid(_ text: String) -> Bool {
+           let characterSet = CharacterSet.letters
+           return text.rangeOfCharacter(from: characterSet.inverted) == nil
+       }
 
     
     func setupNavigation() {
@@ -64,49 +69,68 @@ class InfoViewController: UIViewController {
   
 
     @IBAction func didTapDoneBtn(_ sender: Any) {
-         //Kiểm tra textfiled có bị bỏ trống không
+        // Check if any field is empty
         var isAnyFieldEmpty = false
+
         for section in 0...2 {
             let indexPath = IndexPath(row: 0, section: section)
             if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell,
-               cell.infoText?.isEmpty ?? true {
-                isAnyFieldEmpty = true
-                cell.wrongLabelText = "Không để trống"
-                cell.wrongLabelTextColor = UIColor.red
-                nextBtnImageView.alpha = 0.5
-                infoNextBtn.isEnabled = false
-                return
+               let text = cell.getInfoTextFieldText() {
+                if cell.isInfoTextFieldEmpty() {
+                    cell.updateWrongLabelText("Không để trống")
+                    cell.updateWrongLabelTextColor(UIColor.red)
+                    isAnyFieldEmpty = true
+                } else if (section == 0 || section == 1) && !isTextValid(text) {
+                    cell.updateWrongLabelText("Vui lòng đúng thông tin")
+                    cell.updateWrongLabelTextColor(UIColor.red)
+                    isAnyFieldEmpty = true
+                }
             }
         }
 
-        // Kiểm tra email hợp lệ
+
+        if isAnyFieldEmpty {
+            nextBtnImageView.alpha = 0.5
+            infoNextBtn.isEnabled = false
+        } else {
+            // All fields are filled, you can proceed with the rest of your code
+        }
+
+        // Check if email is valid
         let emailIndexPath = IndexPath(row: 0, section: 5)
         if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell,
-           let email = emailCell.infoText,
-           !isValidEmail(email) {
-            emailCell.wrongLabelText = "Email không hợp lệ"
-            emailCell.wrongLabelTextColor = UIColor.red
-            return
-        }
-
-        // Lưu dữ liệu vào UserDefaults khi tất cả các textField đều hợp lệ
-        for section in 0..<tableView.numberOfSections {
-            let indexPath = IndexPath(row: 0, section: section)
-            if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
-                cell.saveCellData()
+           let email = emailCell.getInfoTextFieldText() {
+            if !isValidEmail(email) {
+                emailCell.updateWrongLabelText("Email không hợp lệ")
+                emailCell.updateWrongLabelTextColor(UIColor.red)
+                return
+            } else {
+                // Save email to UserDefaults only when it's valid
+                UserDefaults.standard.set(email, forKey: "emailKey")
             }
         }
 
-        // xoá text "Email không hợp lệ"
-        if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell {
-                emailCell.wrongLabelText = ""
+
+        // Save data to UserDefaults for other fields when all text fields are valid
+        for section in 0..<tableView.numberOfSections {
+            if section != 5 { // Exclude the email field
+                let indexPath = IndexPath(row: 0, section: section)
+                if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
+                    cell.saveCellData()
+                }
+            }
         }
 
+        // Clear "Email không hợp lệ" text
+        if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell {
+            emailCell.updateWrongLabelText("")
+        }
+
+        // Show alert
         let alertController = UIAlertController(title: "Lưu dữ liệu thành công", message: nil, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }
-
 
 
 }
@@ -127,13 +151,12 @@ extension InfoViewController: UITableViewDataSource {
         case 0, 1, 2, 4, 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.indentifier, for: indexPath) as! InfoUserTableViewCell
             cell.configure(with: currentData, isDropDownButtonHidden: true, isUserInteractionEnabled: true, selectionStyle: .none, section: sectionNumber)
-            cell.delegate = self
             cell.indexPath = indexPath
+            cell.delegate = self
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: GenderTableViewCell.indentifier, for: indexPath) as! GenderTableViewCell
             cell.configure(with: currentData, selectionStyle: .none)
-            cell.generoSegmentControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "genderKey")
             return cell
         case 6...10:
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.indentifier, for: indexPath) as! InfoUserTableViewCell
@@ -172,7 +195,7 @@ extension InfoViewController: InfoUserTableViewCellDelegate {
         if let indexPath = tableView.indexPath(for: cell),
            [0, 1, 2].contains(indexPath.section),
            cell.isEditingTextField,
-           let updatedText = cell.infoText, !updatedText.isEmpty {
+           let updatedText = cell.getInfoTextFieldText(), !updatedText.isEmpty {
             cell.updateWrongLabelText("")
             nextBtnImageView.alpha = 1.0
             infoNextBtn.isEnabled = true

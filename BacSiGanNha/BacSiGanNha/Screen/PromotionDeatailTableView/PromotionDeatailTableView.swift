@@ -85,17 +85,17 @@ extension PromotionDeatailTableView: UITableViewDataSource {
 }
 
 extension PromotionDeatailTableView: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        var urlString: String?
-//        let data = promotionArr[indexPath.row]
-//        urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-//        if let urlString = urlString, let url = URL(string: urlString) {
-//             let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
-//             webViewController.url = url
-//             navigationController?.pushViewController(webViewController, animated: true)
-//         }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let data = promotionArr[indexPath.row]
+        let urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+        if let url = URL(string: urlString) {
+            let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
+            webViewController.title =  "Chi tiết khuyến mại"
+            navigationController?.pushViewController(webViewController, animated: true)
+        }
+
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 102

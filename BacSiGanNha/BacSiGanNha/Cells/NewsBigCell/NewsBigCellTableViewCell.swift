@@ -39,16 +39,10 @@ class NewsBigCellTableViewCell: UITableViewCell {
     }
     
     func configure(data: ArticleList) {
+        newsTitleLabel.text = data.title
         if let imageUrl = URL(string: data.picture) {
-            newsImageView.kf.setImage(with: imageUrl, placeholder: nil, options: nil, completionHandler: { result in
-                switch result {
-                case .success(let value):
-                    print("Image downloaded: \(value.source.url?.absoluteString ?? "")")
-                case .failure(let error):
-                    print("Image download failed: \(error.localizedDescription)")
-                    self.newsImageView.image = UIImage(named: "placeholder")
-                }
-            })
+            let placeholderImage = UIImage(named: "placeholder")
+            newsImageView.kf.setImage(with: imageUrl, placeholder: placeholderImage)
         }
         
         newsTitleLabel.text = data.title

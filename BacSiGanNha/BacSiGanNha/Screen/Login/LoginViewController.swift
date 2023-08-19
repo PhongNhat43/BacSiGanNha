@@ -30,6 +30,7 @@ class LoginViewController: UIViewController {
     
     func setupNavigation() {
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .done , target: self, action: #selector(backButtonTapped))]
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "en"), style: .plain, target: self, action: nil)
     }
 
     @objc func backButtonTapped() {

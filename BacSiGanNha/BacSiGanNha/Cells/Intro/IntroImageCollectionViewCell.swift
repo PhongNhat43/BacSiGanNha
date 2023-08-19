@@ -25,7 +25,6 @@ class IntroImageCollectionViewCell: UICollectionViewCell {
  
     }
     
- 
     // MARK: - configure
     func configure(data: Intro) {
         introImageView.image = UIImage(named: data.image)
@@ -33,7 +32,6 @@ class IntroImageCollectionViewCell: UICollectionViewCell {
         introDescriptionLabel.text = data.description
     }
         
-    
      func heightOfLabel(text: String, font: UIFont, maxWidth: CGFloat, lines: Int = 0) -> CGFloat {
             let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: maxWidth, height: CGFloat.greatestFiniteMagnitude))
             label.numberOfLines = lines
@@ -55,3 +53,24 @@ extension IntroImageCollectionViewCell {
         return totalHeight
     }
 }
+
+//427
+
+//extension IntroImageCollectionViewCell {
+//    func calculateCellHeight() -> CGFloat {
+//        let screenWidth = UIScreen.main.bounds.width
+//        let maxWidth: CGFloat = screenWidth - 75 // Adjust this value based on your layout
+//        let titleHeight = heightOfLabel(text: introTitleLabel.text!, font: introTitleLabel.font, maxWidth: maxWidth, lines: 2)
+//        let introHeight = heightOfLabel(text: introDescriptionLabel.text!, font: introDescriptionLabel.font, maxWidth: maxWidth, lines: 2)
+//        
+//        var additionalHeight: CGFloat = 0
+//        if screenWidth == 414 {
+//            additionalHeight = 466
+//        } else if screenWidth == 375 {
+//            additionalHeight = 427
+//        }
+//        
+//        let totalHeight = titleHeight + introHeight + additionalHeight
+//        return totalHeight
+//    }
+//}

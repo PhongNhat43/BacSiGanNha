@@ -31,7 +31,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlQ-3C-PDW">
                                 <rect key="frame" x="12" y="12" width="97" height="161"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gtq-qo-jbI">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="gtq-qo-jbI">
                                         <rect key="frame" x="0.0" y="0.0" width="97" height="97"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="gtq-qo-jbI" secondAttribute="height" multiplier="1:1" id="4et-fU-NdH"/>
@@ -113,6 +113,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="Image-1" width="84" height="80"/>
         <image name="Star" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
