@@ -34,18 +34,10 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         doctorMainView.layer.borderColor = UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1).cgColor
     }
     
-    func calculateLabelHeight(label: UILabel) -> CGFloat {
-        let width = label.frame.size.width
-        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let result = label.sizeThatFits(size)
-        return result.height
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         setupUI()
     }
-    
     
     func configure(dataDoctor: DoctorList) {
         let placeholderImage = UIImage(named: "doctor")
@@ -72,18 +64,7 @@ class DoctorCollectionViewCell: UICollectionViewCell {
         combinedText.append(starsText)
         combinedText.append(reviewsText)
         doctorStarRateabel.attributedText = combinedText
-
-    }
-
-}
-
-extension DoctorCollectionViewCell {
-    func calculateCellHeight() -> CGFloat {
-        let nameHeight = calculateLabelHeight(label: doctorNameLabel)
-        let majorHeight = calculateLabelHeight(label: doctorLastNameLabel)
-        let rateHeight = calculateLabelHeight(label: doctorStarRateabel)
-        let additionalHeight: CGFloat = 145
-        let totalHeight = nameHeight + majorHeight + rateHeight + additionalHeight
-        return totalHeight
     }
 }
+
+

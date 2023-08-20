@@ -15,10 +15,11 @@ class IntroImageViewController: UIViewController {
     @IBOutlet weak var heightOfIntroContrains: NSLayoutConstraint!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var introPageControlTopConstraint: NSLayoutConstraint!
+
     
     // MARK: - Property
     var intros: [Intro] = []
-    
     var timer: Timer?
     var currentCellIndex = 0
     
@@ -28,7 +29,6 @@ class IntroImageViewController: UIViewController {
         fillData()
         setupPage()
         setupUI()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,32 +37,37 @@ class IntroImageViewController: UIViewController {
         registerBtn.layer.cornerRadius = 24
     }
     
-    func setupPage(){
+    func setupPage() {
         introPageControl.currentPage = 0
         introPageControl.numberOfPages = intros.count
+        let screenWidth = UIScreen.main.bounds.width
+        if screenWidth <= 375 {
+            introPageControlTopConstraint.constant = 10
+            return
+        }
+        if screenWidth == 414 || screenWidth == 428 {
+            introPageControlTopConstraint.constant = 36
+            return
+        }
     }
+
     
     func setupUI() {
-//        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
         // Thiết lập thuộc tính cho nút loginBtn
         loginBtn.layer.backgroundColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1).cgColor
         loginBtn.setTitle("Đăng Nhập", for: .normal)
         loginBtn.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
         loginBtn.titleLabel?.font = UIFont(name: "NunitoSans-Bold", size: 15)
-        let paragraphStyleLogin = NSMutableParagraphStyle()
-        paragraphStyleLogin.lineHeightMultiple = 0.95
         loginBtn.titleLabel?.textAlignment = .center
 
         // Thiết lập thuộc tính cho nút registerBtn
         registerBtn.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-
         registerBtn.setTitle("Tạo tài khoản", for: .normal)
         registerBtn.layer.borderWidth = 1
         registerBtn.layer.borderColor = UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1).cgColor
         registerBtn.setTitleColor(UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1), for: .normal)
         registerBtn.titleLabel?.font = UIFont(name: "NunitoSans-Bold", size: 15)
-        let paragraphStyleRegister = NSMutableParagraphStyle()
-        paragraphStyleRegister.lineHeightMultiple = 0.95
         registerBtn.titleLabel?.textAlignment = .center
     }
     
@@ -76,7 +81,6 @@ class IntroImageViewController: UIViewController {
     
     func startTimer() {
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
-        
     }
     
     @objc func moveToNextIndex() {
@@ -115,16 +119,22 @@ extension IntroImageViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IntroImageCollectionViewCell.indentifier, for: indexPath) as? IntroImageCollectionViewCell else {
-            fatalError("Failed to dequeue NewsCollectionViewCell")
-        }
-        let totalHeight = cell.calculateCellHeight()
+//        let intros = // Đặt intros tại đây, có thể là dữ liệu intros tại indexPath hoặc dữ liệu cần cho cell này
+        let titleFont = UIFont(name: "NunitoSans-Bold", size: 24) ?? UIFont.boldSystemFont(ofSize: 24)
+        let descriptionFont = UIFont(name: "NunitoSans-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14)
+
+        let screenWidth = UIScreen.main.bounds.width
+        let maxWidth: CGFloat = (screenWidth == 375) ? 300 : 339
+
+        let totalHeight = UILabel.calculateIntroCellHeight(intros: intros, titleFont: titleFont, descriptionFont: descriptionFont, titleWidth: maxWidth, descriptionWidth: maxWidth)
+        
         heightOfIntroContrains.constant = totalHeight
         print("IntroCollectionView Cell - Width: \(collectionView.frame.width), Height: \(totalHeight)")
-        print("CollectionView height \( heightOfIntroContrains.constant)")
+        print("CollectionView height \(heightOfIntroContrains.constant)")
+        
         return CGSize(width: collectionView.frame.width, height: totalHeight)
-       
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0

@@ -9,18 +9,13 @@ import UIKit
 import Kingfisher
 
 class NewsCollectionViewCell: UICollectionViewCell {
-    var cells: [NewsCollectionViewCell] = []
-    var maxHeight: CGFloat = 0
-    var maxCell: NewsCollectionViewCell?
-    
+   
+    var cornerRadius: CGFloat = 8.0
     static let indentifier = "NewsCollectionViewCell"
-    
     static func nib() -> UINib {
        return UINib(nibName: "NewsCollectionViewCell", bundle: nil)
     }
     
-    var cornerRadius: CGFloat = 8.0
-   
     @IBOutlet private weak var newscContentView: UIView!
     @IBOutlet private weak var newsImageView: UIImageView!
     @IBOutlet private weak var newsTitleLabel: UILabel!
@@ -58,8 +53,6 @@ class NewsCollectionViewCell: UICollectionViewCell {
             newsImageView.kf.setImage(with: imageUrl, placeholder: placeholderImage)
         }
     }
-    
- 
 }
 
 

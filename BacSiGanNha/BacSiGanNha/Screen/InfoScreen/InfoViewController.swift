@@ -44,13 +44,12 @@ class InfoViewController: UIViewController {
             }
         }
     }
-    
+    // kiểm tra xem có ký tự đặc biệt không
     func isTextValid(_ text: String) -> Bool {
            let characterSet = CharacterSet.letters
            return text.rangeOfCharacter(from: characterSet.inverted) == nil
-       }
+    }
 
-    
     func setupNavigation() {
         self.navigationItem.title = "Thông tin cá nhân"
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
@@ -67,11 +66,8 @@ class InfoViewController: UIViewController {
         tableView.register(GenderTableViewCell.nib(), forCellReuseIdentifier: GenderTableViewCell.indentifier)
     }
   
-
     @IBAction func didTapDoneBtn(_ sender: Any) {
         // Check if any field is empty
-        var isAnyFieldEmpty = false
-
         for section in 0...2 {
             let indexPath = IndexPath(row: 0, section: section)
             if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell,
@@ -79,21 +75,18 @@ class InfoViewController: UIViewController {
                 if cell.isInfoTextFieldEmpty() {
                     cell.updateWrongLabelText("Không để trống")
                     cell.updateWrongLabelTextColor(UIColor.red)
-                    isAnyFieldEmpty = true
-                } else if (section == 0 || section == 1) && !isTextValid(text) {
+                    nextBtnImageView.alpha = 0.5
+                    infoNextBtn.isEnabled = false
+                    return
+                }
+                if !isTextValid(text) {
                     cell.updateWrongLabelText("Vui lòng đúng thông tin")
                     cell.updateWrongLabelTextColor(UIColor.red)
-                    isAnyFieldEmpty = true
+                    nextBtnImageView.alpha = 0.5
+                    infoNextBtn.isEnabled = false
+                    return
                 }
             }
-        }
-
-
-        if isAnyFieldEmpty {
-            nextBtnImageView.alpha = 0.5
-            infoNextBtn.isEnabled = false
-        } else {
-            // All fields are filled, you can proceed with the rest of your code
         }
 
         // Check if email is valid
@@ -104,12 +97,10 @@ class InfoViewController: UIViewController {
                 emailCell.updateWrongLabelText("Email không hợp lệ")
                 emailCell.updateWrongLabelTextColor(UIColor.red)
                 return
-            } else {
-                // Save email to UserDefaults only when it's valid
-                UserDefaults.standard.set(email, forKey: "emailKey")
             }
+            // Save email to UserDefaults only when it's valid
+            UserDefaults.standard.set(email, forKey: "emailKey")
         }
-
 
         // Save data to UserDefaults for other fields when all text fields are valid
         for section in 0..<tableView.numberOfSections {
@@ -132,7 +123,6 @@ class InfoViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-
 }
 
 extension InfoViewController: UITableViewDataSource {
@@ -150,8 +140,7 @@ extension InfoViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0, 1, 2, 4, 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.indentifier, for: indexPath) as! InfoUserTableViewCell
-            cell.configure(with: currentData, isDropDownButtonHidden: true, isUserInteractionEnabled: true, selectionStyle: .none, section: sectionNumber)
-            cell.indexPath = indexPath
+            cell.configure(with: currentData, isDropDownButtonHidden: true, isUserInteractionEnabled: true, selectionStyle: .none, section: sectionNumber, indexPath: indexPath)
             cell.delegate = self
             return cell
         case 3:
@@ -160,7 +149,7 @@ extension InfoViewController: UITableViewDataSource {
             return cell
         case 6...10:
             let cell = tableView.dequeueReusableCell(withIdentifier: InfoUserTableViewCell.indentifier, for: indexPath) as! InfoUserTableViewCell
-            cell.configure(with: currentData, isDropDownButtonHidden: false, isUserInteractionEnabled: false, selectionStyle: .none, section: sectionNumber)
+            cell.configure(with: currentData, isDropDownButtonHidden: false, isUserInteractionEnabled: false, selectionStyle: .none, section: sectionNumber, indexPath: indexPath)
             return cell
         default:
             return UITableViewCell()
@@ -202,10 +191,7 @@ extension InfoViewController: InfoUserTableViewCellDelegate {
         }
     }
 
-
-    
 }
-
 
 
 func isValidEmail(_ email: String) -> Bool {

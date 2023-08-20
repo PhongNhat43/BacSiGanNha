@@ -6,17 +6,12 @@
 //
 
 import UIKit
-//protocol GenderTableViewCellDelegate: AnyObject {
-//    func genderTableViewCell(_ cell: GenderTableViewCell, didSelectGender gender: String)
-//}
+
 class GenderTableViewCell: UITableViewCell {
-//    weak var delegate: GenderTableViewCellDelegate?
+
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var generoSegmentControl: UISegmentedControl!
-    
     static let indentifier = "GenderTableViewCell"
-    
     static func nib() -> UINib {
        return UINib(nibName: "GenderTableViewCell", bundle: nil)
     }
@@ -35,10 +30,9 @@ class GenderTableViewCell: UITableViewCell {
        UserDefaults.standard.set(genIndex, forKey: "genderKey")
        UserDefaults.standard.synchronize()
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

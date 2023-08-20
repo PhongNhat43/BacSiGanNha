@@ -8,12 +8,11 @@
 import UIKit
 
 class NewsTableViewCell: UITableViewCell {
-    static let indentifier = "NewsTableViewCell"
     
+    static let indentifier = "NewsTableViewCell"
     static func nib() -> UINib {
        return UINib(nibName: "NewsTableViewCell", bundle: nil)
     }
-    
     var bookmarkTapped: (() -> Void)?
     
     @IBOutlet private weak var newsMainView: UIView!
@@ -59,7 +58,6 @@ class NewsTableViewCell: UITableViewCell {
                dateFormatter.dateFormat = "d 'tháng' M, yyyy"
                newsCreateNews.text = dateFormatter.string(from: date)
         }
-     
         selectionStyle = .none
     }
     

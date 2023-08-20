@@ -30,7 +30,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zuA-6Z-jdc">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="414" id="XKi-aa-0eE"/>
+                                    <constraint firstAttribute="width" secondItem="zuA-6Z-jdc" secondAttribute="height" multiplier="1:1" id="qMt-ct-7TA"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bác sĩ sẵn lòng chăm sóc khi bạn cần" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ets-6o-4nC">
@@ -73,6 +73,7 @@
                 <outlet property="introDescriptionLabel" destination="Mc6-0z-7P5" id="djm-Z7-zjb"/>
                 <outlet property="introImageView" destination="zuA-6Z-jdc" id="qiZ-P7-4qk"/>
                 <outlet property="introTitleLabel" destination="ets-6o-4nC" id="NXx-vc-FDZ"/>
+                <outlet property="introTitleLabelTopConstraint" destination="pDM-b7-Ljv" id="KFD-h4-kpx"/>
             </connections>
             <point key="canvasLocation" x="145.79439252336448" y="38.876889848812098"/>
         </collectionViewCell>

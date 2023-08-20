@@ -10,7 +10,6 @@ import UIKit
 class DoctorTableViewCell: UITableViewCell {
     
     static let indentifier = "DoctorTableViewCell"
-    
     static func nib() -> UINib {
        return UINib(nibName: "DoctorTableViewCell", bundle: nil)
     }
@@ -36,8 +35,6 @@ class DoctorTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configure(data: DoctorList) {
@@ -63,17 +60,11 @@ class DoctorTableViewCell: UITableViewCell {
         
         doctorNameLabel.text = "BS. \(data.fullName)"
         doctorMajorLabel.text = "Chuyên ngành \(data.majorsName)"
-        
         let rateText = NSAttributedString(string: "\(data.ratioStar) ", attributes: rateAttributes)
         let numberOfStarsText = NSAttributedString(string: "(\(data.numberOfStars) Đánh giá)", attributes: numberOfStarsAttributes)
         let combinedText = NSMutableAttributedString()
         combinedText.append(rateText)
         combinedText.append(numberOfStarsText)
-        
         doctorRateLabel.attributedText = combinedText
     }
-
-
-    
-    
 }

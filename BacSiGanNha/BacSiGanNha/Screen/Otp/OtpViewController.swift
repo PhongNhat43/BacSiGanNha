@@ -76,15 +76,13 @@ class OtpViewController: UIViewController {
            wrongLabel.textColor = UIColor(red: 0.988, green: 0.141, blue: 0.208, alpha: 1)
            wrongLabel.font = UIFont(name: "NunitoSans-Regular", size: 12)
            wrongLabel.isHidden = true
-
            view.addSubview(wrongLabel)
-
            NSLayoutConstraint.activate([
                wrongLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 150),
                wrongLabel.topAnchor.constraint(equalTo: textFieldsOutletCollection[0].bottomAnchor, constant: 16),
                wrongLabel.heightAnchor.constraint(equalToConstant: 20)
            ])
-       }
+    }
     
     func setupNavigation() {
         self.navigationItem.title = "Xác minh số điện thoại"
@@ -100,10 +98,10 @@ class OtpViewController: UIViewController {
          textField.delegate = self
         }
         for i in 0..<textFieldsOutletCollection.count {
-               let textField = textFieldsOutletCollection[i] as! OTPTextField
-               textField.previousTextField = i > 0 ? textFieldsOutletCollection[i - 1] as? OTPTextField : nil
-               textField.nextTextField = i < textFieldsOutletCollection.count - 1 ? textFieldsOutletCollection[i + 1] as? OTPTextField : nil
-           }
+            let textField = textFieldsOutletCollection[i] as! OTPTextField
+            textField.previousTextField = i > 0 ? textFieldsOutletCollection[i - 1] as? OTPTextField : nil
+            textField.nextTextField = i < textFieldsOutletCollection.count - 1 ? textFieldsOutletCollection[i + 1] as? OTPTextField : nil
+        }
     }
     
     func setupUI() {
@@ -118,26 +116,25 @@ class OtpViewController: UIViewController {
         }
         
         if let data = user {
-               let paragraphStyle = NSMutableParagraphStyle()
-               paragraphStyle.lineHeightMultiple = 1.05
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineHeightMultiple = 1.05
+            let phoneNumberAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont(name: "NunitoSans-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .bold),
+            ]
                
-               let phoneNumberAttributes: [NSAttributedString.Key: Any] = [
-                   .font: UIFont(name: "NunitoSans-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14, weight: .bold),
-               ]
-               
-               let instructionText = "Vui lòng nhập mã gồm 6 chữ số đã được gửi đến bạn vào số điện thoại +84 \(data.phoneNumber.toPhoneNumber())"
-               let attributedInstructionText = NSMutableAttributedString(string: instructionText, attributes: [
-                   .foregroundColor: UIColor(red: 0.212, green: 0.239, blue: 0.306, alpha: 1),
-                   .font: UIFont(name: "NunitoSans-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14),
-                   .paragraphStyle: paragraphStyle,
-               ])
-               
-               attributedInstructionText.addAttributes(phoneNumberAttributes, range: (instructionText as NSString).range(of: "+84 \(data.phoneNumber.toPhoneNumber())"))
-               instructionLabel.textAlignment = .center
-               instructionLabel.numberOfLines = 0
-               instructionLabel.lineBreakMode = .byWordWrapping
-               instructionLabel.attributedText = attributedInstructionText
-           }
+            let instructionText = "Vui lòng nhập mã gồm 6 chữ số đã được gửi đến bạn vào số điện thoại +84 \(data.phoneNumber.toPhoneNumber())"
+            let attributedInstructionText = NSMutableAttributedString(string: instructionText, attributes: [
+                .foregroundColor: UIColor(red: 0.212, green: 0.239, blue: 0.306, alpha: 1),
+                .font: UIFont(name: "NunitoSans-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14),
+                .paragraphStyle: paragraphStyle,
+            ])
+            
+            attributedInstructionText.addAttributes(phoneNumberAttributes, range: (instructionText as NSString).range(of: "+84 \(data.phoneNumber.toPhoneNumber())"))
+            instructionLabel.textAlignment = .center
+            instructionLabel.numberOfLines = 0
+            instructionLabel.lineBreakMode = .byWordWrapping
+            instructionLabel.attributedText = attributedInstructionText
+        }
         resendLabel.layer.cornerRadius = 18
         resendLabel.layer.borderWidth = 1
         resendLabel.layer.borderColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1).cgColor
@@ -147,7 +144,6 @@ class OtpViewController: UIViewController {
     
     func textFieldAction() {
         let otpCode = textFieldsOutletCollection.map { $0.text ?? "" }.joined()
-        
         if otpCode.count != 6 {
             nextBtn.isEnabled = false
             nextImageView.alpha = 0.5
@@ -156,14 +152,7 @@ class OtpViewController: UIViewController {
             nextImageView.transform = .identity
             return
         }
-        
-        if otpCode == "111111" {
-            nextBtn.isEnabled = true
-            nextImageView.alpha = 1
-            wrongLabel.isHidden = true
-            resendView.transform = .identity
-            nextBtnView.transform = .identity
-        } else {
+        if otpCode != "111111" {
             nextBtn.isEnabled = false
             nextImageView.alpha = 0.5
             wrongLabel.isHidden = false
@@ -171,7 +160,13 @@ class OtpViewController: UIViewController {
                 self.resendView.transform = CGAffineTransform(translationX: 0, y: 40)
                 self.nextBtnView.transform = CGAffineTransform(translationX: 0, y: 300)
             }
+            return
         }
+        nextBtn.isEnabled = true
+        nextImageView.alpha = 1
+        wrongLabel.isHidden = true
+        resendView.transform = .identity
+        nextBtnView.transform = .identity
     }
 
     @IBAction func didChanged(_ textField: UITextField) {
@@ -187,7 +182,6 @@ class OtpViewController: UIViewController {
         self.textFieldAction()
     }
     
-    
     @IBAction func didBeginEditing(_ sender: UITextField) {
         for textField in textFieldsOutletCollection {
                if textField == sender {
@@ -201,6 +195,14 @@ class OtpViewController: UIViewController {
     }
     
     @IBAction func didTapReSendBtn(_ sender: Any) {
+        UIView.animate(withDuration: 0.2) {
+            self.resendLabel.alpha = 1
+        } completion: { _ in
+            UIView.animate(withDuration: 0.2) {
+                self.resendLabel.alpha = 0.5
+            }
+            self.startTimer()
+        }
         resendLabel.alpha = 0.2
         reSendBtn.isEnabled = false
         resendLabel.text = "Gửi lại mã sau \(countDownTimer)s"
@@ -216,7 +218,6 @@ class OtpViewController: UIViewController {
                 self.reSendBtn.isEnabled = true
                 return
             }
-            
             if self.countDownTimer != 0 {
                 self.resendLabel.text = "Gửi lại mã sau \(self.countDownTimer)s"
                 return
@@ -228,8 +229,6 @@ class OtpViewController: UIViewController {
         let vc = HomePageViewController(nibName: "HomePageViewController", bundle: nil)
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-
 }
 
 extension OtpViewController: UITextFieldDelegate {

@@ -38,7 +38,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vMY-5N-xut">
                     <rect key="frame" x="40" y="125" width="335" height="42"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-Ro-D6h" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-Ro-D6h" customClass="NumericOTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -47,7 +47,7 @@
                                 <action selector="didChanged:" destination="-1" eventType="editingChanged" id="NFu-as-rBl"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCc-3T-8gY" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pCc-3T-8gY" customClass="NumericOTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="58.5" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -56,7 +56,7 @@
                                 <action selector="didChanged:" destination="-1" eventType="editingChanged" id="lv1-e4-a4S"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6S-S0-PMs" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6S-S0-PMs" customClass="NumericOTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="117" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -65,7 +65,7 @@
                                 <action selector="didChanged:" destination="-1" eventType="editingChanged" id="lvc-oU-mKx"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFq-Zo-lZg" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFq-Zo-lZg" customClass="NumericOTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="175.5" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -74,7 +74,7 @@
                                 <action selector="didChanged:" destination="-1" eventType="editingChanged" id="xY3-Kv-laG"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUB-qq-cec" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dUB-qq-cec" customClass="NumericOTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="234" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -83,7 +83,7 @@
                                 <action selector="didChanged:" destination="-1" eventType="editingChanged" id="cf4-Q1-NlP"/>
                             </connections>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9n-83-Bfu" customClass="OTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9n-83-Bfu" customClass="NumericOTPTextField" customModule="BacSiGanNha" customModuleProvider="target">
                             <rect key="frame" x="292.5" y="0.0" width="42.5" height="42"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>

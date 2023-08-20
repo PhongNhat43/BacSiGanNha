@@ -6,34 +6,6 @@ protocol InfoUserTableViewCellDelegate: AnyObject {
 }
 
 class InfoUserTableViewCell: UITableViewCell {
-    
-//    var infoText: String? {
-//           get {
-//               return infoTextField.text
-//           }
-//           set {
-//               infoTextField.text = newValue
-//           }
-//       }
-//
-//       var wrongLabelText: String? {
-//           get {
-//               return wrongLabel.text
-//           }
-//           set {
-//               wrongLabel.text = newValue
-//           }
-//       }
-//
-//       var wrongLabelTextColor: UIColor? {
-//           get {
-//               return wrongLabel.textColor
-//           }
-//           set {
-//               wrongLabel.textColor = newValue
-//           }
-//       }
-//
     var indexPath: IndexPath?
     weak var delegate: InfoUserTableViewCellDelegate?
     var isEditingTextField: Bool = false
@@ -53,7 +25,8 @@ class InfoUserTableViewCell: UITableViewCell {
         infoTextField.inputView = nil
     }
     
-    private func updateTitleLabelColor() {
+    //cập nhật màu sắc cho label
+     func updateTitleLabelColor() {
         if isEditingTextField {
             infoTitleLabel.textColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
             lineLabel.backgroundColor = UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1)
@@ -62,7 +35,7 @@ class InfoUserTableViewCell: UITableViewCell {
             lineLabel.backgroundColor = UIColor(red: 0.588, green: 0.608, blue: 0.671, alpha: 1)
         }
     }
-
+    // hiển thị datePicker
     func showDatePicker() {
         let datePicker = UIDatePicker()
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
@@ -78,46 +51,46 @@ class InfoUserTableViewCell: UITableViewCell {
           infoTextField.becomeFirstResponder()
     }
     
+    // delegate textfield
     @IBAction func textFieldidChanged(_ textField: UITextField) {
             delegate?.infoTextFieldDidChange(self)
             saveCellData()
     }
     
+    // dữ liệu từ text field vào UserDefaults
     func saveCellData() {
-           let section = infoTextField.tag
-           let text = infoTextField.text ?? ""
-           delegate?.saveData(text: text, forSection: section)
+        let section = infoTextField.tag
+        if let text = infoTextField.text, !text.isEmpty {
+            delegate?.saveData(text: text, forSection: section)
+        }
     }
-    
+
+    // trả về text field
     func getInfoTextFieldText() -> String? {
         return infoTextField.text
     }
-
-    
+    // cập nhật text field
     func updateInfoText(_ text: String) {
         infoTextField.text = text
     }
-
+    // cập nhật wrongLabel
     func updateWrongLabelText(_ text: String) {
         wrongLabel.text = text
     }
-    
+    // kiểm tra xem text field có rỗng không
     func isInfoTextFieldEmpty() -> Bool {
         return infoTextField.text?.isEmpty ?? true
     }
 
-
     func updateWrongLabelTextColor(_ color: UIColor) {
         wrongLabel.textColor = color
     }
-    
+   
     func isTextValid(_ text: String) -> Bool {
         let characterSet = CharacterSet.letters
         return text.rangeOfCharacter(from: characterSet.inverted) == nil
     }
 
-
-    
     @objc func dateChange(datePicker: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -168,7 +141,8 @@ class InfoUserTableViewCell: UITableViewCell {
     }
 
 
-    func configure(with data: (title: String, placeholder: String), isDropDownButtonHidden: Bool,isUserInteractionEnabled : Bool ,selectionStyle: UITableViewCell.SelectionStyle ,delegate: UITextFieldDelegate? = nil, section: Int) {
+    func configure(with data: (title: String, placeholder: String), isDropDownButtonHidden: Bool,isUserInteractionEnabled : Bool ,selectionStyle: UITableViewCell.SelectionStyle ,delegate: UITextFieldDelegate? = nil, section: Int, indexPath: IndexPath) {
+        self.indexPath = indexPath
         infoTitleLabel.text = data.title
         infoTextField.placeholder = data.placeholder
         infoTextField.delegate = delegate
@@ -197,5 +171,4 @@ extension InfoUserTableViewCell: UITextFieldDelegate {
         isEditingTextField = false
          updateTitleLabelColor()
     }
-
 }

@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 tháng 6, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEk-VU-3NZ">
-                                <rect key="frame" x="162" y="39.5" width="187" height="16.5"/>
+                                <rect key="frame" x="162" y="40.5" width="187" height="16.5"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                             <constraint firstAttribute="trailing" secondItem="gEk-VU-3NZ" secondAttribute="trailing" id="HWU-sX-4rs"/>
                             <constraint firstAttribute="bottom" secondItem="zly-lh-Omx" secondAttribute="bottom" id="Msi-3m-ZwJ"/>
                             <constraint firstAttribute="trailing" secondItem="Jsr-LW-r6w" secondAttribute="trailing" id="apO-Wl-Fae"/>
-                            <constraint firstItem="gEk-VU-3NZ" firstAttribute="top" secondItem="HlD-Me-D8n" secondAttribute="bottom" constant="4" id="baW-m1-WZk"/>
+                            <constraint firstItem="gEk-VU-3NZ" firstAttribute="top" secondItem="HlD-Me-D8n" secondAttribute="bottom" constant="5" id="baW-m1-WZk"/>
                             <constraint firstAttribute="trailing" secondItem="zly-lh-Omx" secondAttribute="trailing" id="cgo-d4-KWu"/>
                             <constraint firstAttribute="bottom" secondItem="Jsr-LW-r6w" secondAttribute="bottom" id="gnX-P4-pnP"/>
                             <constraint firstAttribute="trailing" secondItem="HlD-Me-D8n" secondAttribute="trailing" id="nT7-Y8-zVP"/>

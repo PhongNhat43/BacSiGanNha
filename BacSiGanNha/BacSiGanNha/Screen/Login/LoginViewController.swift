@@ -29,8 +29,18 @@ class LoginViewController: UIViewController {
     }
     
     func setupNavigation() {
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .done , target: self, action: #selector(backButtonTapped))]
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "en"), style: .plain, target: self, action: nil)
+        // Thiết lập nút bên trái
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backBarButton
+        
+        // Thiết lập nút bên phải
+        let rightButton = UIButton(type: .custom)
+        rightButton.setImage(UIImage(named: "en"), for: .normal)
+        let rightBarButton = UIBarButtonItem(customView: rightButton)
+        self.navigationItem.rightBarButtonItem = rightBarButton
     }
 
     @objc func backButtonTapped() {
@@ -59,16 +69,16 @@ class LoginViewController: UIViewController {
     @IBAction func textFieldDidChange(_ textField: UITextField) {
         if let text = textField.text {
             if text.isValidPhoneNumber() {
-                   nextBtn.isEnabled = true
-                   nexBtnImageView.alpha = 1
-                   return
-               }
+                nextBtn.isEnabled = true
+                nexBtnImageView.alpha = 1
+                return
+            }
             if !text.isValidPhoneNumber() {
-                   nextBtn.isEnabled = false
-                   nexBtnImageView.alpha = 0.5
-                   return
-               }
-           }
+                nextBtn.isEnabled = false
+                nexBtnImageView.alpha = 0.5
+                return
+            }
+        }
     }
     
     @IBAction func didTapNextBtn(_ sender: Any) {
@@ -80,19 +90,18 @@ class LoginViewController: UIViewController {
     }
 }
 
-
 extension LoginViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         let maxLength = currentText.first == "0" ? 11 : 10
-        
+
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        
+
         if updatedText.count > maxLength {
             return false
         }
-        
+
         if updatedText.count == maxLength {
             if updatedText.isValidPhoneNumber() {
                 nextBtn.isEnabled = true
@@ -105,7 +114,6 @@ extension LoginViewController: UITextFieldDelegate {
             nextBtn.isEnabled = false
             nexBtnImageView.alpha = 0.5
         }
-        
         return true
     }
 }
@@ -118,3 +126,4 @@ extension String {
         return result
     }
 }
+

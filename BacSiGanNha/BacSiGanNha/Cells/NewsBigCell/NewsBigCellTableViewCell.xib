@@ -44,7 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 tháng 6, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noo-J2-uvu">
-                                        <rect key="frame" x="0.0" y="59" width="94" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="60" width="94" height="16.5"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="12"/>
                                         <color key="textColor" red="0.49019607843137253" green="0.51764705882352935" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="trailing" secondItem="YVL-Ur-gLA" secondAttribute="trailing" id="5Wd-Qc-vye"/>
                                     <constraint firstItem="YVL-Ur-gLA" firstAttribute="leading" secondItem="gqx-ag-Pwf" secondAttribute="leading" id="OSI-Ee-xBR"/>
                                     <constraint firstItem="YVL-Ur-gLA" firstAttribute="top" secondItem="gqx-ag-Pwf" secondAttribute="top" id="Z92-EU-FAX"/>
-                                    <constraint firstItem="noo-J2-uvu" firstAttribute="top" secondItem="YVL-Ur-gLA" secondAttribute="bottom" constant="4" id="nsN-nK-cda"/>
+                                    <constraint firstItem="noo-J2-uvu" firstAttribute="top" secondItem="YVL-Ur-gLA" secondAttribute="bottom" constant="5" id="nsN-nK-cda"/>
                                     <constraint firstItem="noo-J2-uvu" firstAttribute="leading" secondItem="gqx-ag-Pwf" secondAttribute="leading" id="oGO-67-IlV"/>
                                 </constraints>
                             </view>

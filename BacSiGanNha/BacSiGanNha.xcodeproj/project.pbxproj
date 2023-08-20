@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B37602221D35A05D9F200F81 /* Pods_BacSiGanNha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F999C32F34F8E83A11A58DB /* Pods_BacSiGanNha.framework */; };
+		E7135EF42A92161200571C3F /* NumericTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7135EF32A92161200571C3F /* NumericTextField.swift */; };
 		E71A6FF42A8B2BBE00EE6305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A6FF22A8B2BBD00EE6305 /* AppDelegate.swift */; };
 		E71A6FF52A8B2BBE00EE6305 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A6FF32A8B2BBD00EE6305 /* SceneDelegate.swift */; };
 		E71A6FF82A8B2C5200EE6305 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71A6FF62A8B2C5000EE6305 /* User.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		6F999C32F34F8E83A11A58DB /* Pods_BacSiGanNha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BacSiGanNha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7202C4FF2F7D66B127CF54E /* Pods-BacSiGanNha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiGanNha.debug.xcconfig"; path = "Target Support Files/Pods-BacSiGanNha/Pods-BacSiGanNha.debug.xcconfig"; sourceTree = "<group>"; };
+		E7135EF32A92161200571C3F /* NumericTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTextField.swift; sourceTree = "<group>"; };
 		E71A6FF22A8B2BBD00EE6305 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E71A6FF32A8B2BBD00EE6305 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E71A6FF62A8B2C5000EE6305 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				E71A6FFF2A8B2CAF00EE6305 /* OtpViewController.swift */,
 				E71A6FFE2A8B2CAF00EE6305 /* OtpViewController.xib */,
 				E71A70002A8B2CAF00EE6305 /* OTPTextField.swift */,
+				E7135EF32A92161200571C3F /* NumericTextField.swift */,
 			);
 			path = Otp;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				E71A70042A8B2CAF00EE6305 /* OtpViewController.swift in Sources */,
 				E73057DF2A83917C00A59E09 /* NewsDetailViewController.swift in Sources */,
 				E71A70052A8B2CAF00EE6305 /* OTPTextField.swift in Sources */,
+				E7135EF42A92161200571C3F /* NumericTextField.swift in Sources */,
 				E71A70022A8B2CAF00EE6305 /* LoginViewController.swift in Sources */,
 				E76AD56E2A823E280010485F /* APICaller.swift in Sources */,
 				E73473C22A89C2F20076624F /* InfoViewController.swift in Sources */,

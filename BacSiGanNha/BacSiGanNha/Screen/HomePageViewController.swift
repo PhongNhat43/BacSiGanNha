@@ -231,17 +231,19 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             hegihtofPromotion.constant = totalHeight + 5
             print("promotionCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
-
+            
         case doctorCollectionView:
             let cellWidth: CGFloat = 121
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DoctorCollectionViewCell", for: indexPath) as? DoctorCollectionViewCell else {
-                fatalError("Failed to dequeue NewsCollectionViewCell")
-            }
-            let totalHeight = cell.calculateCellHeight()
+            let nameWidth: CGFloat = 97
+            let titleWidth: CGFloat = 97
+            let rateWidth: CGFloat = 70
+            let totalHeight = UILabel.calculateDoctorCellHeight(doctors: doctorArr, nameFont: UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13), titleFont: UIFont(name: "NunitoSans-Regular", size: 12) ?? UIFont.systemFont(ofSize: 12), rateFont: UIFont(name: "NunitoSans-Regular", size: 11) ?? UIFont.systemFont(ofSize: 11), nameWidth: nameWidth, titleWidth: titleWidth, rateWidth: rateWidth)
             heightOfDoctor.constant = totalHeight + 5
             print("doctorCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
-        default: return CGSize(width: 0, height: 0)
+
+
+        default: return CGSize(width: 250, height: 250)
         }
     }
 

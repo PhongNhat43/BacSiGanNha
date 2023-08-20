@@ -9,14 +9,12 @@ import UIKit
 
 class PromotionCollectionViewCell: UICollectionViewCell {
     
+    var cornerRadius: CGFloat = 8.0
     static let indentifier = "PromotionCollectionViewCell"
-    
     static func nib() -> UINib {
        return UINib(nibName: "PromotionCollectionViewCell", bundle: nil)
     }
     
-    var cornerRadius: CGFloat = 8.0
-
     @IBOutlet private weak var promotionMainView: UIView!
     @IBOutlet private weak var promotionImageView: UIImageView!
     @IBOutlet private weak var promotionTitleLabel: UILabel!
@@ -48,7 +46,6 @@ class PromotionCollectionViewCell: UICollectionViewCell {
            ).cgPath
     }
 
-    
     func configure(dataPromotion: PromotionList) {
         promotionTitleLabel.text = dataPromotion.name
         promotionCreateAt.text = dataPromotion.createdAt
