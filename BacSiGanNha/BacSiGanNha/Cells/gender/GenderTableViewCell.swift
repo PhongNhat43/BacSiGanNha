@@ -30,11 +30,25 @@ class GenderTableViewCell: UITableViewCell {
        UserDefaults.standard.set(genIndex, forKey: "genderKey")
        UserDefaults.standard.synchronize()
     }
+    
+    func setupUI() {
+        generoSegmentControl.setImage(UIImage.textEmbededImage(image: UIImage(named: "icon")!, string: "Nam", color: .black), forSegmentAt: 0)
+        generoSegmentControl.setImage(UIImage.textEmbededImage(image: UIImage(named: "male icon")!, string: "Nữ", color: .black), forSegmentAt: 1)
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(red: 0.173, green: 0.525, blue: 0.404, alpha: 1),
+            .font: UIFont(name: "NunitoSans-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        ]
+        
+        generoSegmentControl.setTitleTextAttributes(attributes, for: .selected)
+    }
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -47,7 +61,6 @@ class GenderTableViewCell: UITableViewCell {
   
     
 }
-
 
 
 

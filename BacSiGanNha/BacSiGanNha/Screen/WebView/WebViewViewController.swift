@@ -26,16 +26,26 @@ class WebViewViewController: UIViewController {
     }
     
     func setupWebView() {
-           webView.navigationDelegate = self
-           activityIndicator = UIActivityIndicatorView(style: .large)
-           activityIndicator?.center = view.center
-           view.addSubview(activityIndicator!)
-       }
-
+        webView.navigationDelegate = self
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator?.center = view.center
+        view.addSubview(activityIndicator!)
+    }
     
     func setupNavigation() {
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "share"), style: .plain, target: self, action: #selector(shareButtonTapped))
+        // Thiết lập nút bên trái
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backBarButton
+        
+        // Thiết lập nút bên phải
+        let rightButton = UIButton(type: .custom)
+        rightButton.setImage(UIImage(named: "share"), for: .normal)
+        rightButton.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
+        let rightBarButton = UIBarButtonItem(customView: rightButton)
+        self.navigationItem.rightBarButtonItem = rightBarButton
     }
 
     @objc func backButtonTapped() {
@@ -52,15 +62,14 @@ class WebViewViewController: UIViewController {
 
 extension WebViewViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-           activityIndicator?.startAnimating()
-       }
+         activityIndicator?.startAnimating()
+    }
        
-       func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
            activityIndicator?.stopAnimating()
-       }
+    }
        
-       func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
            activityIndicator?.stopAnimating()
-       }
-
+    }
 }

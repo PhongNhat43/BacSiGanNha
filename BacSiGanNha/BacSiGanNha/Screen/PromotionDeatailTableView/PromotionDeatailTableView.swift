@@ -49,9 +49,14 @@ class PromotionDeatailTableView: UIViewController {
                         return paragraphStyle
                     }()
                 ]
-                navigationBar.titleTextAttributes = titleTextAttributes
+        navigationBar.titleTextAttributes = titleTextAttributes
         }
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        // Thiết lập nút bên trái
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backBarButton
         if let navigationBar = self.navigationController?.navigationBar {
             let borderView = UIView(frame: CGRect(x: 0, y: navigationBar.frame.height - 1, width: navigationBar.frame.width, height: 1))
             borderView.backgroundColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1)
@@ -59,7 +64,6 @@ class PromotionDeatailTableView: UIViewController {
         }
     }
 
-    
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
@@ -87,14 +91,19 @@ extension PromotionDeatailTableView: UITableViewDataSource {
 extension PromotionDeatailTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let data = promotionArr[indexPath.row]
-        let urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-        if let url = URL(string: urlString) {
-            let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
-            webViewController.title =  "Chi tiết khuyến mại"
-            navigationController?.pushViewController(webViewController, animated: true)
-        }
-
+        let dataPromotion = promotionArr[indexPath.row]
+        let urlString = dataPromotion.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+        guard let url = URL(string: urlString) else { return }
+        let webViewVC = WebViewViewController()
+        webViewVC.url = url
+        let titleLabel = UILabel()
+        titleLabel.text =  "Chi tiết Khuyến mãi"
+        titleLabel.font = UIFont(name: "NunitoSans-Bold", size: 18)
+        titleLabel.textColor = .black
+        titleLabel.sizeToFit()
+        webViewVC.navigationItem.titleView = titleLabel
+        navigationController?.pushViewController(webViewVC, animated: true)
+        navigationController?.isNavigationBarHidden = false
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

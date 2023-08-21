@@ -33,8 +33,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ahf-xP-YXu">
                                 <rect key="frame" x="0.0" y="26" width="311" height="36"/>
                                 <segments>
-                                    <segment title="Nam"/>
-                                    <segment title="Nữ"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>

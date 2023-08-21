@@ -40,7 +40,7 @@ class NewsTableViewCell: UITableViewCell {
     @IBAction func bookMarkButtonTapped(_ sender: Any) {
         bookmarkTapped?()
         bookmarkTapped = {
-              self.bookMarkImageView.isHighlighted = !self.bookMarkImageView.isHighlighted
+            self.bookMarkImageView.isHighlighted = !self.bookMarkImageView.isHighlighted
         }
     }
     

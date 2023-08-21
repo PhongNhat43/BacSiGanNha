@@ -59,7 +59,7 @@ class DoctorTableViewCell: UITableViewCell {
         ]
         
         doctorNameLabel.text = "BS. \(data.fullName)"
-        doctorMajorLabel.text = "Chuyên ngành \(data.majorsName)"
+        doctorMajorLabel.text = "Chuyên ngành: \(data.majorsName)"
         let rateText = NSAttributedString(string: "\(data.ratioStar) ", attributes: rateAttributes)
         let numberOfStarsText = NSAttributedString(string: "(\(data.numberOfStars) Đánh giá)", attributes: numberOfStarsAttributes)
         let combinedText = NSMutableAttributedString()

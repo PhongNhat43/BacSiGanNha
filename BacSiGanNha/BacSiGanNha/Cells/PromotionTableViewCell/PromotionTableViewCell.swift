@@ -9,7 +9,6 @@ import UIKit
 class PromotionTableViewCell: UITableViewCell {
     
     static let indentifier = "PromotionTableViewCell"
-    
     static func nib() -> UINib {
        return UINib(nibName: "PromotionTableViewCell", bundle: nil)
     }

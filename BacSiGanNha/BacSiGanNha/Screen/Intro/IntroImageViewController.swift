@@ -51,7 +51,6 @@ class IntroImageViewController: UIViewController {
         }
     }
 
-    
     func setupUI() {
         navigationController?.navigationBar.isHidden = true
         // Thiết lập thuộc tính cho nút loginBtn

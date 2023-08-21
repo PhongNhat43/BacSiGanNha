@@ -110,7 +110,6 @@ class HomePageViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
 
-
     @IBAction func didTapNextPromotionBtn(_ sender: Any) {
         let vc = PromotionDeatailTableView(nibName: "PromotionDeatailTableView", bundle: nil)
         navigationController?.pushViewController(vc, animated: true)
@@ -147,10 +146,14 @@ extension HomePageViewController: UICollectionViewDataSource {
                 let dataNews = newsArr[indexPath.row]
                 let urlString = dataNews.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
                 guard let url = URL(string: urlString) else { return }
-                
                 let webViewVC = WebViewViewController()
                 webViewVC.url = url
-                webViewVC.title = "Chi tiết tin tức"
+                let titleLabel = UILabel()
+                titleLabel.text = "Chi tiết tin tức"
+                titleLabel.font = UIFont(name: "NunitoSans-Bold", size: 18)
+                titleLabel.textColor = .black
+                titleLabel.sizeToFit()
+                webViewVC.navigationItem.titleView = titleLabel
                 navigationController?.pushViewController(webViewVC, animated: true)
                 navigationController?.isNavigationBarHidden = false
                 
@@ -159,13 +162,16 @@ extension HomePageViewController: UICollectionViewDataSource {
                 let dataPromotion = promotionArr[indexPath.row]
                 let urlString = dataPromotion.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
                 guard let url = URL(string: urlString) else { return }
-                
                 let webViewVC = WebViewViewController()
                 webViewVC.url = url
-                webViewVC.title = "Chi tiết Khuyến mại"
+                let titleLabel = UILabel()
+                titleLabel.text =  "Chi tiết Khuyến mãi"
+                titleLabel.font = UIFont(name: "NunitoSans-Bold", size: 18)
+                titleLabel.textColor = .black
+                titleLabel.sizeToFit()
+                webViewVC.navigationItem.titleView = titleLabel
                 navigationController?.pushViewController(webViewVC, animated: true)
                 navigationController?.isNavigationBarHidden = false
-                
             default:
                 break
             }
@@ -202,9 +208,8 @@ extension HomePageViewController: UICollectionViewDataSource {
             let dataDoctor = doctorArr[indexPath.item]
             cell.configure(dataDoctor: dataDoctor)
             return cell
-
         default: return UICollectionViewCell()
-     }
+      }
     }
 }
 
@@ -218,8 +223,7 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             let titleWidth: CGFloat = 234
             let hotSaleWidth: CGFloat = 65
             let totalHeight = UILabel.calculateNewsCellHeight(articles: newsArr, titleFont: UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15), hotSaleText: "Ưu đãi hot", hotSaleFont: UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13), titleWidth: titleWidth, hotSaleWidth: hotSaleWidth)
-
-            heightOfNewsConstraint.constant = totalHeight + 5
+            heightOfNewsConstraint.constant = totalHeight + 10
             print("newsCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
 
@@ -228,7 +232,7 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             let titleWidth: CGFloat = 234
             let hotSaleWidth: CGFloat = 65
             let totalHeight = UILabel.calculatePromotionCellHeight(promotion: promotionArr, titleFont: UIFont(name: "NunitoSans-Bold", size: 15) ?? UIFont.boldSystemFont(ofSize: 15), hotSaleText: "Ưu đãi hot", hotSaleFont: UIFont(name: "NunitoSans-Bold", size: 13) ?? UIFont.boldSystemFont(ofSize: 13), titleWidth: titleWidth, hotSaleWidth: hotSaleWidth)
-            hegihtofPromotion.constant = totalHeight + 5
+            hegihtofPromotion.constant = totalHeight + 10
             print("promotionCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
             
@@ -242,17 +246,13 @@ extension HomePageViewController: UICollectionViewDelegateFlowLayout {
             print("doctorCollectionView Cell - Width: \(cellWidth), Height: \(totalHeight)")
             return CGSize(width: cellWidth, height: totalHeight)
 
-
         default: return CGSize(width: 250, height: 250)
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 12
-       
     }
-
-
 }
 
 

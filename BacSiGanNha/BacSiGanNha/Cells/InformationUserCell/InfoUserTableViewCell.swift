@@ -53,14 +53,17 @@ class InfoUserTableViewCell: UITableViewCell {
     
     // delegate textfield
     @IBAction func textFieldidChanged(_ textField: UITextField) {
-            delegate?.infoTextFieldDidChange(self)
-            saveCellData()
+        delegate?.infoTextFieldDidChange(self)
+        saveCellData()
     }
     
     // dữ liệu từ text field vào UserDefaults
     func saveCellData() {
         let section = infoTextField.tag
         if let text = infoTextField.text, !text.isEmpty {
+            if (section == 0 || section == 1) && !isTextValid(text) {
+                return
+            }
             delegate?.saveData(text: text, forSection: section)
         }
     }
@@ -85,7 +88,7 @@ class InfoUserTableViewCell: UITableViewCell {
     func updateWrongLabelTextColor(_ color: UIColor) {
         wrongLabel.textColor = color
     }
-   
+    // kiểm tra xem có có ký tự đặc biệt không
     func isTextValid(_ text: String) -> Bool {
         let characterSet = CharacterSet.letters
         return text.rangeOfCharacter(from: characterSet.inverted) == nil

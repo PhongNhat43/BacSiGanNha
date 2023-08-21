@@ -56,7 +56,12 @@ class NewsDetailViewController: UIViewController {
                 ]
                 navigationBar.titleTextAttributes = titleTextAttributes
         }
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        // Thiết lập nút bên trái
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backBarButton
         
         if let navigationBar = self.navigationController?.navigationBar {
             let borderView = UIView(frame: CGRect(x: 0, y: navigationBar.frame.height - 1, width: navigationBar.frame.width, height: 1))
@@ -99,14 +104,18 @@ extension NewsDetailViewController: UITableViewDataSource {
 extension NewsDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let data = newsArr[indexPath.row]
-        let urlString = data.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
-        if let url = URL(string: urlString) {
-            let webViewController = WebViewViewController(nibName: "WebViewViewController", bundle: nil)
-            webViewController.title =  "Chi tiết tin tức"
-            navigationController?.pushViewController(webViewController, animated: true)
-        }
-
+        let dataNews = newsArr[indexPath.row]
+        let urlString = dataNews.link.replacingOccurrences(of: "bvsoft.vn", with: "jiohealth.com")
+        guard let url = URL(string: urlString) else { return }
+        let webViewVC = WebViewViewController()
+        webViewVC.url = url
+        let titleLabel = UILabel()
+        titleLabel.text =  "Chi tiết Khuyến mãi"
+        titleLabel.font = UIFont(name: "NunitoSans-Bold", size: 18)
+        titleLabel.textColor = .black
+        titleLabel.sizeToFit()
+        webViewVC.navigationItem.titleView = titleLabel
+        navigationController?.pushViewController(webViewVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

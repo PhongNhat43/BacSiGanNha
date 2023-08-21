@@ -4,7 +4,6 @@
 //
 //  Created by devsenior on 14/08/2023.
 //
-
 import UIKit
 import IQKeyboardManagerSwift
 class InfoViewController: UIViewController {
@@ -52,7 +51,24 @@ class InfoViewController: UIViewController {
 
     func setupNavigation() {
         self.navigationItem.title = "Thông tin cá nhân"
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        if let navigationBar = self.navigationController?.navigationBar {
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                    .foregroundColor: UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1),
+                    .font: UIFont(name: "NunitoSans-Bold", size: 18) ?? UIFont.boldSystemFont(ofSize: 18),
+                    .paragraphStyle: { () -> NSMutableParagraphStyle in
+                        let paragraphStyle = NSMutableParagraphStyle()
+                        paragraphStyle.lineHeightMultiple = 0.81
+                        return paragraphStyle
+                    }()
+                ]
+        navigationBar.titleTextAttributes = titleTextAttributes
+        }
+        // Thiết lập nút bên trái
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backBarButton
     }
 
     @objc func backButtonTapped() {
@@ -67,62 +83,67 @@ class InfoViewController: UIViewController {
     }
   
     @IBAction func didTapDoneBtn(_ sender: Any) {
-        // Check if any field is empty
-        for section in 0...2 {
-            let indexPath = IndexPath(row: 0, section: section)
-            if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell,
-               let text = cell.getInfoTextFieldText() {
-                if cell.isInfoTextFieldEmpty() {
-                    cell.updateWrongLabelText("Không để trống")
-                    cell.updateWrongLabelTextColor(UIColor.red)
-                    nextBtnImageView.alpha = 0.5
-                    infoNextBtn.isEnabled = false
-                    return
-                }
-                if !isTextValid(text) {
-                    cell.updateWrongLabelText("Vui lòng đúng thông tin")
-                    cell.updateWrongLabelTextColor(UIColor.red)
-                    nextBtnImageView.alpha = 0.5
-                    infoNextBtn.isEnabled = false
-                    return
-                }
-            }
-        }
-
-        // Check if email is valid
+        // Check xem có textfield nào rỗng và không hợp lệ
+          var isAnyFieldEmpty = false
+          var isSectionZeroAndOneValid = true
+          for section in 0...2 {
+              let indexPath = IndexPath(row: 0, section: section)
+              if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell,
+                 let text = cell.getInfoTextFieldText() {
+                  if cell.isInfoTextFieldEmpty() {
+                      cell.updateWrongLabelText("Không để trống")
+                      cell.updateWrongLabelTextColor(UIColor.red)
+                      isAnyFieldEmpty = true
+                  } else if (section == 0 || section == 1) && !isTextValid(text) {
+                      cell.updateWrongLabelText("Vui lòng đúng thông tin")
+                      cell.updateWrongLabelTextColor(UIColor.red)
+                      isAnyFieldEmpty = true
+                      isSectionZeroAndOneValid = false
+                  }
+              }
+          }
+          if isAnyFieldEmpty || !isSectionZeroAndOneValid {
+              nextBtnImageView.alpha = 0.5
+              infoNextBtn.isEnabled = false
+              return
+          }
+        // Check nếu email không hợp lệ
         let emailIndexPath = IndexPath(row: 0, section: 5)
-        if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell,
-           let email = emailCell.getInfoTextFieldText() {
-            if !isValidEmail(email) {
-                emailCell.updateWrongLabelText("Email không hợp lệ")
-                emailCell.updateWrongLabelTextColor(UIColor.red)
-                return
-            }
-            // Save email to UserDefaults only when it's valid
-            UserDefaults.standard.set(email, forKey: "emailKey")
-        }
-
-        // Save data to UserDefaults for other fields when all text fields are valid
+            if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell,
+               let email = emailCell.getInfoTextFieldText() {
+                if !isValidEmail(email) {
+                    emailCell.updateWrongLabelText("Email không hợp lệ")
+                    emailCell.updateWrongLabelTextColor(UIColor.red)
+                    return
+                }
+             }
+        // Lưu dữ liệu UserDefaults
         for section in 0..<tableView.numberOfSections {
-            if section != 5 { // Exclude the email field
+            if section != 5 {
                 let indexPath = IndexPath(row: 0, section: section)
                 if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
                     cell.saveCellData()
                 }
             }
         }
-
-        // Clear "Email không hợp lệ" text
-        if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell {
-            emailCell.updateWrongLabelText("")
+        // Clear "Email không hợp lệ"
+            if let emailCell = tableView.cellForRow(at: emailIndexPath) as? InfoUserTableViewCell {
+                emailCell.updateWrongLabelText("")
+            }
+        
+        // Clear "wrongLabel"
+           for section in 0..<tableView.numberOfSections {
+               let indexPath = IndexPath(row: 0, section: section)
+               if let cell = tableView.cellForRow(at: indexPath) as? InfoUserTableViewCell {
+                   cell.updateWrongLabelText("")
+               }
+           }
+        
+        // Hiển thị thông báo
+            let alertController = UIAlertController(title: "Lưu dữ liệu thành công", message: nil, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertController, animated: true, completion: nil)
         }
-
-        // Show alert
-        let alertController = UIAlertController(title: "Lưu dữ liệu thành công", message: nil, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alertController, animated: true, completion: nil)
-    }
-
 }
 
 extension InfoViewController: UITableViewDataSource {
@@ -166,7 +187,7 @@ extension InfoViewController: UITableViewDelegate {
 extension InfoViewController: InfoUserTableViewCellDelegate {
     // Save data to user defaults
     func saveData(text: String, forSection section: Int) {
-            switch section {
+        switch section {
             case 0:
                 UserDefaults.standard.set(text, forKey: "firstNameKey")
             case 1:
@@ -190,10 +211,7 @@ extension InfoViewController: InfoUserTableViewCellDelegate {
             infoNextBtn.isEnabled = true
         }
     }
-
 }
-
-
 func isValidEmail(_ email: String) -> Bool {
     let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.(com|net|org|edu|gov|mil|vc|info|mobi|name|aero|asia|jobs|museum|co\\.vn|vn)$"
     let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)

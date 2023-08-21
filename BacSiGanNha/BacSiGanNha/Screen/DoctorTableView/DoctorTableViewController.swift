@@ -18,7 +18,6 @@ class DoctorTableViewController: UIViewController {
         super.viewDidLoad()
         getData()
         setupTableView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +28,6 @@ class DoctorTableViewController: UIViewController {
     func getData() {
         APICaller.sharedInstance.fetchingAPIData { articleData, promotionData, doctorData in
                 self.doctorArr = doctorData
-              
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -54,23 +52,25 @@ class DoctorTableViewController: UIViewController {
                         return paragraphStyle
                     }()
                 ]
-                navigationBar.titleTextAttributes = titleTextAttributes
+        navigationBar.titleTextAttributes = titleTextAttributes
         }
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        // Thiết lập nút bên trái
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backBarButton
        
         if let navigationBar = self.navigationController?.navigationBar {
             let borderView = UIView(frame: CGRect(x: 0, y: navigationBar.frame.height - 1, width: navigationBar.frame.width, height: 1))
             borderView.backgroundColor = UIColor(red: 0.933, green: 0.937, blue: 0.957, alpha: 1)
             navigationBar.addSubview(borderView)
         }
-
     }
 
     @objc func backButtonTapped() {
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
 extension DoctorTableViewController: UITableViewDataSource {
@@ -84,7 +84,6 @@ extension DoctorTableViewController: UITableViewDataSource {
         cell.configure(data: data)
         return cell
     }
-    
 }
 
 extension DoctorTableViewController: UITableViewDelegate {

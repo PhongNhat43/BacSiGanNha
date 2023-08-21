@@ -49,7 +49,6 @@ class OtpViewController: UIViewController {
 
     @objc func updateCounter() {
         if counter > 0 {
-//            print("\(counter) seconds to the end of the world")
             counter -= 1
             UIView.animate(withDuration: 0.2) {
                 self.resendLabel.alpha = 1
@@ -86,7 +85,24 @@ class OtpViewController: UIViewController {
     
     func setupNavigation() {
         self.navigationItem.title = "Xác minh số điện thoại"
-        self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(backButtonTapped))]
+        if let navigationBar = self.navigationController?.navigationBar {
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                    .foregroundColor: UIColor(red: 0.141, green: 0.165, blue: 0.38, alpha: 1),
+                    .font: UIFont(name: "NunitoSans-Bold", size: 18) ?? UIFont.boldSystemFont(ofSize: 18),
+                    .paragraphStyle: { () -> NSMutableParagraphStyle in
+                        let paragraphStyle = NSMutableParagraphStyle()
+                        paragraphStyle.lineHeightMultiple = 0.81
+                        return paragraphStyle
+                    }()
+                ]
+        navigationBar.titleTextAttributes = titleTextAttributes
+        }
+        // Thiết lập nút bên trái
+        let backButton = UIButton(type: .custom)
+        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        let backBarButton = UIBarButtonItem(customView: backButton)
+        self.navigationItem.leftBarButtonItem = backBarButton
     }
     
     @objc func backButtonTapped() {
