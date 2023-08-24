@@ -229,3 +229,4 @@ extension InfoViewController: InfoUserTableViewCellDelegate {
         infoNextBtn.isEnabled = true
     }
 }
+

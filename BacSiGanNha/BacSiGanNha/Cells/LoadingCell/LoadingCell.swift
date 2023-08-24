@@ -8,7 +8,13 @@
 import UIKit
 
 class LoadingCell: UITableViewCell {
+    
+    static let indentifier = "LoadingCell"
+    static func nib() -> UINib {
+       return UINib(nibName: "LoadingCell", bundle: nil)
+    }
 
+    @IBOutlet weak var activityIndicatorLoad: UIActivityIndicatorView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

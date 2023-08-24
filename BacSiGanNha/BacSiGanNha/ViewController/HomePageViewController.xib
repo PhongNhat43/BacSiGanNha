@@ -25,6 +25,7 @@
                 <outlet property="heightOfDoctor" destination="Sjb-ry-LyN" id="b7X-d4-UFO"/>
                 <outlet property="heightOfNewsConstraint" destination="K5T-ht-gzc" id="Jww-qU-C17"/>
                 <outlet property="homePageImageView" destination="9Hq-GL-HJ9" id="Kwb-iH-pEW"/>
+                <outlet property="myScrollView" destination="ylU-k5-ePK" id="w2V-PU-c05"/>
                 <outlet property="newsCollectionView" destination="UBx-jO-WQo" id="cEU-Kw-osq"/>
                 <outlet property="promotionCollectionView" destination="0bF-sp-B0m" id="SIF-Tp-SFB"/>
                 <outlet property="roundView" destination="fQy-7W-rHJ" id="4xB-02-b4m"/>

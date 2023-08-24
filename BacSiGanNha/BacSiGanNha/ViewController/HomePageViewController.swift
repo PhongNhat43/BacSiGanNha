@@ -23,6 +23,7 @@ class HomePageViewController: UIViewController {
     @IBOutlet private weak var heightOfDoctor: NSLayoutConstraint!
     @IBOutlet private weak var avatarImageView: UIImageView!
     
+    @IBOutlet weak var myScrollView: UIScrollView!
     // MARK: - Property
     var newsArr = [ArticleList]()
     var promotionArr = [PromotionList]()
@@ -38,6 +39,19 @@ class HomePageViewController: UIViewController {
         getData()
         updateFirstNameText()
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange(_:)), name: UserDefaults.didChangeNotification, object: nil)
+    }
+    
+    func configureRefreshControl() {
+        myScrollView.refreshControl = UIRefreshControl()
+        myScrollView.refreshControl?.addTarget(self, action:
+                                          #selector(handleRefreshControl),
+                                          for: .valueChanged)
+    }
+  
+    @objc func handleRefreshControl() {
+       DispatchQueue.main.async {
+          self.myScrollView.refreshControl?.endRefreshing()
+       }
     }
     
     // update userDefaults data
@@ -129,8 +143,9 @@ class HomePageViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            navigationController?.isNavigationBarHidden = true
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        configureRefreshControl()
     }
 
     deinit {

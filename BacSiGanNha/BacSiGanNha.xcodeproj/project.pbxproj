@@ -69,6 +69,8 @@
 		E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79425D72A83C84B0051EB4C /* DoctorTableViewCell.xib */; };
 		E79425DD2A83CCCC0051EB4C /* DoctorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79425DB2A83CCCC0051EB4C /* DoctorTableViewController.swift */; };
 		E79425DE2A83CCCC0051EB4C /* DoctorTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E79425DC2A83CCCC0051EB4C /* DoctorTableViewController.xib */; };
+		E7D032552A96FF7200826282 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D032532A96FF7200826282 /* LoadingCell.swift */; };
+		E7D032562A96FF7200826282 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7D032542A96FF7200826282 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +139,8 @@
 		E79425D72A83C84B0051EB4C /* DoctorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorTableViewCell.xib; sourceTree = "<group>"; };
 		E79425DB2A83CCCC0051EB4C /* DoctorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableViewController.swift; sourceTree = "<group>"; };
 		E79425DC2A83CCCC0051EB4C /* DoctorTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoctorTableViewController.xib; sourceTree = "<group>"; };
+		E7D032532A96FF7200826282 /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		E7D032542A96FF7200826282 /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		F669494E467B184DE0FC6741 /* Pods-BacSiGanNha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BacSiGanNha.release.xcconfig"; path = "Target Support Files/Pods-BacSiGanNha/Pods-BacSiGanNha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -462,6 +466,7 @@
 		E76AD56F2A82415C0010485F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				E7D032512A96FF2200826282 /* LoadingCell */,
 				E71A700B2A8B445600EE6305 /* Intro */,
 				E73473C92A89C38C0076624F /* gender */,
 				E73473C42A89C37F0076624F /* InformationUserCell */,
@@ -510,6 +515,15 @@
 				E79425DC2A83CCCC0051EB4C /* DoctorTableViewController.xib */,
 			);
 			path = DoctorTableView;
+			sourceTree = "<group>";
+		};
+		E7D032512A96FF2200826282 /* LoadingCell */ = {
+			isa = PBXGroup;
+			children = (
+				E7D032532A96FF7200826282 /* LoadingCell.swift */,
+				E7D032542A96FF7200826282 /* LoadingCell.xib */,
+			);
+			path = LoadingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,6 +600,7 @@
 				E76AFD9B2A8CDB6700F2F63E /* IntroImageViewController.xib in Resources */,
 				E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */,
 				E731009A2A8DF99700598DF4 /* IntroImageCollectionViewCell.xib in Resources */,
+				E7D032562A96FF7200826282 /* LoadingCell.xib in Resources */,
 				E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */,
 				E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */,
 				E73057E02A83917C00A59E09 /* NewsDetailViewController.xib in Resources */,
@@ -683,6 +698,7 @@
 				E71A6FF42A8B2BBE00EE6305 /* AppDelegate.swift in Sources */,
 				E71F761C2A8474C6005DDA06 /* WebViewViewController.swift in Sources */,
 				E73057EA2A83974100A59E09 /* PromotionTableViewCell.swift in Sources */,
+				E7D032552A96FF7200826282 /* LoadingCell.swift in Sources */,
 				E71A6FF82A8B2C5200EE6305 /* User.swift in Sources */,
 				E735C7EC2A935667009119E6 /* APIUtilities.swift in Sources */,
 			);

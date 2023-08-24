@@ -13,7 +13,8 @@ class DoctorTableViewController: UIViewController {
     
     // MARK: - Property
     var doctorArr = [DoctorList]()
-    
+    var isLoading = false
+    var isAllDataLoaded = false 
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
@@ -23,6 +24,8 @@ class DoctorTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigation()
+        configureRefreshControl()
+        
     }
     
     func getData() {
@@ -34,10 +37,37 @@ class DoctorTableViewController: UIViewController {
             }
     }
     
+    func loadMoreData() {
+        if !self.isLoading && doctorArr.count > 0 {
+            self.isLoading = true
+            DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
+                // Download more data here
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.isLoading = false
+                }
+            }
+        }
+    }
+
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(DoctorTableViewCell.nib(), forCellReuseIdentifier: DoctorTableViewCell.indentifier)
+        tableView.register(LoadingCell.nib(), forCellReuseIdentifier: LoadingCell.indentifier)
+    }
+    
+    func configureRefreshControl() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:
+                                          #selector(handleRefreshControl),
+                                          for: .valueChanged)
+    }
+  
+    @objc func handleRefreshControl() {
+       DispatchQueue.main.async {
+          self.tableView.refreshControl?.endRefreshing()
+       }
     }
     
     func setupNavigation() {
@@ -74,20 +104,54 @@ class DoctorTableViewController: UIViewController {
 }
 
 extension DoctorTableViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return doctorArr.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return doctorArr.count
+        } else if section == 1 {
+            let totalRowHeight = CGFloat(doctorArr.count) * 105
+            if totalRowHeight < tableView.frame.height {
+                return 0
+            } else {
+                return 1
+            }
+        } else {
+            return 0
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DoctorTableViewCell.indentifier, for: indexPath) as! DoctorTableViewCell
-        let data = doctorArr[indexPath.row]
-        cell.configure(data: data)
-        return cell
+       
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: DoctorTableViewCell.indentifier, for: indexPath) as! DoctorTableViewCell
+            let data = doctorArr[indexPath.row]
+            cell.configure(data: data)
+            return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: LoadingCell.indentifier, for: indexPath) as! LoadingCell
+                cell.activityIndicatorLoad.startAnimating()
+                return cell
+            }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == doctorArr.count - 10, !isLoading {
+            loadMoreData()
+        }
     }
 }
 
 extension DoctorTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 105
+        if indexPath.section == 0 {
+            return 105
+        } else {
+            return 115
+        }
     }
+    
+    
 }
