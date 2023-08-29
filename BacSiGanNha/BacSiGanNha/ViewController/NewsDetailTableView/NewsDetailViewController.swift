@@ -19,11 +19,26 @@ class NewsDetailViewController: UIViewController {
         super.viewDidLoad()
         getData()
         setupTableView()
+        configureRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigation()
+    }
+    
+    func configureRefreshControl() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:
+                                          #selector(handleRefreshControl),
+                                          for: .valueChanged)
+    }
+  
+    @objc func handleRefreshControl() {
+       getData()
+       DispatchQueue.main.async {
+          self.tableView.refreshControl?.endRefreshing()
+       }
     }
     
     func getData() {

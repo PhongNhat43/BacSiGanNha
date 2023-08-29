@@ -50,6 +50,8 @@
 		E735C7F72A936E40009119E6 /* CGSize+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735C7F62A936E40009119E6 /* CGSize+Extensions.swift */; };
 		E735C7F92A936E4C009119E6 /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735C7F82A936E4C009119E6 /* NSMutableAttributedString+Extensions.swift */; };
 		E735C7FB2A936E56009119E6 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735C7FA2A936E56009119E6 /* Date+Extensions.swift */; };
+		E7417DA82A9D94C0001E1581 /* ToastAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7417DA72A9D94C0001E1581 /* ToastAlertView.swift */; };
+		E7417DAC2A9D960A001E1581 /* ToastAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7417DAB2A9D960A001E1581 /* ToastAlertView.xib */; };
 		E750EDFC2A8F17440017FEE8 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750EDFB2A8F17440017FEE8 /* Extension+UILabel.swift */; };
 		E755ED042A83486000C9BCC6 /* NunitoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */; };
 		E755ED052A83486000C9BCC6 /* NunitoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */; };
@@ -120,6 +122,8 @@
 		E735C7F62A936E40009119E6 /* CGSize+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGSize+Extensions.swift"; sourceTree = "<group>"; };
 		E735C7F82A936E4C009119E6 /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		E735C7FA2A936E56009119E6 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		E7417DA72A9D94C0001E1581 /* ToastAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
+		E7417DAB2A9D960A001E1581 /* ToastAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastAlertView.xib; sourceTree = "<group>"; };
 		E750EDFB2A8F17440017FEE8 /* Extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		E755ED012A83486000C9BCC6 /* NunitoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Regular.ttf"; sourceTree = "<group>"; };
 		E755ED022A83486000C9BCC6 /* NunitoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		E72A1BC42A80E58F00EFB0D7 /* BacSiGanNha */ = {
 			isa = PBXGroup;
 			children = (
+				E7417DA62A9D946E001E1581 /* ToastView */,
 				E735C7E52A9351A4009119E6 /* App */,
 				E76AD5682A823DFD0010485F /* Model */,
 				E735C7E92A9353D2009119E6 /* Helpers */,
@@ -415,6 +420,15 @@
 				E735C7FA2A936E56009119E6 /* Date+Extensions.swift */,
 			);
 			path = Cores;
+			sourceTree = "<group>";
+		};
+		E7417DA62A9D946E001E1581 /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				E7417DA72A9D94C0001E1581 /* ToastAlertView.swift */,
+				E7417DAB2A9D960A001E1581 /* ToastAlertView.xib */,
+			);
+			path = ToastView;
 			sourceTree = "<group>";
 		};
 		E755ED002A83486000C9BCC6 /* Font */ = {
@@ -600,6 +614,7 @@
 				E76AFD9B2A8CDB6700F2F63E /* IntroImageViewController.xib in Resources */,
 				E79425D92A83C84B0051EB4C /* DoctorTableViewCell.xib in Resources */,
 				E731009A2A8DF99700598DF4 /* IntroImageCollectionViewCell.xib in Resources */,
+				E7417DAC2A9D960A001E1581 /* ToastAlertView.xib in Resources */,
 				E7D032562A96FF7200826282 /* LoadingCell.xib in Resources */,
 				E72A1BD22A80E59800EFB0D7 /* LaunchScreen.storyboard in Resources */,
 				E72A1BCF2A80E59800EFB0D7 /* Assets.xcassets in Resources */,
@@ -692,6 +707,7 @@
 				E73057C72A8375AB00A59E09 /* DoctorCollectionViewCell.swift in Sources */,
 				E73473C82A89C37F0076624F /* InfoUserTableViewCell.swift in Sources */,
 				E755ED0A2A834A8000C9BCC6 /* PromotionCollectionViewCell.swift in Sources */,
+				E7417DA82A9D94C0001E1581 /* ToastAlertView.swift in Sources */,
 				E73473CC2A89C38C0076624F /* GenderTableViewCell.swift in Sources */,
 				E735C7FB2A936E56009119E6 /* Date+Extensions.swift in Sources */,
 				E76AD56C2A823E220010485F /* UIImageViewExtention.swift in Sources */,

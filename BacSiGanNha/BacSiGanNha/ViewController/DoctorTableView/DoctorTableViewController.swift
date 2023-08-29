@@ -25,7 +25,6 @@ class DoctorTableViewController: UIViewController {
         super.viewWillAppear(animated)
         setupNavigation()
         configureRefreshControl()
-        
     }
     
     func getData() {
@@ -41,7 +40,6 @@ class DoctorTableViewController: UIViewController {
         if !self.isLoading && doctorArr.count > 0 {
             self.isLoading = true
             DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) {
-                // Download more data here
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     self.isLoading = false
@@ -65,6 +63,7 @@ class DoctorTableViewController: UIViewController {
     }
   
     @objc func handleRefreshControl() {
+       getData()
        DispatchQueue.main.async {
           self.tableView.refreshControl?.endRefreshing()
        }

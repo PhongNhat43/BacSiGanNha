@@ -19,8 +19,22 @@ class PromotionDeatailTableView: UIViewController {
         super.viewDidLoad()
         getData()
         setupTableView()
-       
+        configureRefreshControl()
         view.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+    }
+    
+    func configureRefreshControl() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action:
+                                          #selector(handleRefreshControl),
+                                          for: .valueChanged)
+    }
+  
+    @objc func handleRefreshControl() {
+       getData()
+       DispatchQueue.main.async {
+          self.tableView.refreshControl?.endRefreshing()
+       }
     }
     
     override func viewWillAppear(_ animated: Bool) {

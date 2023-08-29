@@ -17,7 +17,6 @@ class IntroImageViewController: UIViewController {
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var introPageControlTopConstraint: NSLayoutConstraint!
 
-    
     // MARK: - Property
     var intros: [Intro] = []
     var timer: Timer?
@@ -118,23 +117,17 @@ extension IntroImageViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let intros = // Đặt intros tại đây, có thể là dữ liệu intros tại indexPath hoặc dữ liệu cần cho cell này
         let titleFont = UIFont(name: "NunitoSans-Bold", size: 24) ?? UIFont.boldSystemFont(ofSize: 24)
         let descriptionFont = UIFont(name: "NunitoSans-Regular", size: 14) ?? UIFont.systemFont(ofSize: 14)
-
         let screenWidth = UIScreen.main.bounds.width
         let maxWidth: CGFloat = (screenWidth == 375) ? 300 : 339
-
         let totalHeight = UILabel.calculateIntroCellHeight(intros: intros, titleFont: titleFont, descriptionFont: descriptionFont, titleWidth: maxWidth, descriptionWidth: maxWidth)
-        
         heightOfIntroContrains.constant = totalHeight
         print("IntroCollectionView Cell - Width: \(collectionView.frame.width), Height: \(totalHeight)")
         print("CollectionView height \(heightOfIntroContrains.constant)")
-        
         return CGSize(width: collectionView.frame.width, height: totalHeight)
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }

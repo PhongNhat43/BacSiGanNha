@@ -138,6 +138,13 @@ class InfoViewController: UIViewController {
             let alertController = UIAlertController(title: "Lưu dữ liệu thành công", message: nil, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
+//            let toastAlertView = ToastAlertView()
+//               if allFieldsValid {
+//                   toastAlertView.configViews(toastCase: .success, message: "Lưu dữ liệu thành công")
+//               } else {
+//                   toastAlertView.configViews(toastCase: .error, message: "Lưu dữ liệu thất bại")
+//               }
+//               self.view.addSubview(toastAlertView)
         }
     }
 

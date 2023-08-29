@@ -36,6 +36,13 @@ struct Constants {
     struct AllinfoVC {
         static let infoCellHeight: CGFloat = 85
     }
+    
+    struct Icon {
+        static let iconError = UIImage(named: "icon-toast-error")
+        static let iconSusses = UIImage(named: "icon-toast-success")
+        static let iconWarning = UIImage(named: "icon-toast-warning")
+        static let iconNormal = UIImage(named: "icon-toast-normal")
+    }
 
 }
 
